@@ -8,6 +8,7 @@
     ./hardware-configuration.nix
     ./lang.nix
     ./school/wifi/cert.nix
+    #./school/wifi/cert.flake
   ];
 
   # Bootloader.

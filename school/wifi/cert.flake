@@ -1,0 +1,31 @@
+{
+  description = "Get the legacy school/uni wifi working";
+  inputs.flake-utils.url = "github:numtide/flake-utils";
+  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
+
+  outputs = { self, flake-utils, config, pkgs, ... }: {
+    flake-utils.lib.eachDefaultSystem (
+      let
+        pkgs = nixpkgs.legacyPackages.${system};
+      in
+      {
+        systemd.services.wpa_supplicant.environment.OPENSSL_CONF = pkgs.writeText "openssl.cnf" ''
+          openssl_conf = openssl_init
+          [openssl_init]
+          ssl_conf = ssl_sect
+          [ssl_sect]
+          system_default = system_default_sect
+          [system_default_sect]
+          Options = UnsafeLegacyRenegotiation
+          [system_default_sect]
+          CipherString = Default:@SECLEVEL=0
+        '';
+        security.pki.certificateFiles = [
+          "${pkgs.cacert}/etc/ssl/certs/ca-bundle.crt"
+          ./SAEDURootCA_Base64.crt
+        ];
+      };
+    );
+  };
+}
+

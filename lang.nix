@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 let
-  lang = "en_AU.UTF-8";
+  lang = "en_US.UTF-8";
 in
 {
   # Select internationalisation properties.
@@ -35,6 +35,10 @@ in
     packages = with pkgs; [
       # Contains alot of fonts
       nerdfonts
+
+      # MS Fonts
+      corefonts
+      vistafonts
 
       # Misc other fonts
       noto-fonts
