@@ -3,16 +3,12 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, ... }:
-
-let
-  lang = "en_AU.UTF-8";
-in
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./school/wifi/cert.nix
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    ./hardware-configuration.nix
+    ./lang.nix
+    ./school/wifi/cert.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -30,30 +26,6 @@ in
 
   # Set your time zone.
   time.timeZone = "Australia/Adelaide";
-
-  # Select internationalisation properties.
-  i18n = {
-    defaultLocale = "${lang}";
-
-    extraLocaleSettings = {
-      LC_ADDRESS = "${lang}";
-      LC_IDENTIFICATION = "${lang}";
-      LC_MEASUREMENT = "${lang}";
-      LC_MONETARY = "${lang}";
-      LC_NAME = "${lang}";
-      LC_NUMERIC = "${lang}";
-      LC_PAPER = "${lang}";
-      LC_TELEPHONE = "${lang}";
-      LC_TIME = "${lang}";
-    };
-
-    #inputMethod = {
-    #  enabled = "ibus";
-    #  ibus.engines = with pkgs.ibus-engines; [
-    #    anthy
-    #  ];
-    #};
-  };
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -143,21 +115,6 @@ in
     anthy
   ];
 
-  fonts = {
-    fontDir.enable = true;
-    enableDefaultPackages = true;
-    packages = with pkgs; [
-      noto-fonts
-      noto-fonts-cjk
-      noto-fonts-emoji
-      liberation_ttf
-      fira-code
-      fira-code-symbols
-      mplus-outline-fonts.githubRelease
-      dina-font
-      proggyfonts
-    ];
-  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
