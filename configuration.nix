@@ -7,6 +7,7 @@
   imports = [
     ./hardware-configuration.nix
     ./lang.nix
+    ./shell.nix
     ./school/wifi/cert.nix
     #./school/wifi/cert.flake
   ];
