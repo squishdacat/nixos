@@ -1,19 +1,13 @@
 { config, pkgs, ... }:
-#let
-#  stylix = pkgs.fetchFromGitHub {
-#    owner = "danth";
-#    repo = "stylix";
-#    #rev = "...";
-#    #sha256 = "...";
-#  };
-#in
 {
-  #imports = [ (import stylix).homeManagerModules.stylix ];
-  #imports = [ (import pkgs.fetchFromGithub {
-  #  owner = "danth";
-  #  repo = "stylix";
-  #}).homeManagerModules.stylix ];
+  stylix = {
+    image = ./wallpaper.png;
+    polarity = "dark";
+    #base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
 
-  stylix.image = ./wallpaper.png;
-  stylix.polarity = "dark";
+    cursor = {
+      package = pkgs.breeze-gtk;
+      name = "breeze_cursors";
+    };
+  };
 }
