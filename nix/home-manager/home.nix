@@ -1,0 +1,109 @@
+{ config, pkgs, ... }:
+{
+  # Home Manager needs a bit of information about you and the paths it should
+  # manage.
+  home.username = "coolgi";
+  home.homeDirectory = "/home/coolgi";
+  home.stateVersion = "24.05";
+  # Let Home Manager install and manage itself.
+  programs.home-manager.enable = true;
+
+  nixpkgs.config.allowUnfree = true;
+
+
+  imports = [
+    ./app/desktop/hyprland.nix
+    ./app/terminal/kitty.nix
+  ];
+
+  #nixpkgs.config.permittedInsecurePackages = [
+  #  "electron-25.9.0"
+  #];
+
+  # The home.packages option allows you to install Nix packages into your
+  # environment.
+  home.packages = with pkgs; [
+    hyprland
+    #nerdfonts
+
+    wofi
+    waybar
+    xfce.thunar
+    xfce.thunar-archive-plugin
+    xfce.thunar-media-tags-plugin
+
+    librewolf
+    
+    libreoffice-qt
+    hunspell
+    hunspellDicts.en_AU-large
+    hunspellDicts.en_US-large
+    #hunspellDicts.jp_JA
+    
+    vesktop
+    memento
+    obs-studio
+    mpv
+    obsidian
+    #blender
+    kate
+    feh
+
+    bat
+    eza
+    ranger
+    unimatrix
+
+    cmatrix
+
+    font-manager
+    networkmanagerapplet
+    brightnessctl
+  ];
+
+  # Home Manager is pretty good at managing dotfiles. The primary way to manage
+  # plain files is through 'home.file'.
+  home.file = {
+    # # Building this configuration will create a copy of 'dotfiles/screenrc' in
+    # # the Nix store. Activating the configuration will then make '~/.screenrc' a
+    # # symlink to the Nix store copy.
+    # ".screenrc".source = dotfiles/screenrc;
+
+    # # You can also set the file content immediately.
+    # ".gradle/gradle.properties".text = ''
+    #   org.gradle.console=verbose
+    #   org.gradle.daemon.idletimeout=3600000
+    # '';
+  };
+
+  # Home Manager can also manage your environment variables through
+  # 'home.sessionVariables'. If you don't want to manage your shell through Home
+  # Manager then you have to manually source 'hm-session-vars.sh' located at
+  # either
+  #
+  #  ~/.nix-profile/etc/profile.d/hm-session-vars.sh
+  #
+  # or
+  #
+  #  ~/.local/state/nix/profiles/profile/etc/profile.d/hm-session-vars.sh
+  #
+  # or
+  #
+  #  /etc/profiles/per-user/coolgi/etc/profile.d/hm-session-vars.sh
+  #
+
+  home.pointerCursor = {
+    gtk.enable = true;
+    # x11.enable = true;
+    package = pkgs.libsForQt5.breeze-gtk;
+    name = "Breeze-gtk";
+    size = 16;
+  };
+
+
+
+  home.sessionVariables = {
+    EDITOR = "nvim";
+  };
+
+}

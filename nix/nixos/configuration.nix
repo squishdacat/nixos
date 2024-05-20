@@ -8,6 +8,7 @@
     ./hardware-configuration.nix
     ./lang.nix
     ./shell.nix
+    ./keyboard/workman.nix
     ./school/wifi/cert.nix
     #./school/wifi/cert.flake
   ];
@@ -63,7 +64,7 @@
   #services.xserver.desktopManager.gnome.enable = true;
 
 
-  #programs.hyprland.enable = true;
+  programs.hyprland.enable = true;
   programs.zsh = {
     enable = true;
     enableCompletion = true;
