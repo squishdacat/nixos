@@ -14,7 +14,7 @@
   imports = [
     ./app/desktop/hyprland.nix
     ./app/terminal/kitty.nix
-    #./style/stylix.nix
+    ./style/stylix.nix
   ];
 
   #nixpkgs.config.permittedInsecurePackages = [
@@ -93,13 +93,13 @@
   #  /etc/profiles/per-user/coolgi/etc/profile.d/hm-session-vars.sh
   #
 
-  home.pointerCursor = {
-    gtk.enable = true;
-    # x11.enable = true;
-    package = pkgs.libsForQt5.breeze-gtk;
-    name = "Breeze-gtk";
-    size = 16;
-  };
+  #home.pointerCursor = {
+  #  gtk.enable = true;
+  #  # x11.enable = true;
+  #  package = pkgs.libsForQt5.breeze-gtk;
+  #  name = "Breeze-gtk";
+  #  size = 16;
+  #};
 
 
 
