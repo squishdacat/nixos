@@ -14,6 +14,7 @@
   imports = [
     ./app/desktop/hyprland.nix
     ./app/terminal/kitty.nix
+    #./style/stylix.nix
   ];
 
   #nixpkgs.config.permittedInsecurePackages = [
