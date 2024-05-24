@@ -1,10 +1,11 @@
 { config, pkgs, ... }:
 {
-  # Home Manager needs a bit of information about you and the paths it should
-  # manage.
-  home.username = "coolgi";
-  home.homeDirectory = "/home/coolgi";
-  home.stateVersion = "24.05";
+  home = {
+    username = "coolgi";
+    homeDirectory = "/home/coolgi";
+    stateVersion = "24.05";
+    preferXdgDirectories = true;
+  };
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
@@ -25,7 +26,6 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-    hyprland
     #nerdfonts
 
     wofi

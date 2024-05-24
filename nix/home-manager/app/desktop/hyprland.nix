@@ -1,5 +1,11 @@
 { config, pkgs, ... }:
 {
+  imports = [
+    ./wallpaper/hyprpaper.nix
+    #./wallpaper/wpaperd.nix
+  ];
+
+  home.packages = [ pkgs.hyprland ];
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
@@ -22,13 +28,6 @@
   };
 
   
-  services.hyprpaper = {
-    enable = true;
-    settings = {
-      preload = "${config.stylix.image}";
-      wallpaper = ",${config.stylix.image}";
-    };
-  };
 
   wayland.windowManager.hyprland.settings = {
     "$mod" = "SUPER";
