@@ -14,6 +14,7 @@
   imports = [
     ./app/desktop/hyprland.nix
     ./app/terminal/kitty.nix
+    ./app/cmd/ranger.nix
     ./style/stylix.nix
   ];
 
@@ -52,7 +53,6 @@
 
     bat
     eza
-    ranger
     unimatrix
 
     cmatrix
