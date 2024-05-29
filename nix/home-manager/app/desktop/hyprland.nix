@@ -43,7 +43,6 @@
 	"bind = $mod+SHIFT, up, movewindow, u"
 	"bind = $mod+SHIFT, down, movewindow, d"
 
-        "$mod, D, exec, librewolf"
         "$mod, RETURN, exec, kitty"
         "$mod, Q, killactive"
       ]

@@ -1,12 +1,11 @@
 { config, pkgs, ... }:
 {
   stylix = {
-    image = ./wallpaper.jpg;
-    #image = ./wallpaper.png;
-    #image = ./sushi_dark.png;
+    image = ./wallpaper.png;
     
     polarity = "dark";
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-night-terminal-dark.yaml";
+    #base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-night-terminal-dark.yaml";
+    #base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyodark.yaml";
 
     cursor = {
       package = pkgs.breeze-gtk;
