@@ -1,19 +1,16 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { config, pkgs, ... }:
 {
   imports = [
     ./hardware-configuration.nix
+    ./nix-features.nix
     ./lang.nix
+    ./audio.nix
     ./shell.nix
     ./keyboard/workman.nix
     ./school/wifi/cert.nix
-    #./school/wifi/cert.flake
   ];
 
-  # Bootloader.
+  # Bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
@@ -30,29 +27,6 @@
   # Set your time zone.
   time.timeZone = "Australia/Adelaide";
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  
-  sound.enable = true;
-  hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    jack.enable = true;
-  };
-
-
-  # Required to get running random binaries to work
-  #programs.nix-ld.enable = true;
-  #programs.nix-ld.libaries = with pkgs; [
-  #  # Add any missing dynamic libaries for unpackage
-  #  # programs here, NOT in environment.systemPackages
-  #];
-
-
   # Configure keymap in X11
   #services.xserver = {
   #  layout = "us";
@@ -65,33 +39,17 @@
 
 
   programs.hyprland.enable = true;
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-    enableBashCompletion = true;
-    autosuggestions.enable = true;
-    syntaxHighlighting.enable = true;
-
-    shellAliases = {
-      ll = "ls -l";
-      update = "sudo nixos-rebuild switch";
-    };
-    histSize = 10000;
-    #histFile = "${config.xdg.dataHome}/zsh/history";
-  };
-  environment.shells = with pkgs; [ zsh ];
-  users.defaultUserShell = pkgs.zsh;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.coolgi = {
     isNormalUser = true;
     description = "coolGi";
-    extraGroups = [ "networkmanager" "wheel" "video" "input" ];
+    #extraGroups = [ "networkmanager" "wheel" "video" "input" "kvm" "adbusers" ];
+    extraGroups = [ "networkmanager" "wheel" "video" "input" "kvm" ];
   };
 
+  programs.adb.enable = true;
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
 
   # Override system page versions
   #nixpkgs.config.packageOverrides = pkgs; {
@@ -99,7 +57,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    vim
+    #vim
     neovim
     curl
     wget
@@ -115,7 +73,7 @@
     #fishPlugins.grc
     #grc
 
-    anthy
+    #anthy
   ];
 
 

@@ -9,11 +9,17 @@
 
     shellAliases = {
       ll = "ls -l";
+      nix-shell = "nix-shell --command zsh";
       update = "sudo nixos-rebuild switch";
     };
+
+    # History
     histSize = 10000;
-    #histFile = "${config.xdg.dataHome}/zsh/history";
+    #histFile = "${config.xdg.configHome}/zsh/history";
   };
+
+  # Adds zsh to the list of valid shells
   environment.shells = with pkgs; [ zsh ];
+  # Sets all users default shell to be zsh
   users.defaultUserShell = pkgs.zsh;
 }

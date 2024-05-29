@@ -14,7 +14,8 @@
 
   imports = [
     ./app/desktop/hyprland.nix
-    ./app/terminal/kitty.nix
+    ./app/terminal/emulator/kitty.nix
+    ./app/terminal/shell/zsh.nix
     ./app/cmd/ranger.nix
     ./style/stylix.nix
   ];
@@ -26,8 +27,6 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-    #nerdfonts
-
     wofi
     waybar
     xfce.thunar
