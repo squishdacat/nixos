@@ -21,6 +21,7 @@
       ll = "ls -l";
       ".." = "cd ..";
       hm-update = "home-manager switch";
+      nixGL = "nix run --impure github:nix-community/nixGL --";
     };
 
 
@@ -36,13 +37,13 @@
 
 
 
-  #programs.zsh.oh-my-zsh = {
-  #  enable = true;
-  #  plugins = [
-  #    "git"
-  #    "sudo"
-  #  ];
-  #};
+  programs.zsh.oh-my-zsh = {
+    enable = true;
+    plugins = [
+      "git"
+      "sudo"
+    ];
+  };
 
   #programs.zsh.zplug = {
   #  enable = true;

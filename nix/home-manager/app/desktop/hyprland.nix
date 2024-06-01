@@ -33,15 +33,15 @@
     "$mod" = "SUPER";
     bind =
       [
-        "bind = $mod, left, movefocus, l"
-	"bind = $mod, right, movefocus, r"
-	"bind = $mod, up, movefocus, u"
-	"bind = $mod, down, movefocus, d"
+        "$mod, left, movefocus, l"
+	"$mod, right, movefocus, r"
+	"$mod, up, movefocus, u"
+	"$mod, down, movefocus, d"
 	# Move window with mainMod + shift + arrow keys
-	"bind = $mod+SHIFT, left, movewindow, l"
-	"bind = $mod+SHIFT, right, movewindow, r"
-	"bind = $mod+SHIFT, up, movewindow, u"
-	"bind = $mod+SHIFT, down, movewindow, d"
+	"$mod+SHIFT, left, movewindow, l"
+	"$mod+SHIFT, right, movewindow, r"
+	"$mod+SHIFT, up, movewindow, u"
+	"$mod+SHIFT, down, movewindow, d"
 
         "$mod, RETURN, exec, kitty"
         "$mod, Q, killactive"

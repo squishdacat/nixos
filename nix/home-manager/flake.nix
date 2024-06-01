@@ -16,6 +16,7 @@
       modules = [
         stylix.homeManagerModules.stylix
 	./home.nix
+	./style/stylix.nix
       ];
     };
   };

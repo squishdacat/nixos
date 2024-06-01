@@ -5,6 +5,6 @@
   };
 
   wayland.windowManager.hyprland.settings.bind = [
-    "bind = $mod, d, exec, wofi -Im -w 3 --show drun"
+    "bind = $mod, d, exec, wofi -Ime -a -w 3 --show drun" 
   ];
 }

@@ -18,7 +18,6 @@
     ./app/terminal/shell/zsh.nix
     ./app/launcher/wofi.nix
     ./app/cmd/ranger.nix
-    ./style/stylix.nix
   ];
 
   #nixpkgs.config.permittedInsecurePackages = [
