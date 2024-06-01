@@ -66,14 +66,8 @@
     fzf
     bat
 
-    #fishPlugins.done
-    #fishPlugins.fzf-fish
-    #fishPlugins.forgit
-    #fishPlugins.hydro
-    #fishPlugins.grc
-    #grc
-
-    #anthy
+    # Many useful system utils
+    psmisc
   ];
 
 
