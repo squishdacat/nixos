@@ -5,18 +5,29 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    #nixgl.url = "github:nix-community/nixGL";
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     stylix.url = "github:danth/stylix";
+
+
+    #nixgl.url = "github:nix-community/nixGL";
   };
 
-  outputs = { nixpkgs, home-manager, stylix, ... }:
+  outputs = { nixpkgs, home-manager, stylix, nixvim, ... }:
   {
     homeConfigurations."coolgi" = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
       modules = [
+      ./home.nix
+
+
         stylix.homeManagerModules.stylix
-	./home.nix
-	./style/stylix.nix
+        ./flakes/stylix/stylix.nix
+
+        nixvim.homeManagerModules.nixvim
+        ./flakes/nixvim/nixvim.nix
       ];
     };
   };

@@ -1,7 +1,9 @@
 { config, pkgs, ... }:
 {
   stylix = {
-    image = ./wallpaper.png;
+    #image = ./systemdeeznuts_2.png;
+    image = ./all_the_mascots.jpeg;
+    #image = ./head_dark.png;
     
     polarity = "dark";
     #base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-night-terminal-dark.yaml";
@@ -14,6 +16,11 @@
 
     opacity = {
       terminal = 0.8;
+    };
+
+
+    targets = {
+      kitty.variant256Colors = true;
     };
   };
 }

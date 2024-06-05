@@ -34,6 +34,7 @@
     xfce.thunar-media-tags-plugin
 
     librewolf
+    firefox
     
     libreoffice-qt
     hunspell
@@ -102,8 +103,8 @@
 
 
 
-  home.sessionVariables = {
-    EDITOR = "nvim";
-  };
+  #home.sessionVariables = {
+  #  EDITOR = "nvim";
+  #};
 
 }
