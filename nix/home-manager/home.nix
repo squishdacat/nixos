@@ -13,7 +13,10 @@
 
 
   imports = [
+    ./lang/workman.nix
+    ./lang/hunspell.nix
     ./app/desktop/hyprland.nix
+    ./app/bar/waybar.nix
     ./app/terminal/emulator/kitty.nix
     ./app/terminal/shell/zsh.nix
     ./app/launcher/wofi.nix
@@ -27,8 +30,6 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-    wofi
-    waybar
     xfce.thunar
     xfce.thunar-archive-plugin
     xfce.thunar-media-tags-plugin
@@ -36,12 +37,8 @@
     librewolf
     firefox
     
-    libreoffice-qt
-    hunspell
-    hunspellDicts.en_AU-large
-    hunspellDicts.en_US-large
-    #hunspellDicts.jp_JA
-    
+    libreoffice-fresh
+
     vesktop
     memento
     obs-studio

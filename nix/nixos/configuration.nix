@@ -3,6 +3,7 @@
   imports = [
     ./hardware-configuration.nix
     ./nix-features.nix
+    ./login/greetd.nix
     ./lang.nix
     ./audio.nix
     ./shell.nix

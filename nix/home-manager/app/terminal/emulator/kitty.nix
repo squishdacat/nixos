@@ -9,4 +9,8 @@
       confirm_os_window_close = 0;
     };
   };
+
+  wayland.windowManager.hyprland.settings.bind = [
+    "$mod, RETURN, exec, kitty"
+  ];
 }
