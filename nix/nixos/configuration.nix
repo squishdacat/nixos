@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 {
   imports = [
+    ./bootloader/systemd.nix
     ./hardware-configuration.nix
     ./nix-features.nix
     ./drivers/hardware/audio.nix
@@ -14,7 +15,6 @@
   ];
 
   # Bootloader
-  boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "Jeff-Laptop"; # Define your hostname.
