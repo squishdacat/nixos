@@ -31,19 +31,28 @@
   
 
   wayland.windowManager.hyprland.settings = {
+    monitor = ",preferred,auto,1";
+
+
     "$mod" = "SUPER";
     bind = [
+      "$mod, Q, killactive"
+      "$mod, K, exec, hyprctl kill" # Kill something
+
+      "$mod, F, fullscreen"
+      "$mod, V, togglefloating"
+
+      # Change focus
       "$mod, left, movefocus, l"
       "$mod, right, movefocus, r"
       "$mod, up, movefocus, u"
       "$mod, down, movefocus, d"
-      # Move window with mainMod + shift + arrow keys
+      # Move
       "$mod+SHIFT, left, movewindow, l"
       "$mod+SHIFT, right, movewindow, r"
       "$mod+SHIFT, up, movewindow, u"
       "$mod+SHIFT, down, movewindow, d"
 
-      "$mod, Q, killactive"
     ]
     ++ (
       # workspaces
@@ -66,11 +75,13 @@
       "$mod, mouse:273, resizewindow"
     ];
 
-    monitor = ",preferred,auto,1";
 
     input = {
+      follow_mouse = true;
+      float_switch_override_focus = true;
+
       touchpad = {
-        #natural_scroll = false;
+        natural_scroll = false;
         disable_while_typing = false;
       };
     };
@@ -79,12 +90,16 @@
       workspace_swipe = true;
     };
 
+    misc = {
+      enable_swallow = true;
+      swallow_regex = "^(kitty)$";
+      hide_cursor_on_touch = true; # for touchscreen
+    };
+
     general = {
       gaps_in = 5;
       gaps_out = 20;
       border_size = 2;
-      #col.active_border = "#1affffee";
-      #col.inactive_border = "#595959aa";
       
       layout = "dwindle";
     };
@@ -92,8 +107,24 @@
     dwindle = {
       # See https://wiki.hyprland.org/Configuring/Dwindle-Layout/ for more
       pseudotile = true; # master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
-      preserve_split = true; # you probably want this
+      preserve_split = true;
       no_gaps_when_only = true;
+    };
+
+
+    decoration = {
+      rounding = 10;
+
+      drop_shadow = true;
+      shadow_range = 4;
+      shadow_render_power = 3;
+
+      blur = {
+        enabled = true;
+        size = 4;
+        passes = 2;
+        new_optimizations = true;
+      };
     };
   };
 }

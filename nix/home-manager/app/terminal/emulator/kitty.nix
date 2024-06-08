@@ -1,4 +1,4 @@
-{ ... }:
+{ config, ... }:
 {
   programs.kitty = {
     enable = true;
@@ -13,4 +13,6 @@
   wayland.windowManager.hyprland.settings.bind = [
     "$mod, RETURN, exec, kitty"
   ];
+
+  programs.rofi.extraConfig.terminal = "${config.programs.kitty.package}/bin/kitty";
 }

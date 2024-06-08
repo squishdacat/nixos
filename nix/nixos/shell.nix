@@ -11,7 +11,7 @@
       ll = "ls -l";
       nix-shell = "nix-shell --command zsh";
       #nix-shell = "nix-shell --run zsh";
-      update = "sudo nixos-rebuild switch";
+      nx-update = "sudo nixos-rebuild switch";
     };
 
     # History

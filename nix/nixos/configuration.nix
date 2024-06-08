@@ -3,11 +3,13 @@
   imports = [
     ./hardware-configuration.nix
     ./nix-features.nix
+    ./drivers/hardware/audio.nix
+    ./drivers/hardware/graphics.nix
+    ./drivers/hardware/bluetooth.nix
     ./login/greetd.nix
-    ./lang.nix
-    ./audio.nix
     ./shell.nix
-    ./keyboard/workman.nix
+    ./locale/keyboard/workman.nix
+    ./locale/lang/en-us.nix
     ./school/wifi/cert.nix
   ];
 
@@ -29,10 +31,6 @@
   time.timeZone = "Australia/Adelaide";
 
   # Configure keymap in X11
-  #services.xserver = {
-  #  layout = "us";
-  #  xkbVariant = "";
-  #};
   #services.xserver.enable = true;
   #services.xserver.displayManager.sddm.enable = true;
   #services.xserver.desktopManager.plasma5.enable = true;
@@ -45,8 +43,10 @@
   users.users.coolgi = {
     isNormalUser = true;
     description = "coolGi";
-    #extraGroups = [ "networkmanager" "wheel" "video" "input" "kvm" "adbusers" ];
-    extraGroups = [ "networkmanager" "wheel" "video" "input" "kvm" ];
+
+    initialPassword = "password";
+
+    extraGroups = [ "networkmanager" "wheel" "video" "input" "kvm" "adbusers" ];
   };
 
   programs.adb.enable = true;

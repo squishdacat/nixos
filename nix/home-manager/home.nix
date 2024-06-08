@@ -19,7 +19,8 @@
     ./app/bar/waybar.nix
     ./app/terminal/emulator/kitty.nix
     ./app/terminal/shell/zsh.nix
-    ./app/launcher/wofi.nix
+    #./app/launcher/wofi.nix
+    ./app/launcher/rofi.nix
     ./app/cmd/ranger.nix
   ];
 
