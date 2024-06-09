@@ -2,7 +2,7 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ./nix-features.nix
+    ./features.nix
 
     ./drivers/hardware/default.nix
     ./bootloader/default.nix

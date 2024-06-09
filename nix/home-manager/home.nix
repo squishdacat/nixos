@@ -13,15 +13,19 @@
 
 
   imports = [
-    ./lang/workman.nix
-    ./lang/hunspell.nix
+    ./features.nix
+    ./locale/default.nix
     ./app/desktop/hyprland.nix
     ./app/bar/waybar.nix
     ./app/terminal/emulator/kitty.nix
+    #./app/terminal/emulator/foot.nix
     ./app/terminal/shell/zsh.nix
     ./app/launcher/wofi.nix
     #./app/launcher/rofi.nix
     ./app/cmd/ranger.nix
+
+    ./app/browser/firefox.nix
+    #./app/browser/librewolf.nix
   ];
 
   #nixpkgs.config.permittedInsecurePackages = [
@@ -34,9 +38,6 @@
     xfce.thunar
     xfce.thunar-archive-plugin
     xfce.thunar-media-tags-plugin
-
-    librewolf
-    firefox
     
     libreoffice-fresh
 
