@@ -1,9 +1,15 @@
-{ ... }:
+{ pkgs, ... }:
 {
   boot.loader.grub = {
     efiSupport = true;
-
     device = "nodev";
-    #efiInstallAsRemovable = true; # in case canTouchEfiVariables doesnt work
+    #useOSProber = true;
+
+
+    #splashImage = ./bg.png;
+    theme = "${pkgs.libsForQt5.breeze-grub}/grub/themes/breeze";
+
+
+    memtest86.enable = true;
   };
 }

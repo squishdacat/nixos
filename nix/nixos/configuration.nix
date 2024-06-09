@@ -1,31 +1,20 @@
 { config, pkgs, ... }:
 {
   imports = [
-    ./bootloader/systemd.nix
     ./hardware-configuration.nix
     ./nix-features.nix
-    ./drivers/hardware/audio.nix
-    ./drivers/hardware/graphics.nix
-    ./drivers/hardware/bluetooth.nix
-    ./login/greetd.nix
-    ./shell.nix
-    ./locale/keyboard/workman.nix
-    ./locale/lang/en-us.nix
-    ./school/wifi/cert.nix
+
+    ./drivers/hardware/default.nix
+    ./bootloader/default.nix
+    ./locale/default.nix
+    ./login/default.nix
+
+    ./power/default.nix
+
+    ./shell/zsh.nix
   ];
 
-  # Bootloader
-  boot.loader.efi.canTouchEfiVariables = true;
-
   networking.hostName = "Jeff-Laptop"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Enable networking
-  networking.networkmanager.enable = true;
 
   # Set your time zone.
   time.timeZone = "Australia/Adelaide";
@@ -39,11 +28,12 @@
 
   programs.hyprland.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
+
   users.users.coolgi = {
     isNormalUser = true;
     description = "coolGi";
 
+    # NOTE: Remember to change the password on first login
     initialPassword = "password";
 
     extraGroups = [ "networkmanager" "wheel" "video" "input" "kvm" "adbusers" ];
@@ -58,7 +48,6 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    #vim
     neovim
     curl
     wget

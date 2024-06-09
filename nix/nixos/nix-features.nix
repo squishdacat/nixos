@@ -4,6 +4,15 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
 
+  system.autoUpgrade = {
+    enable = true;
+    dates = "weekly";
+
+    operation = "boot";
+    allowReboot = false;
+  };
+
+
   # The nix garbage collector
   nix.gc = {
     automatic = true;
