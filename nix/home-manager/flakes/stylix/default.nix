@@ -1,5 +1,9 @@
-{ config, pkgs, ... }:
+{ inputs, config, pkgs, ... }:
 {
+  imports = [
+    inputs.stylix.homeManagerModules.stylix
+  ];
+
   stylix = {
     #image = ./systemdeeznuts_2.png;
     image = ./all_the_mascots.jpeg;

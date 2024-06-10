@@ -36,7 +36,16 @@
     # NOTE: Remember to change the password on first login
     initialPassword = "password";
 
-    extraGroups = [ "networkmanager" "wheel" "video" "input" "kvm" "adbusers" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "video"
+      "input"
+      "kvm"
+      "adbusers"
+      "uucp"
+      "dialout"
+    ];
   };
 
   programs.adb.enable = true;

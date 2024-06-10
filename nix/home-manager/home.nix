@@ -16,13 +16,16 @@
     ./features.nix
     ./locale/default.nix
     ./app/desktop/hyprland.nix
-    ./app/bar/waybar.nix
+    #./app/bar/waybar.nix
     ./app/terminal/emulator/kitty.nix
     #./app/terminal/emulator/foot.nix
-    ./app/terminal/shell/zsh.nix
+    ./app/shell/zsh/default.nix
     ./app/launcher/wofi.nix
     #./app/launcher/rofi.nix
     ./app/cmd/ranger.nix
+    ./app/cmd/eza.nix
+    ./app/cmd/bat.nix
+    ./app/cmd/lf.nix
 
     ./app/browser/firefox.nix
     #./app/browser/librewolf.nix
@@ -38,20 +41,21 @@
     xfce.thunar
     xfce.thunar-archive-plugin
     xfce.thunar-media-tags-plugin
+
+    bun
     
     libreoffice-fresh
 
     vesktop
+
     memento
     obs-studio
     mpv
     obsidian
-    #blender
+    blender
     kate
     feh
 
-    bat
-    eza
     unimatrix
 
     cmatrix
