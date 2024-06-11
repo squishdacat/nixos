@@ -49,10 +49,10 @@
       modules = [
         ./home.nix
         
-        ./flakes/stylix/default.nix
-        ./flakes/nixvim/default.nix
-        ./flakes/ags/default.nix
-        ./flakes/spicetify/default.nix
+        ./flakes/stylix
+        ./flakes/nixvim
+        ./flakes/ags
+        ./flakes/spicetify
       ];
     };
   };

@@ -2,6 +2,7 @@
 {
   imports = [
     ./hyprland/windowrules.nix
+    ./hyprland/monitors.nix
     ./wallpaper/hyprpaper.nix
     #./wallpaper/wpaperd.nix
   ];
@@ -25,13 +26,13 @@
     extraPortals = with pkgs; [
       xdg-desktop-portal-hyprland
     ];
-    config.common.default = "*";
+    config.common.default = "hyprland";
   };
 
   
 
   wayland.windowManager.hyprland.settings = {
-    monitor = ",preferred,auto,1";
+    #monitor = ",preferred,auto,1";
 
 
     "$mod" = "SUPER";

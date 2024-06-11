@@ -2,7 +2,7 @@
 {
   imports = [
     ./fonts.nix
-    ./lang/en-us.nix
+    ./lang/en-au.nix
     ./keyboard/workman.nix
     ./im/ibus.nix
   ];

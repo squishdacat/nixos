@@ -1,8 +1,8 @@
 { ... }:
 {
   imports = [
+    ./lang/en-au.nix
     ./keyboard/workman.nix
-    ./lang/en-us.nix
     ./spell/hunspell.nix
   ];
 }

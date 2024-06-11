@@ -2,34 +2,29 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ./features.nix
+    ./nix
 
-    ./drivers/hardware/default.nix
-    ./bootloader/default.nix
-    ./locale/default.nix
-    ./login/default.nix
+    ./drivers/default
+    ./bootloader
+    ./locale
+    ./login
 
-    ./power/default.nix
+    ./shell
+    ./app
 
-    ./app/default.nix
-
-    ./shell/zsh.nix
+    #./power
   ];
 
-  networking.hostName = "Jeff-Laptop"; # Define your hostname.
+  # NOTE: Define the hostname in the hardware-configuration.nix
+  #networking.hostName = "NixComputer"; 
 
-  # Set your time zone.
+  # Set the time zone
   time.timeZone = "Australia/Adelaide";
-
-  # Configure keymap in X11
-  #services.xserver.enable = true;
-  #services.xserver.displayManager.sddm.enable = true;
-  #services.xserver.desktopManager.plasma5.enable = true;
-  #services.xserver.desktopManager.gnome.enable = true;
 
 
   programs.hyprland.enable = true;
   programs.adb.enable = true;
+  security.polkit.enable = true;
 
 
   users.users.coolgi = {

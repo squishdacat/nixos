@@ -1,7 +1,6 @@
 { ... }:
 {
   imports = [
-    ./utils.nix
-    ./steam.nix
+    ./zsh.nix
   ];
 }
