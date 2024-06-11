@@ -1,4 +1,5 @@
 # ASCII Arts
 
-## [NIX Trans](./nix-trans.txt)
-Author: Me (coolGi)
+## [NIX Trans](./nix-trans.ascii)
+Author: coolGi
+

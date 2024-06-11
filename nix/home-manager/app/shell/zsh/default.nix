@@ -20,7 +20,8 @@
     shellAliases = {
       ll = "ls -l";
       ".." = "cd ..";
-      hm-update = "home-manager switch";
+      #hm-update = "home-manager switch";
+      hm-update = "nh home switch";
       nixGL = "nix run --impure github:nix-community/nixGL --";
     };
 

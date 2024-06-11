@@ -38,6 +38,8 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
+    distrobox lilipod
+
     xfce.thunar
     xfce.thunar-archive-plugin
     xfce.thunar-media-tags-plugin
@@ -106,8 +108,8 @@
 
 
 
-  #home.sessionVariables = {
-  #  EDITOR = "nvim";
-  #};
+  home.sessionVariables = {
+    FLAKE = "/home/coolgi/.dotfiles/nix/home-manager/";
+  };
 
 }

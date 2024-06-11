@@ -11,6 +11,8 @@
 
     ./power/default.nix
 
+    ./app/default.nix
+
     ./shell/zsh.nix
   ];
 
@@ -27,6 +29,7 @@
 
 
   programs.hyprland.enable = true;
+  programs.adb.enable = true;
 
 
   users.users.coolgi = {
@@ -48,26 +51,6 @@
     ];
   };
 
-  programs.adb.enable = true;
-
-
-  # Override system page versions
-  #nixpkgs.config.packageOverrides = pkgs; {
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    neovim
-    curl
-    wget
-    git
-
-    fzf
-    bat
-
-    # Many useful system utils
-    psmisc
-  ];
 
 
   # Some programs need SUID wrappers, can be configured further or are

@@ -6,8 +6,8 @@
 
   stylix = {
     #image = ./systemdeeznuts_2.png;
-    image = ./all_the_mascots.jpeg;
-    #image = ./head_dark.png;
+    #image = ./all_the_mascots.jpeg;
+    image = ./head_dark.png;
     
     polarity = "dark";
     #base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-night-terminal-dark.yaml";

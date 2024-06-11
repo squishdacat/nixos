@@ -14,11 +14,12 @@
 
 
   # The nix garbage collector
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    #options = "--delete-older-than 30d";
-  };
+  # NOTE: For the garbage collection, we are using nh
+  #nix.gc = {
+  #  automatic = true;
+  #  dates = "weekly";
+  #  options = "--delete-older-than 30d";
+  #};
 
   # Optimise the nix store
   nix.optimise = {
@@ -29,6 +30,10 @@
   };
   # If instead I wanted to optimise at every build, use the thing below
   #nix.settings.auto-optimise-store = true;
+
+
+  # Override system page versions
+  #nixpkgs.config.packageOverrides = pkgs; {
 
 
   # Required to get running random binaries to work
