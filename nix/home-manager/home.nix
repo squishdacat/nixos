@@ -15,6 +15,9 @@
   imports = [
     ./features.nix
     ./locale/default.nix
+
+    ./icons
+
     ./app/desktop/hyprland.nix
     #./app/bar/waybar.nix
     ./app/terminal/emulator/kitty.nix
