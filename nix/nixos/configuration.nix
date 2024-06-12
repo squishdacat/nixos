@@ -52,6 +52,11 @@
       "adbusers"
       "uucp"
       "dialout"
+
+      "disk"
+      "optical"
+      "floppy"
+      "storage"
     ];
   };
 
