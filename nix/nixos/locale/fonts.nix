@@ -3,6 +3,7 @@
   fonts = {
     fontDir.enable = true;
     enableDefaultPackages = true;
+
     packages = with pkgs; [
       # Contains alot of fonts
       nerdfonts

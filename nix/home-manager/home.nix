@@ -9,8 +9,6 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  nixpkgs.config.allowUnfree = true;
-
 
   imports = [
     ./features.nix
@@ -33,6 +31,8 @@
     ./app/browser/firefox.nix
     #./app/browser/librewolf.nix
   ];
+
+  targets.genericLinux.enable = true;
 
   #nixpkgs.config.permittedInsecurePackages = [
   #  "electron-25.9.0"

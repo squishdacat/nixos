@@ -54,6 +54,9 @@
       "$mod+SHIFT, up, movewindow, u"
       "$mod+SHIFT, down, movewindow, d"
 
+      # IBus (Japanese)
+      "$mod, SPACE, exec, sh -c 'if [ \"$(ibus engine)\" = \"anthy\" ]; then ibus engine xkb:de:nodeadkeys:deu; else ibus engine anthy; fi'"
+      "$mod, PERIOD, exec, sh -c 'ibus emoji'"
     ]
     ++ (
       # workspaces

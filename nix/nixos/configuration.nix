@@ -4,7 +4,8 @@
     ./hardware-configuration.nix
     ./nix
 
-    ./drivers/default
+    ./users/coolgi.nix
+
     ./bootloader
     ./locale
     ./login
@@ -18,47 +19,10 @@
   # NOTE: Define the hostname in the hardware-configuration.nix
   #networking.hostName = "NixComputer"; 
 
-  # Set the time zone
-  time.timeZone = "Australia/Adelaide";
 
 
-  #programs.hyprland.enable = true;
-  # Android Debugger
-  programs.adb.enable = true;
-  # Authentication
-  security.polkit.enable = true;
-  # Configs
-  programs.dconf.enable = true;
-  programs.xfconf.enable = true;
-  # For userspace file systems
-  services.gvfs.enable = true;
-  # Thumbnail managment
-  services.tumbler.enable = true;
 
 
-  users.users.coolgi = {
-    isNormalUser = true;
-    description = "coolGi";
-
-    # NOTE: Remember to change the password on first login
-    initialPassword = "password";
-
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-      "video"
-      "input"
-      "kvm"
-      "adbusers"
-      "uucp"
-      "dialout"
-
-      "disk"
-      "optical"
-      "floppy"
-      "storage"
-    ];
-  };
 
 
 

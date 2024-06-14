@@ -5,6 +5,8 @@
     ./optimise.nix
     ./update.nix
 
+    ./driver
+
     #./gc.nix
     ./nh.nix
 
