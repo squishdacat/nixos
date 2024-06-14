@@ -32,7 +32,8 @@
     #./app/browser/librewolf.nix
   ];
 
-  targets.genericLinux.enable = true;
+  #targets.genericLinux.enable = true;
+  nixpkgs.config.allowUnfree = true;
 
   #nixpkgs.config.permittedInsecurePackages = [
   #  "electron-25.9.0"

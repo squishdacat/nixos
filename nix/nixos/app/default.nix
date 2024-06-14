@@ -8,7 +8,6 @@
   ];
 
 
-
   # Android Debugger
   programs.adb.enable = true;
   # Authentication
