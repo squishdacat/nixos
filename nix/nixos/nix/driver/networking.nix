@@ -9,6 +9,10 @@
     #wifi.powersave = true;
   };
 
+  # Disable networkmanager from trying to connect to the network on boot,
+  #  (improving boot speed)
+  systemd.services.NetworkManager-wait-online.enable = false;
+
   # If a network proxy is ever needed
   #networking.proxy = {
   #  default = "http://user:password@proxy:port/";

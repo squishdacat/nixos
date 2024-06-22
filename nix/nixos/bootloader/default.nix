@@ -8,8 +8,4 @@
   ];
 
   boot.loader.efi.canTouchEfiVariables = true;
-
-
-  # Why isnt this enabled by default?
-  boot.tmp.cleanOnBoot = true;
 }

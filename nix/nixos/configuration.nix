@@ -4,7 +4,7 @@
     ./hardware-configuration.nix
     ./nix
 
-    ./users/coolgi.nix
+    ./user/coolgi
 
     ./bootloader
     ./locale
@@ -12,17 +12,11 @@
 
     ./shell
     ./app
-
-    #./power
   ];
 
-  # NOTE: Define the hostname in the hardware-configuration.nix
-  #networking.hostName = "NixComputer"; 
-
-
-
-
-
+  # NOTE
+  #  Remember to set which host to use on a fresh install
+  #   ie. ./host/laptop/aubrey
 
 
 
@@ -38,12 +32,6 @@
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
