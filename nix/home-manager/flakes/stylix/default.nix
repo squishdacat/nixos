@@ -5,6 +5,8 @@
   ];
 
   stylix = {
+    enable = true;
+
     #image = ./systemdeeznuts_2.png;
     #image = ./all_the_mascots.jpeg;
     image = ./head_dark.png;

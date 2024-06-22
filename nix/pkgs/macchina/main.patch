@@ -1,8 +1,6 @@
-diff --git a/Cargo.toml b/Cargo.toml
-index a16cb00..a78b402 100644
---- a/Cargo.toml
-+++ b/Cargo.toml
-@@ -11,7 +11,7 @@ readme = "README.md"
+--- macchina-f6840f6d0193800c5ce3b7bbcae427c8fad5be05/Cargo.toml	2024-06-22 11:18:08.961789161 +0930
++++ macchina-f6840f6d0193800c5ce3b7bbcae427c8fad5be05/Cargo.toml	2024-06-22 11:12:05.662533260 +0930
+@@ -11,7 +11,7 @@
  build = "build.rs"
  
  [dependencies]
@@ -11,24 +9,3 @@ index a16cb00..a78b402 100644
  bytesize = "1.3.0"
  shellexpand = "3.1.0"
  clap = { version = "4.4.6", features = ["derive"] }
-diff --git a/src/data/mod.rs b/src/data/mod.rs
-index f1af199..7d300d5 100644
---- a/src/data/mod.rs
-+++ b/src/data/mod.rs
-@@ -499,6 +499,7 @@ fn handle_readout_window_manager(
- }
- 
- fn handle_readout_gpu(readout_values: &mut Vec<Readout>, general_readout: &GeneralReadout) {
-+    /*
-     match general_readout.gpus() {
-         Ok(gpus) => {
-             for gpu in gpus {
-@@ -508,6 +509,8 @@ fn handle_readout_gpu(readout_values: &mut Vec<Readout>, general_readout: &Gener
- 
-         Err(e) => readout_values.push(Readout::new_err(ReadoutKey::GPU, e)),
-     };
-+    */
-+    readout_values.push(Readout::new(ReadoutKey::GPU, ""));
- }
- 
- fn handle_readout_disk_space(

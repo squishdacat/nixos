@@ -2,10 +2,11 @@
 {
   services.hyprpaper = {
     enable = true;
-    settings = {
-      preload = "${config.stylix.image}";
-      wallpaper = ",${config.stylix.image}";
-    };
+    
+    #settings = {
+    #  preload = "${config.stylix.image}";
+    #  wallpaper = ",${config.stylix.image}";
+    #};
   };
 
   home.file."${config.xdg.configHome}/hypr/hyprpaper.conf".onChange = ''

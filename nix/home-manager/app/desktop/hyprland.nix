@@ -97,7 +97,7 @@
     misc = {
       enable_swallow = true;
       swallow_regex = "^(kitty)$";
-      hide_cursor_on_touch = true; # for touchscreen
+      #hide_cursor_on_touch = true; # for touchscreen
     };
 
     general = {
