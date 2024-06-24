@@ -6,7 +6,7 @@
 
     ./user/coolgi
 
-    ./bootloader
+    ./boot/loader
     ./locale
     ./login
 
