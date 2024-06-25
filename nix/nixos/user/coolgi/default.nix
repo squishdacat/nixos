@@ -17,6 +17,9 @@
       "uucp"
       "dialout"
 
+      "lp"
+      "scanner"
+
       "disk"
       "optical"
       "floppy"
