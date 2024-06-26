@@ -13,14 +13,8 @@ rustPlatform.buildRustPackage rec {
     owner = "Macchina-CLI";
     repo = pname;
     rev = "${version}";
-    hash = "sha256-MntHq5nphfjbO0Rx7v6WjsnabSMH5Ke3aR9/embG/rk=";
+    hash = "sha256-JVIKA2uj5QQDxjDjegOpUcdlTntc1m4DPMqmLt4PRv4=";
   };
-
-  patches = [
-    ./main.patch
-  ];
-
-  cargoHash = "sha256-yowhMwp/ZTgqwwIvpPGU50GwCORfLcCZLA1mCERygkY=";
 
   nativeBuildInputs = [
     installShellFiles
@@ -30,6 +24,15 @@ rustPlatform.buildRustPackage rec {
     darwin.apple_sdk.frameworks.AppKit
     darwin.apple_sdk.frameworks.DisplayServices
   ];
+
+  cargoLock = {
+    lockFileContents = builtins.readFile ./Cargo.lock;
+    allowBuiltinFetchGit = true;
+  };
+  postPatch = ''
+    rm Cargo.lock
+    ln -s ${./Cargo.lock} Cargo.lock
+  '';
 
   postInstall = ''
     installManPage doc/macchina.{1,7}
