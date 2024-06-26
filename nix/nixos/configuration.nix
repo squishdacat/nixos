@@ -12,6 +12,8 @@
 
     ./shell
     ./app
+
+    ./libvirt.nix
   ];
 
   # NOTE

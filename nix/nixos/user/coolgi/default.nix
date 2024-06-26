@@ -17,6 +17,8 @@
       "uucp"
       "dialout"
 
+      "libvirtd"
+
       "lp"
       "scanner"
 
