@@ -1,6 +1,7 @@
 { ... }:
 {
   imports = [
+    ./hardware-configuration.nix
     ./../default
 
     ./../../../driver/school/wifi/cert.nix

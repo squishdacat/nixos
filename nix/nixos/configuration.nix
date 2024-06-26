@@ -19,6 +19,11 @@
   #   ie. ./host/laptop/aubrey
 
 
+  nixpkgs.config.packageOverrides = super: {
+    macchina = pkgs.callPackage ../pkgs/macchina {};
+  };
+
+
   # The set of english words (at $WORDLIST env var)
   #environment.wordList.enable = true;
 

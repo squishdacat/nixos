@@ -33,6 +33,15 @@
           ./nixos/host/desktop/basil
         ];
       };
+
+      Ldaisy = lib.nixosSystem {
+        inherit specialArgs;
+
+        modules = [
+          ./nixos/configuration.nix
+          ./nixos/host/laptop/daisy
+        ];
+      };
     };
   };
 }
