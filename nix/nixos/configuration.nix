@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 {
   imports = [
+    ./../pkgs
     #./hardware-configuration.nix
     ./nix
 
@@ -19,11 +20,6 @@
   # NOTE
   #  Remember to set which host to use on a fresh install
   #   ie. ./host/laptop/aubrey
-
-
-  nixpkgs.config.packageOverrides = super: {
-    macchina = pkgs.callPackage ../pkgs/macchina {};
-  };
 
 
   # The set of english words (at $WORDLIST env var)
