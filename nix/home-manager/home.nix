@@ -28,6 +28,7 @@
     ./app/cmd/bat.nix
     ./app/cmd/lf.nix
 
+    #./app/browser/floorp.nix
     ./app/browser/firefox.nix
     #./app/browser/librewolf.nix
   ];
@@ -60,6 +61,8 @@
     mpv
     obsidian
     blender
+    krita
+    inkscape
     kate
     feh
 

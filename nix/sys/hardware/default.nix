@@ -1,0 +1,6 @@
+{ umport, ... }:
+{
+  imports = umport {
+    path = ./.;
+  };
+}

@@ -14,13 +14,16 @@
     ./shell
     ./app
 
-    ./libvirt.nix
+    #./libvirt.nix
   ];
 
   # NOTE
   #  Remember to set which host to use on a fresh install
   #   ie. ./host/laptop/aubrey
 
+  environment.systemPackages = with pkgs; [
+    macchina
+  ];
 
   # The set of english words (at $WORDLIST env var)
   #environment.wordList.enable = true;

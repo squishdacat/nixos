@@ -18,30 +18,39 @@
   let
     inherit (self) outputs;
     inherit (nixpkgs) lib;
+    aimport = import ./clib/aimport.nix { inherit lib; };
 
     specialArgs = { 
-      inherit inputs outputs nixpkgs;
+      inherit inputs outputs nixpkgs lib aimport;
     };
   in
   {
-    nixosConfigurations = {
-      Dbasil = lib.nixosSystem {
-        inherit specialArgs;
 
-        modules = [
-          ./nixos/configuration.nix
-          ./nixos/host/desktop/basil
-        ];
-      };
-
-      Ldaisy = lib.nixosSystem {
-        inherit specialArgs;
-
-        modules = [
-          ./nixos/configuration.nix
-          ./nixos/host/laptop/daisy
-        ];
-      };
+    nixosConfigurations = import ./hosts {
+      inherit (self) nixosConfigurations;
+      inherit (nixpkgs) lib;
+      inherit aimport;
+      inherit specialArgs;
     };
+
+    #nixosConfigurations = {
+    #  Dbasil = lib.nixosSystem {
+    #    inherit specialArgs;
+    #
+    #    modules = [
+    #      ./nixos/configuration.nix
+    #      ./nixos/host/desktop/basil
+    #    ];
+    #  };
+    #
+    #  Ldaisy = lib.nixosSystem {
+    #    inherit specialArgs;
+    #
+    #    modules = [
+    #      ./nixos/configuration.nix
+    #      ./nixos/host/laptop/daisy
+    #    ];
+    #  };
+    #};
   };
 }

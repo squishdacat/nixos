@@ -4,6 +4,7 @@
     enable = true;
     flake = inputs.self.outPath;
 
+    # Garbage Collection
     clean = {
       enable = true;
 
