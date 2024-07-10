@@ -1,9 +1,11 @@
 { config, pkgs, ... }:
 {
   imports = [
-    ./hyprland/windowrules.nix
-    ./hyprland/monitors.nix
-    ./wallpaper/hyprpaper.nix
+    ./../lock/hyprlock
+
+    ./windowrules.nix
+    ./monitors.nix
+    ./../wallpaper/hyprpaper.nix
     #./wallpaper/wpaperd.nix
   ];
 
@@ -53,6 +55,8 @@
       "$mod+SHIFT, right, movewindow, r"
       "$mod+SHIFT, up, movewindow, u"
       "$mod+SHIFT, down, movewindow, d"
+
+      "$mod, P, togglesplit," # dwindle swap windows
 
       # IBus (Japanese)
       "$mod, SPACE, exec, sh -c 'if [ \"$(ibus engine)\" = \"anthy\" ]; then ibus engine xkb:de:nodeadkeys:deu; else ibus engine anthy; fi'"

@@ -1,0 +1,107 @@
+{
+  "keymaps": {
+    ":": { "type": "command.show" },
+    "x": { "type": "command.show.open", "alter": false },
+    "X": { "type": "command.show.open", "alter": true },
+    "t": { "type": "command.show.tabopen", "alter": false },
+    "T": { "type": "command.show.tabopen", "alter": true },
+    "b": { "type": "command.show.buffer" },
+    "a": { "type": "command.show.addbookmark", "alter": true },
+    "o": { "type": "scroll.vertically", "count": -1 },
+    "e": { "type": "scroll.vertically", "count": 1 },
+    "n": { "type": "scroll.horizonally", "count": -1 },
+    "i": { "type": "scroll.horizonally", "count": 1 },
+    "O": { "type": "scroll.pages", "count": -0.5 },
+    "E": { "type": "scroll.pages", "count": 0.5 },
+    "<C-O>": { "type": "scroll.top" },
+    "<C-E>": { "type": "scroll.bottom" },
+    "": { "type": "scroll.end" },
+    "d": { "type": "tabs.close" },
+    "u": { "type": "tabs.reopen" },
+    "gn": { "type": "tabs.prev" },
+    "gi": { "type": "tabs.next" },
+    "<C-6>": { "type": "tabs.prevsel" },
+    "r": { "type": "tabs.reload", "cache": false },
+    "R": { "type": "tabs.reload", "cache": true },
+    "zp": { "type": "tabs.pin.toggle" },
+    "zd": { "type": "tabs.duplicate" },
+    "zi": { "type": "zoom.in" },
+    "zo": { "type": "zoom.out" },
+    "zz": { "type": "zoom.neutral" },
+    "f": { "type": "hint.quick", "newTab": false },
+    "F": { "type": "hint.quick", "newTab": true },
+    ";y": { "type": "hint.yankurl" },
+    ";Y": { "type": "hint.yanklinktext" },
+    ";i": { "type": "hint.openimage", "newTab": false },
+    ";I": { "type": "hint.openimage", "newTab": true, "background": false },
+    ";v": { "type": "hint.source", "newTab": false },
+    ";V": { "type": "hint.source", "newTab": true },
+    ";t": { "type": "hint.tabopen" },
+    ";w": { "type": "hint.winopen" },
+    ";O": { "type": "hint.command.open" },
+    ";T": { "type": "hint.command.tabopen" },
+    ";W": { "type": "hint.command.winopen" },
+    "m": { "type": "mark.set.prefix" },
+    "'": { "type": "mark.jump.prefix" },
+    "N": { "type": "navigate.history.prev" },
+    "I": { "type": "navigate.history.next" },
+    "gu": { "type": "navigate.parent" },
+    "gU": { "type": "navigate.root" },
+    "gi": { "type": "focus.input" },
+    "gf": { "type": "navigate.source" },
+    "gh": { "type": "navigate.home" },
+    "gH": { "type": "navigate.home", "newTab": true },
+    "gr": { "type": "tabs.reader.toggle" },
+    "y": { "type": "urls.yank" },
+    "P": { "type": "urls.paste", "newTab": false },
+    "p": { "type": "urls.paste", "newTab": true },
+    "/": { "type": "find.start" },
+    "k": { "type": "find.next" },
+    "K": { "type": "find.prev" },
+    ".": { "type": "repeat" },
+    "<S-Esc>": { "type": "addon.toggle.enabled" }
+  },
+  "search": {
+    "default": "sx",
+    "engines": {
+      "sx": "https://searx.be/search?q={}",
+      "bv": "https://search.brave.com/search?q={}",
+      "gg": "https://google.com/search?q={}",
+      "yh": "https://search.yahoo.com/search?p={}",
+      "bg": "https://www.bing.com/search?q={}",
+      "ddg": "https://duckduckgo.com/?q={}",
+
+      "aur": "https://aur.archlinux.org/packages?O=0&K={}",
+      "nix": "https://mynixos.com/search?q={}",
+
+      "jisho": "https://jisho.org/search?keyword={}",
+      "yt": "https://youtube.com/results?search_query={}",
+      "wp": "https://en.wikipedia.org/w/index.php?search={}&vectornightmode=1",
+
+      "tw": "https://twitter.com/search?q={}"
+    }
+  },
+  "properties": {
+    "hintchars": "abcdefghijklmnopqrstuvwxyz",
+    "smoothscroll": true,
+    "complete": "sh",
+    "colorscheme": "system",
+    "ignorecase": true,
+    "findmode": "regexp"
+  },
+  "blacklist": [
+  ],
+  "styles": {
+    "hint": {
+      "background-color": "yellow",
+      "border": "1px solid gold",
+      "font-weight": "bold",
+      "font-size": "12px",
+      "color": "black"
+    },
+    "console": {
+      "font-family": "monospace",
+      "font-size": "12px"
+    }
+  }
+}

@@ -765,6 +765,9 @@
         },
         "UserSettingsAPI": {
             "enabled": true
+        },
+        "ShowAllRoles": {
+            "enabled": false
         }
     },
     "notifications": {
@@ -777,6 +780,6 @@
         "authenticated": false,
         "url": "https://api.vencord.dev/",
         "settingsSync": false,
-        "settingsSyncVersion": 1719242303585
+        "settingsSyncVersion": 1720441668203
     }
 }

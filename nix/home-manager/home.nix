@@ -16,7 +16,7 @@
 
     ./icons
 
-    ./app/desktop/hyprland.nix
+    ./app/desktop/hyprland
     #./app/bar/waybar.nix
     ./app/terminal/emulator/kitty.nix
     #./app/terminal/emulator/foot.nix
@@ -55,6 +55,9 @@
     libreoffice-fresh
 
     vesktop
+    element-desktop
+
+    prismlauncher
 
     memento
     obs-studio

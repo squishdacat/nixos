@@ -1,6 +1,5 @@
-{
-  lib,
-  aimport,
+{ lib,
+  clib,
   nixosConfigurations,
   specialArgs,
 }: let
@@ -19,21 +18,18 @@
   in
     lib.nixosSystem {
       specialArgs = extraSpecialArgs;
-      modules =
-        [
-          ./${name}
-          ./${name}/hardware.nix
-          ./../nixos/configuration.nix
-          #nypkgs.nixosModules.nypkgs
-          #{
-          #  host.name = name;
-          #}
-        ]
-        ++ aimport.aimport {
-          #paths = [../modules ../options];
-          recursive = true;
-        };
-        #++ builtins.map (host: import ./${host}/shared.nix {hostName = host;}) hosts;
+      modules = [
+        ./${name} # Main System Conf
+        ./${name}/hardware.nix # Hardware Conf (partitions & stuff)
+        ./default
+        { networking.hostName = name; } # System Name
+
+        ### Default for All Systems ###
+        ./../nixos/configuration.nix
+      ] ++ clib.aimport {
+        recursive = false;
+        exclude = [ ./default ];
+      };
     };
 in
   builtins.listToAttrs (builtins.map (name: {

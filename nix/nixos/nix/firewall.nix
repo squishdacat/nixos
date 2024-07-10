@@ -8,5 +8,7 @@
     allowPing = false;
     # If pinging is allowed, dont allow many pings
     #pingLimit = "--limit 4/minute --limit-burst 10"
+
+    allowedTCPPorts = [ 5900 ];
   };
 }

@@ -51,7 +51,7 @@
         ./flakes/stylix
         ./flakes/nixvim
         ./flakes/ags
-        #./flakes/spicetify
+        ./flakes/spicetify
       ];
     };
   };
