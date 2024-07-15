@@ -20,10 +20,14 @@
   # NOTE
   #  Remember to set which host to use on a fresh install
   #   ie. ./host/laptop/aubrey
+  
+
+  boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
 
   environment.systemPackages = with pkgs; [
     macchina
   ];
+  hardware.wooting.enable = true;
 
   # The set of english words (at $WORDLIST env var)
   #environment.wordList.enable = true;

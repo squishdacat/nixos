@@ -20,7 +20,7 @@
     inherit (self) outputs;
     inherit (nixpkgs) lib;
     # TODO: Make it import everything in the clib location
-    clib = import ./clib/aimport.nix { inherit lib; };
+    clib = import ./clib { inherit lib; };
 
     specialArgs = { 
       inherit inputs outputs nixpkgs lib clib;

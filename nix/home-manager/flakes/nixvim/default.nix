@@ -2,6 +2,11 @@
 {
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
+
+    ./plugins/fidget.nix
+    ./plugins/lsp.nix
+    ./plugins/lspkind.nix
+    ./plugins/cmp.nix
   ];
 
   programs.nixvim = {
@@ -21,6 +26,8 @@
       tabstop = 2;
       softtabstop = 2;
       showtabline = 2;
+      shiftwidth = 2;
+      expandtab = true;
 
       # Enable persistent undo history
       swapfile = false;

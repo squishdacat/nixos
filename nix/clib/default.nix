@@ -1,12 +1,9 @@
-# Import all libs
-#  FIXME: Broken atm
-
-{ ... }:
+{ lib, ... }:
 let
-  aimport = import ./aimport.nix;
+  rootPath = ../.;
+  aimport = import ./aimport.nix { inherit lib; };
 in
 {
-  imports = aimport {
-    path = ./.;
-  };
+  inherit rootPath;
+  inherit aimport;
 }

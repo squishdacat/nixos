@@ -6,12 +6,12 @@
     "themeLinks": [],
     "enabledThemes": [
         "NekoTrans.css",
-        "ONeko.css",
         "zFloat.theme.css",
         "webmUndo.css",
         "removeChatWithoutPerms.css",
         "noLineClamp.css",
-        "ClearVision_v6.theme.css"
+        "ClearVision_v6.theme.css",
+        "ONeko.css"
     ],
     "enableReactDevtools": true,
     "frameless": true,
@@ -209,7 +209,7 @@
         "ImageZoom": {
             "enabled": true,
             "size": 6305.001766784452,
-            "zoom": 3.4000000000000044,
+            "zoom": 2.44909280100732,
             "nearestNeighbour": false,
             "square": false,
             "saveZoomValues": true,
@@ -380,7 +380,7 @@
             "enabled": true
         },
         "OpenInApp": {
-            "enabled": true,
+            "enabled": false,
             "spotify": true,
             "steam": true,
             "epic": false,
@@ -504,7 +504,9 @@
             "enabled": false
         },
         "SpotifyCrack": {
-            "enabled": false
+            "enabled": false,
+            "noSpotifyAutoPause": true,
+            "keepSpotifyActivityOnIdle": false
         },
         "SpotifyShareCommands": {
             "enabled": false
@@ -766,6 +768,9 @@
         "UserSettingsAPI": {
             "enabled": true
         },
+        "ConsoleJanitor": {
+            "enabled": false
+        },
         "ShowAllRoles": {
             "enabled": false
         }
@@ -780,6 +785,6 @@
         "authenticated": false,
         "url": "https://api.vencord.dev/",
         "settingsSync": false,
-        "settingsSyncVersion": 1720441668203
+        "settingsSyncVersion": 1720764124753
     }
 }
