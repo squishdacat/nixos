@@ -21,15 +21,13 @@
       modules = [
         ./${name} # Main System Conf
         ./${name}/hardware.nix # Hardware Conf (partitions & stuff)
-        ./default
+
+        ./default # Shared Sys Conf
         { networking.hostName = name; } # System Name
 
         ### Default for All Systems ###
         ./../nixos/configuration.nix
-      ] ++ clib.aimport {
-        recursive = false;
-        exclude = [ ./default ];
-      };
+      ];
     };
 in
   builtins.listToAttrs (builtins.map (name: {
