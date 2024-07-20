@@ -31,7 +31,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     spicetify = {
-      url = "github:the-argus/spicetify-nix";
+      url = "github:A1ca7raz/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -52,7 +52,7 @@
         ./flakes/stylix
         ./flakes/nixvim
         ./flakes/ags
-        #./flakes/spicetify
+        ./flakes/spicetify
       ];
     };
   };
