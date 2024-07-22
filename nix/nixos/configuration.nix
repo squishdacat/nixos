@@ -1,17 +1,11 @@
 { config, pkgs, ... }:
 {
   imports = [
-    ./../pkgs
-    #./hardware-configuration.nix
-    ./nix
-
     ./user/coolgi
 
-    ./locale
     ./login
 
     ./shell
-    ./app
 
     #./libvirt.nix
   ];
@@ -21,12 +15,12 @@
   #   ie. ./host/laptop/aubrey
   
 
-  boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
+
+  hardware.wooting.enable = true;
 
   environment.systemPackages = with pkgs; [
     macchina
   ];
-  hardware.wooting.enable = true;
 
   # The set of english words (at $WORDLIST env var)
   #environment.wordList.enable = true;

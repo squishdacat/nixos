@@ -22,11 +22,11 @@
         ./${name} # Main System Conf
         ./${name}/hardware.nix # Hardware Conf (partitions & stuff)
 
-        ./default # Shared Sys Conf
-        { networking.hostName = name; } # System Name
+        ./defaults # Shared Sys Conf
 
-        ### Default for All Systems ###
+        ### Default for all systems ###
         ./../nixos/configuration.nix
+        { networking.hostName = name; } # System Name
       ];
     };
 in

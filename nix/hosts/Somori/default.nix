@@ -1,6 +1,7 @@
 { ... }:
 {
   imports = [
+    ./../defaults/server.nix
     #### Drivers ####
   ];
 
@@ -10,7 +11,6 @@
     device = "/dev/sda";
   };
 
-  services.openssh.enable = true;
 
   # TODO #
   #  cockpit : Desktop management

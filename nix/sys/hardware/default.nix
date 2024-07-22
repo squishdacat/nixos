@@ -1,6 +1,0 @@
-{ umport, ... }:
-{
-  imports = umport {
-    path = ./.;
-  };
-}

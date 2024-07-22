@@ -10,8 +10,6 @@
 
   # Android Debugger
   programs.adb.enable = true;
-  # Authentication
-  security.polkit.enable = true;
   # Configs
   programs.dconf.enable = true;
   programs.xfconf.enable = true;

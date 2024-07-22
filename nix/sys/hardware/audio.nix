@@ -1,6 +1,5 @@
 { ... }:
 { 
-  sound.enable = true;
   hardware.pulseaudio.enable = false;
   hardware.pulseaudio.support32Bit = true;
   security.rtkit.enable = true;
