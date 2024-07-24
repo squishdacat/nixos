@@ -2,6 +2,7 @@
 {
   imports = [
     ./../defaults/server.nix
+    ./mail.nix
   ];
 
 
