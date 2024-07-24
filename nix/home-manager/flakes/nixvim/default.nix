@@ -37,6 +37,10 @@
       # Enable 24-bit colors
       termguicolors = true;
     };
+
+    filetype.extension = {
+      mdx = "markdown";
+    };
     
 
     plugins = {

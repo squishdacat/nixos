@@ -36,7 +36,7 @@
         taplo.enable = true;        # TOML
         texlab.enable = true;       # LaTeX
         #tsserver.enable = true;     # TypeScript
-        typos-lsp.enable = true;    # Spell Check
+        #typos-lsp.enable = true;    # Spell Check
         yamlls.enable = true;       # YAML
       };
       keymaps = {
