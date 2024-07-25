@@ -48,6 +48,9 @@
   home.packages = with pkgs; [
     #distrobox lilipod
 
+    thunderbird
+    bitwarden-desktop
+
     xfce.thunar
     xfce.thunar-archive-plugin
     xfce.thunar-media-tags-plugin
