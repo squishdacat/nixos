@@ -22,6 +22,10 @@
       fira-code
       fira-code-symbols
 
+      # toki pona
+      linja-pi-pu-lukin # stylized
+      nasin-nanpa # monospace
+
       # Minecraft-like
       scientifica # Programing
       monocraft
