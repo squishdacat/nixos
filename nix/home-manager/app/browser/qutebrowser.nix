@@ -1,4 +1,11 @@
 { ... }:
+let
+  # TODO: Is there a better way to do this?
+  #yomichad = builtins.fetchurl {
+  #  url = "https://github.com/potamides/yomichad/raw/main/yomichad";
+  #  sha256 = "sha256:0ri84ifwacgxjxrc03pamqq2j7c6aqkn53whsp9zaa993hb8l47v";
+  #};
+in
 {
   programs.qutebrowser = {
     enable = true;
@@ -30,8 +37,12 @@
         "zz" = "zoom";
 
         # Use MPV for videos
-        ",m" = "spawn mpv {url}";
-        ",M" = "hint links spawn mpv {hint-url}";
+        ",m" = "spawn --userscript view_in_mpv {url}";
+        ",M" = "hint links spawn --userscript view_in_mpv {hint-url}";
+
+        # Yomichad
+        #"gs" = "spawn --userscript ${yomichad}";
+        #"gS" = "spawn --userscript ${yomichad} --prefix-search";
 
 
         ##### More usable on Workman #####
