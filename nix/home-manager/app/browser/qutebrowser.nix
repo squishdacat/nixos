@@ -71,6 +71,8 @@ in
         "E" = "tab-next";
         "O" = "tab-prev";
         "I" = "forward"; #in history
+        # Insert mode was overwritten, so readd it
+        "<Ctrl-I>" = "mode-enter insert";
 
       };
       "caret" = {

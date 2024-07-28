@@ -57,6 +57,7 @@
     xfce.thunar-volman
 
     bun
+    wl-clipboard
     
     libreoffice-fresh
 
