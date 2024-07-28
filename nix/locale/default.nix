@@ -1,10 +1,11 @@
 { ... }:
 {
   imports = [
-    ./lang/en-au.nix
+    ./lang/custom.nix
     ./keyboard/workman.nix
     ./fonts.nix
-    ./im/ibus.nix
+    #./im/ibus.nix
+    ./im/fcitx5.nix
   ];
 
 

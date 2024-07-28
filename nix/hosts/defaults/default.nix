@@ -1,7 +1,7 @@
 { pkgs, clib, ... }:
 {
   imports = [
-    ./../../locale/lang/en-au.nix # English Language
+    ./../../locale/lang/custom.nix
     ./../../pkgs # Custom pkgs
     ./../../apps/sys/utils.nix # Some apps I will always need
   ] ++ clib.aimport {

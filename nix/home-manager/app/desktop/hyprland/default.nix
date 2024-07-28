@@ -47,20 +47,31 @@
 
       # Change focus
       "$mod, left, movefocus, l"
-      "$mod, right, movefocus, r"
-      "$mod, up, movefocus, u"
       "$mod, down, movefocus, d"
+      "$mod, up, movefocus, u"
+      "$mod, right, movefocus, r"
+      "$mod, n, movefocus, l"
+      "$mod, e, movefocus, d"
+      "$mod, o, movefocus, u"
+      "$mod, i, movefocus, r"
       # Move
       "$mod+SHIFT, left, movewindow, l"
-      "$mod+SHIFT, right, movewindow, r"
-      "$mod+SHIFT, up, movewindow, u"
       "$mod+SHIFT, down, movewindow, d"
+      "$mod+SHIFT, up, movewindow, u"
+      "$mod+SHIFT, right, movewindow, r"
+      "$mod+SHIFT, n, movewindow, l"
+      "$mod+SHIFT, e, movewindow, d"
+      "$mod+SHIFT, o, movewindow, u"
+      "$mod+SHIFT, i, movewindow, r"
 
       "$mod, P, togglesplit," # dwindle swap windows
 
       # IBus (Japanese)
-      "$mod, SPACE, exec, sh -c 'if [ \"$(ibus engine)\" = \"anthy\" ]; then ibus engine xkb:de:nodeadkeys:deu; else ibus engine anthy; fi'"
-      "$mod, PERIOD, exec, sh -c 'ibus emoji'"
+      #"$mod, SPACE, exec, sh -c 'if [ \"$(${pkgs.ibus}/bin/ibus engine)\" = \"anthy\" ]; then ibus engine xkb:de:nodeadkeys:deu; else ibus engine anthy; fi'"
+      #"$mod, PERIOD, exec, sh -c '${pkgs.ibus}/bin/ibus emoji'"
+
+      # Fcitx5 (Japanese)
+      "$mod, SPACE, exec, ${pkgs.fcitx5}/bin/fcitx5-remote -t"
     ]
     ++ (
       # workspaces
@@ -99,8 +110,9 @@
     };
 
     misc = {
-      enable_swallow = true;
-      swallow_regex = "^(kitty)$";
+      #enable_swallow = true;
+      #swallow_regex = "^(kitty)$";
+
       #hide_cursor_on_touch = true; # for touchscreen
     };
 
