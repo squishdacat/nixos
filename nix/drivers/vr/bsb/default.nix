@@ -1,5 +1,5 @@
-{ config, pkgs, ... }: {
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+{ lib, pkgs, ... }: {
+  boot.kernelPackages = lib.mkForce pkgs.linuxPackages_latest;
   
   boot.kernelPatches = [
     {
