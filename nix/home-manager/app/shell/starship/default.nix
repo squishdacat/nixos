@@ -2,7 +2,7 @@
 let
   nerd-font-symbols = pkgs.fetchurl {
     url = "https://starship.rs/presets/toml/nerd-font-symbols.toml";
-    sha256 = "JKX+DKY4IPQwNj3znkhMUReNqbKBxdJyBZW+WCdKwuU=";
+    sha256 = "qkwT6sw0yAaCr2RUT2CeU3MwV18IUUTroOsAhdGZPUw=";
   };
 in
 {

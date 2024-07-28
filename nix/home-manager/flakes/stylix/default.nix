@@ -8,10 +8,7 @@
     enable = true;
     polarity = "dark";
 
-    #image = ./systemdeeznuts_2.png;
-    #image = ./all_the_mascots.jpeg;
-    #image = ./head_dark.png;
-    image = ./chimmie_valentine.png;
+    image = ./wallpaper.png;
     
     #base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-night-terminal-dark.yaml";
     #base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyodark.yaml";
