@@ -45,26 +45,35 @@
       "$mod, F, fullscreen"
       "$mod, V, togglefloating"
 
+      # Change workspaces with mouse
+      "$mod, mouse_down, workspace, e+1"
+	    "$mod, mouse_up, workspace, e-1"
+
+	    # Screenshot a region
+      ", PRINT, exec, ${pkgs.hyprshot}/bin/hyprshot -m region --clipboard-only"
+      "SHIFT, PRINT, exec, ${pkgs.hyprshot}/bin/hyprshot -m region -o $HOME/Pictures/screenshots/"
+	    # Screenshot a window
+      "$mod, PRINT, exec, ${pkgs.hyprshot}/bin/hyprshot -m window --clipboard-only"
+      "$mod SHIFT, PRINT, exec, ${pkgs.hyprshot}/bin/hyprshot -m window -o $HOME/Pictures/screenshots/"
+
       # Change focus
-      "$mod, left, movefocus, l"
-      "$mod, down, movefocus, d"
-      "$mod, up, movefocus, u"
-      "$mod, right, movefocus, r"
       "$mod, n, movefocus, l"
       "$mod, e, movefocus, d"
       "$mod, o, movefocus, u"
       "$mod, i, movefocus, r"
+      # Change workspaces
+      "$mod SHIFT, n, workspace, e-1"
+      "$mod SHIFT, e, workspace, e+1"
+      "$mod SHIFT, o, workspace, e-1"
+      "$mod SHIFT, i, workspace, e+1"
       # Move
-      "$mod+SHIFT, left, movewindow, l"
-      "$mod+SHIFT, down, movewindow, d"
-      "$mod+SHIFT, up, movewindow, u"
-      "$mod+SHIFT, right, movewindow, r"
-      "$mod+SHIFT, n, movewindow, l"
-      "$mod+SHIFT, e, movewindow, d"
-      "$mod+SHIFT, o, movewindow, u"
-      "$mod+SHIFT, i, movewindow, r"
+      "$mod CTRL SHIFT, n, movewindow, l"
+      "$mod CTRL SHIFT, e, movewindow, d"
+      "$mod CTRL SHIFT, o, movewindow, u"
+      "$mod CTRL SHIFT, i, movewindow, r"
 
       "$mod, P, togglesplit," # dwindle swap windows
+
 
       # IBus (Japanese)
       #"$mod, SPACE, exec, sh -c 'if [ \"$(${pkgs.ibus}/bin/ibus engine)\" = \"anthy\" ]; then ibus engine xkb:de:nodeadkeys:deu; else ibus engine anthy; fi'"
@@ -88,6 +97,20 @@
         ]
       )10)
     );
+
+    bindle = [
+      # Brightness
+      "     , XF86MonBrightnessUp,   exec, ${pkgs.brightnessctl}/bin/brightnessctl set 5%+"
+      "     , XF86MonBrightnessDown, exec, ${pkgs.brightnessctl}/bin/brightnessctl set 5%-"
+      "SHIFT, XF86MonBrightnessUp,   exec, ${pkgs.brightnessctl}/bin/brightnessctl set 1%+"
+      "SHIFT, XF86MonBrightnessDown, exec, ${pkgs.brightnessctl}/bin/brightnessctl set 1%-"
+      #", XF86KbdBrightnessUp, exec, ${pkgs.brightnessctl}/bin/brightnessctl set 5%+"
+      #", XF86KbdBrightnessUp, exec, ${pkgs.brightnessctl}/bin/brightnessctl set 5%-"
+      # Volume
+      #binde=, XF86AudioRaiseVolume, exec, pamixer -ui 2 && pamixer --get-volume > $WOBSOCK
+      #binde=, XF86AudioLowerVolume, exec, pamixer -ud 2 && pamixer --get-volume > $WOBSOCK
+      #binde=, XF86AudioMute, exec, pamixer --toggle-mute && ( [ "$(pamixer --get-mute)" = "true" ] && echo 0 > $WOBSOCK ) || pamixer --get-volume > $WOBSOCK
+    ];
 
     bindm = [
       "$mod, mouse:272, movewindow"

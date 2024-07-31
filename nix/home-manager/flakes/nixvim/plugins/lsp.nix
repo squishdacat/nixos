@@ -33,6 +33,7 @@
         #ruff-lsp.enable = true;     # Python (Rust)
         rust-analyzer.enable = true;# Rust
         rust-analyzer.installCargo = true;
+        rust-analyzer.installRustc = true;
         taplo.enable = true;        # TOML
         texlab.enable = true;       # LaTeX
         #tsserver.enable = true;     # TypeScript

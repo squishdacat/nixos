@@ -60,6 +60,7 @@
     wl-clipboard
     
     libreoffice-fresh
+    speedcrunch
 
     vesktop
     element-desktop

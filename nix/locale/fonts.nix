@@ -23,7 +23,7 @@
       fira-code-symbols
 
       # toki pona
-      linja-pi-pu-lukin # stylized
+      #linja-pi-pu-lukin # stylized
       nasin-nanpa # monospace
 
       # Minecraft-like
@@ -33,8 +33,6 @@
 
       # Other
       liberation_ttf
-      mplus-outline-fonts.githubRelease
-      dina-font
       proggyfonts
       dejavu_fonts
     ];

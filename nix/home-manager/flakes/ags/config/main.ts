@@ -9,8 +9,7 @@ notifications.popupTimeout = 60000; // in ms (30 sec)
 
 App.config({
   // TODO: Styling
-  //style: "./style.css",
-  style: "./notifyStyle.css",
+  style: "./style.css",
 
   windows: [
     Bar(),

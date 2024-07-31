@@ -86,7 +86,10 @@ in
     settings = {
       scrolling.smooth = true;
       content.autoplay = false;
+      # Pages when the browser opens
       url.start_pages = "about:blank";
+      # Page when `:open` is used without anything
+      url.default_page = "about:blank";
 
       colors.webpage = {
         # Prefer Dark
