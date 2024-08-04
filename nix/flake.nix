@@ -65,7 +65,6 @@
       inherit (nixpkgs) lib;
       inherit (inputs) nixpkgs;
       inherit inputs;
-      #inherit specialArgs;
     };
   };
 }
