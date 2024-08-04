@@ -14,7 +14,10 @@
 
       environmentFile = "/etc/ssl/porkbun-tokens";
 
-      extraDomainNames = [ "vaultwarden.coolgi.dev" ];
+      extraDomainNames = [
+        "vaultwarden.coolgi.dev"
+        "calendar.coolgi.dev"
+      ];
     };
   };
 }

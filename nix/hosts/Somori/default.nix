@@ -6,6 +6,7 @@
     ./nginx.nix
     ./mail.nix
     ./vaultwarden.nix
+    ./radicale.nix
   ];
 
 

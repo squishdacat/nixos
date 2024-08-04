@@ -30,17 +30,25 @@
       #  so that nginx can handle SSL(/TLS) signing
       "vaultwarden.coolgi.dev" = {
         forceSSL = true;
-        #enableACME = true;
-        useACMEHost = "coolgi.dev";
+        enableACME = true;
 
         locations."/" = {
           proxyPass = "http://127.0.0.1:${toString config.services.vaultwarden.config.ROCKET_PORT}";
         };
-        #locations = {
-        #  "/" = {
-        #    return = "307 https://coolgi.gitlab.io/";
-        #  };
-        #};
+      };
+
+      "calendar.coolgi.dev" = {
+        forceSSL = true;
+        enableACME = true;
+
+        locations."/" = {
+          proxyPass = "http://${toString (builtins.elemAt config.services.radicale.settings.server.hosts 0)}";
+          extraConfig = ''
+            proxy_set_header  X-Script-Name /;
+            proxy_set_header  X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_pass_header Authorization;
+          '';
+        };
       };
     };
   };

@@ -33,5 +33,12 @@
       #  sendOnly = true;
       #};
     };
+
+
+    extraVirtualAliases = {
+      "abuse@coolgi.dev" = "me@coolgi.dev";
+      "info@coolgi.dev" = "me@coolgi.dev";
+      "postmaster@coolgi.dev" = "me@coolgi.dev";
+    };
   };
 }
