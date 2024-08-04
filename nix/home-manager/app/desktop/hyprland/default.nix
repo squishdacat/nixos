@@ -5,7 +5,7 @@
 
     ./windowrules.nix
     ./monitors.nix
-    ./../wallpaper/hyprpaper.nix
+    #./../wallpaper/hyprpaper.nix
     #./wallpaper/wpaperd.nix
   ];
 
