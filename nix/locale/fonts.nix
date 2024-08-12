@@ -36,5 +36,13 @@
       proggyfonts
       dejavu_fonts
     ];
+
+    fontconfig = {
+      subpixel.rgba = "rgb";
+
+      defaultFonts = {
+        # TODO: Look at my fonts and see which ones I actually want as defaults
+      };
+    };
   };
 }
