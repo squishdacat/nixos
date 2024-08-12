@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   programs.steam = {
     enable = true;
@@ -9,6 +9,10 @@
     #package = pkgs.steam.override { withJava = true; };
     
     gamescopeSession.enable = true;
+
+    extraCompatPackages = with pkgs; [
+      proton-ge-bin
+    ];
   };
   programs.gamemode.enable = true;
   
