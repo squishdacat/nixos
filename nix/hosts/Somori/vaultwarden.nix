@@ -1,5 +1,9 @@
 { config, ... }:
 {
+  networking.firewall.allowedTCPPorts = [
+    config.services.vaultwarden.config.ROCKET_PORT
+  ];
+
   services.vaultwarden = {
     enable = true;
     backupDir = "/var/backup/vaultwarden";
@@ -22,7 +26,12 @@
     };
   };
 
-  networking.firewall.allowedTCPPorts = [
-    config.services.vaultwarden.config.ROCKET_PORT
-  ];
+  services.nginx.virtualHosts."vaultwarden.coolgi.dev" = {
+    forceSSL = true;
+    enableACME = true;
+
+    locations."/" = {
+      proxyPass = "http://127.0.0.1:${toString config.services.vaultwarden.config.ROCKET_PORT}";
+    };
+  };
 }

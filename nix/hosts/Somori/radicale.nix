@@ -1,4 +1,4 @@
-{ ... }:
+{ config, ... }:
 {
   networking.firewall.allowedTCPPorts = [ 5232 ];
 
@@ -26,6 +26,21 @@
       #web = {
       #  type = "none";
       #};
+    };
+  };
+
+
+  services.nginx.virtualHosts."calendar.coolgi.dev" = {
+    forceSSL = true;
+    enableACME = true;
+
+    locations."/" = {
+      proxyPass = "http://${toString (builtins.elemAt config.services.radicale.settings.server.hosts 0)}";
+      extraConfig = ''
+        proxy_set_header  X-Script-Name /;
+        proxy_set_header  X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_pass_header Authorization;
+      '';
     };
   };
 }

@@ -4,7 +4,7 @@
   ];
 
   # Only allow root users to access nix packages
-  nix.allowedUsers = [ "@wheel" ];
+  nix.settings.allowed-users = [ "@wheel" ];
 
   services.openssh = {
     enable = true;
