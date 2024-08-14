@@ -37,6 +37,16 @@
         };
       };
 
+      #"headscale.coolgi.dev" = {
+      #  forceSSL = true;
+      #  enableACME = true;
+      #
+      #  locations."/" = {
+      #    proxyPass = "http://${toString config.services.headscale.settings.listen_addr}";
+      #    proxyWebsockets = true;
+      #  };
+      #};
+
       "calendar.coolgi.dev" = {
         forceSSL = true;
         enableACME = true;
