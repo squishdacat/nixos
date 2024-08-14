@@ -209,7 +209,7 @@
         "ImageZoom": {
             "enabled": true,
             "size": 6305.001766784452,
-            "zoom": 2.44909280100732,
+            "zoom": 3.04909280100732,
             "nearestNeighbour": false,
             "square": false,
             "saveZoomValues": true,
@@ -265,7 +265,8 @@
             "ignoreGuilds": "",
             "logEdits": true,
             "logDeletes": true,
-            "collapseDeleted": false
+            "collapseDeleted": false,
+            "inlineEdits": true
         },
         "MessageTags": {
             "enabled": false,
@@ -385,7 +386,8 @@
             "spotify": true,
             "steam": true,
             "epic": false,
-            "tidal": true
+            "tidal": true,
+            "itunes": true
         },
         "PermissionFreeWill": {
             "enabled": false,
@@ -532,7 +534,8 @@
             "autoTranslate": false,
             "receivedInput": "auto",
             "receivedOutput": "en",
-            "showChatBarButton": true
+            "showChatBarButton": true,
+            "service": "google"
         },
         "TypingIndicator": {
             "enabled": true,
@@ -789,6 +792,6 @@
         "authenticated": false,
         "url": "https://api.vencord.dev/",
         "settingsSync": false,
-        "settingsSyncVersion": 1722583234367
+        "settingsSyncVersion": 1723653754512
     }
 }
