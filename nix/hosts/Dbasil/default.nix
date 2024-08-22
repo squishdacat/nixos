@@ -8,4 +8,6 @@
 
     ./../../nixos/boot/loader
   ];
+
+  networking.firewall.allowedTCPPorts = [ 8123 ];
 }

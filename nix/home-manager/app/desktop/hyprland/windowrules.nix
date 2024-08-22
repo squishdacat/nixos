@@ -23,8 +23,8 @@
       #"nofocus, net.sapples.LiveCaptions"
       "pin, net.sapples.LiveCaptions"
       # Rythm Doctor
-      "windowdance, steam_app_774181"
-      "forceinput, steam_app_774181"
+      #"windowdance, steam_app_774181"
+      #"forceinput, steam_app_774181"
       # Spamton
       "float, com-group_finity-mascot-Main"
       "noblur, com-group_finity-mascot-Main"
