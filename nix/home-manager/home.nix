@@ -66,9 +66,10 @@
     prismlauncher
     osu-lazer-bin
 
-    #memento
     obs-studio
     mpv
+    #memento
+    miru
     audacity
     kdenlive
     blender
@@ -76,6 +77,8 @@
     inkscape
     feh
 
+    jetbrains.idea-ultimate
+    jetbrains.rust-rover
     obsidian
 
     unimatrix
