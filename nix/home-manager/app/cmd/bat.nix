@@ -5,7 +5,6 @@
 
     extraPackages = with pkgs.bat-extras; [
       batman
-      batdiff
     ];
   };
 }

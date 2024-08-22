@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  nixpkgs.config.packageOverrides = super: {
-    macchina = pkgs.callPackage ./macchina {};
-  };
+  #nixpkgs.config.packageOverrides = super: {
+  #  macchina = pkgs.callPackage ./macchina {};
+  #};
 }
