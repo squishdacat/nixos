@@ -50,15 +50,13 @@
 
     thunderbird
     bitwarden-desktop
+    tor-browser
 
     xfce.thunar
     xfce.thunar-archive-plugin
     xfce.thunar-media-tags-plugin
     xfce.thunar-volman
 
-    bun
-    wl-clipboard
-    
     libreoffice-fresh
     speedcrunch
 
@@ -67,22 +65,27 @@
 
     prismlauncher
 
-    memento
+    #memento
     obs-studio
     mpv
-    obsidian
-    #blender
+    audacity
+    kdenlive
+    blender
     krita
     inkscape
     feh
 
-    unimatrix
+    obsidian
 
+    unimatrix
     cmatrix
 
+    bun
+    wl-clipboard
     font-manager
     networkmanagerapplet
     brightnessctl
+    
   ];
 
 
