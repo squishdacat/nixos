@@ -64,6 +64,7 @@
     element-desktop
 
     prismlauncher
+    osu-lazer-bin
 
     #memento
     obs-studio
