@@ -340,7 +340,10 @@
             "mediaLayoutType": "STATIC"
         },
         "NoPendingCount": {
-            "enabled": false
+            "enabled": true,
+            "hideFriendRequestsCount": true,
+            "hideMessageRequestsCount": false,
+            "hidePremiumOffersCount": true
         },
         "NoProfileThemes": {
             "enabled": false
@@ -401,7 +404,8 @@
             "enabled": false
         },
         "PictureInPicture": {
-            "enabled": false
+            "enabled": true,
+            "loop": true
         },
         "PinDMs": {
             "enabled": false
@@ -434,7 +438,7 @@
             "enabled": false
         },
         "ReactErrorDecoder": {
-            "enabled": false
+            "enabled": true
         },
         "ReadAllNotificationsButton": {
             "enabled": false
@@ -449,7 +453,11 @@
             "enabled": true
         },
         "RoleColorEverywhere": {
-            "enabled": false
+            "enabled": false,
+            "chatMentions": true,
+            "memberList": true,
+            "voiceUsers": true,
+            "reactorsList": true
         },
         "SearchReply": {
             "enabled": false
@@ -486,7 +494,10 @@
             "defaultAllowedUsersAndRolesDropdownState": true
         },
         "ShowMeYourName": {
-            "enabled": false
+            "enabled": false,
+            "mode": "user-nick",
+            "displayNames": false,
+            "inReplies": false
         },
         "SilentMessageToggle": {
             "enabled": false,
@@ -497,7 +508,7 @@
             "enabled": true,
             "showIcon": true,
             "isEnabled": true,
-            "contextMenu": true
+            "contextMenu": false
         },
         "SortFriendRequests": {
             "enabled": true,
@@ -518,7 +529,10 @@
             "enabled": false
         },
         "SuperReactionTweaks": {
-            "enabled": false
+            "enabled": false,
+            "superReactByDefault": true,
+            "unlimitedSuperReactionPlaying": false,
+            "superReactionPlayingLimit": 20
         },
         "TextReplace": {
             "enabled": false
@@ -527,7 +541,7 @@
             "enabled": false
         },
         "TimeBarAllActivities": {
-            "enabled": false
+            "enabled": true
         },
         "Translate": {
             "enabled": true,
@@ -666,7 +680,9 @@
             "enabled": true
         },
         "OverrideForumDefaults": {
-            "enabled": false
+            "enabled": false,
+            "defaultLayout": 1,
+            "defaultSortOrder": 0
         },
         "ResurrectHome": {
             "enabled": false
@@ -693,10 +709,10 @@
             "enabled": false
         },
         "ImageLink": {
-            "enabled": false
+            "enabled": true
         },
         "PauseInvitesForever": {
-            "enabled": false
+            "enabled": true
         },
         "PartyMode": {
             "enabled": false
@@ -708,7 +724,9 @@
             "enabled": true
         },
         "CtrlEnterSend": {
-            "enabled": false
+            "enabled": false,
+            "submitRule": "ctrl+enter",
+            "sendMessageInTheMiddleOfACodeBlock": true
         },
         "CustomIdle": {
             "enabled": true,
@@ -722,7 +740,10 @@
             "enabled": false
         },
         "MessageLatency": {
-            "enabled": false
+            "enabled": true,
+            "latency": 2,
+            "detectDiscordKotlin": true,
+            "showMillis": true
         },
         "NoDefaultHangStatus": {
             "enabled": false
@@ -734,10 +755,11 @@
             "enabled": false
         },
         "ReplyTimestamp": {
-            "enabled": false
+            "enabled": true
         },
         "Summaries": {
-            "enabled": false
+            "enabled": true,
+            "summaryExpiryThresholdDays": 3
         },
         "ShowTimeoutDuration": {
             "enabled": false
@@ -772,14 +794,18 @@
         "ConsoleJanitor": {
             "enabled": false
         },
-        "ShowAllRoles": {
-            "enabled": false
-        },
         "MentionAvatars": {
-            "enabled": false
+            "enabled": true,
+            "showAtSymbol": true
         },
         "YoutubeAdblock": {
             "enabled": true
+        },
+        "NoMaskedUrlPaste": {
+            "enabled": true
+        },
+        "AlwaysExpandRoles": {
+            "enabled": false
         }
     },
     "notifications": {
@@ -792,6 +818,6 @@
         "authenticated": false,
         "url": "https://api.vencord.dev/",
         "settingsSync": false,
-        "settingsSyncVersion": 1723653754512
+        "settingsSyncVersion": 1724918635665
     }
 }

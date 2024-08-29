@@ -2,21 +2,20 @@
 {
   imports = [
     ./../defaults/server.nix
-    ./networking.nix
+    ./apps/networking.nix
 
-    ./acme.nix
-    ./nginx.nix
-    ./mail.nix
-    ./vaultwarden.nix
+    ./../../os/boot/loader/grub.nix
+
+    ./apps/acme.nix
+    ./apps/nginx.nix
+    ./apps/mail.nix
+    ./apps/vaultwarden.nix
   ];
 
 
   boot.loader.grub = {
     enable = true;
     device = "/dev/sda";
+    efiSupport = false;
   };
-
-
-  # TODO #
-  #  cockpit : Desktop management
 }

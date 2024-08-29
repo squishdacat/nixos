@@ -3,10 +3,8 @@
   imports = [
     ./../defaults/desktop.nix
     #### Drivers ####
-    ./../../drivers/gpu/amd
-    #./../../drivers/vr/bsb
-
-    ./../../nixos/boot/loader
+    ./../../os/drivers/gpu/amd
+    #./../../os/drivers/vr/bsb
   ];
 
   networking.firewall.allowedTCPPorts = [ 8123 ];

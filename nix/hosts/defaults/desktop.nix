@@ -1,9 +1,18 @@
 { clib, ... }:
 {
   imports = [
-    ./../../locale
-    ./../../apps/sys
+    ./../../os/boot/loader/systemd.nix
+    
+    ./../../os/locale
+
+    ./../../os/login/greetd/tuigreet.nix
+    ./../../os/apps/utils/desktop.nix
+    ./../../os/apps/game/steam.nix
+    ./../../os/apps/polkit/gnome.nix
+    ./../../os/apps/tailscale.nix
   ] ++ clib.aimport {
-    path = ./../../sys/hardware;
+    path = ./../../os/sys/hardware;
   };
+
+  hardware.wooting.enable = true;
 }

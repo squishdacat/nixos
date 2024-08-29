@@ -1,22 +1,26 @@
 { pkgs, clib, ... }:
 {
   imports = [
-    ./../../locale/lang/custom.nix
-    ./../../pkgs # Custom pkgs
-    ./../../apps/sys/utils.nix # Some apps I will always need
+    ./../../default.nix
+    ./users.nix
+
+    ./../../os/locale/lang
+
+    ./../../pkgs
+    ./../../os/apps/utils/general.nix
+
+    ./../../os/shell/zsh.nix
   ] ++ clib.aimport {
-    path = ./../../sys/nix; # Defaults for nix stuff
-    exclude = [ ./../../sys/nix/gc.nix ];
+    path = ./../../os/sys/nix; # Defaults for nix stuff
+    exclude = [ ./../../os/sys/nix/gc.nix ];
   };
 
 
   # Use the Zen Kernel
-  boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
+  boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen; 
 
-  # Add our own custom stuff to the nix man page
-  documentation.nixos.includeAllModules = true;
-  
-
+  # Set the time zone
+  time.timeZone = "Australia/Adelaide";
 
 
   # This value determines the NixOS release from which the default

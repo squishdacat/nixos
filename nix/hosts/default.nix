@@ -3,7 +3,7 @@
   nixosConfigurations,
   specialArgs,
 }: let
-  hosts = builtins.attrNames (lib.filterAttrs (_name: type: type == "directory") (builtins.readDir ./.));
+  hosts = lib.lists.remove "default" (builtins.attrNames (lib.filterAttrs (_name: type: type == "directory") (builtins.readDir ./.)));
 
   host = name: let
     inherit (nixosConfigurations.${name}) config;
@@ -24,8 +24,6 @@
 
         ./defaults # Shared Sys Conf
 
-        ### Default for all systems ###
-        ./../nixos/configuration.nix
         { networking.hostName = name; } # System Name
       ];
     };
