@@ -10,6 +10,7 @@
     ./apps/nginx.nix
     ./apps/mail.nix
     ./apps/vaultwarden.nix
+    ./apps/fail2ban.nix
   ];
 
 
@@ -18,4 +19,6 @@
     device = "/dev/sda";
     efiSupport = false;
   };
+
+  services.sshguard.enable = true;
 }

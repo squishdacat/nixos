@@ -21,7 +21,7 @@
       SMTP_PORT = 25;
       SMTP_SSL = false;
 
-      SMTP_FROM = "vaultwarden@coolgi.dev";
+      SMTP_FROM = "vaultwarden@services.coolgi.dev";
       SMTP_FROM_NAME = "Vaultwarden Server";
     };
   };
