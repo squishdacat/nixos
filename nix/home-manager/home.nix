@@ -28,9 +28,6 @@
   #targets.genericLinux.enable = true;
   nixpkgs.config.allowUnfree = true;
 
-  #nixpkgs.config.permittedInsecurePackages = [
-  #  "electron-25.9.0"
-  #];
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
@@ -78,7 +75,6 @@
     font-manager
     networkmanagerapplet
     brightnessctl
-    
   ];
 
 
@@ -120,10 +116,4 @@
   #  name = "Breeze-gtk";
   #  size = 16;
   #};
-
-
-
-  home.sessionVariables = {
-    FLAKE = "/home/coolgi/.dotfiles/";
-  };
 }

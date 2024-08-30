@@ -2,7 +2,8 @@
 {
   programs.nh = {
     enable = true;
-    flake = inputs.self.outPath;
+    #flake = inputs.self.outPath;
+    flake = "/home/coolgi/.dotfiles/";
 
     # Garbage Collection
     clean = {
