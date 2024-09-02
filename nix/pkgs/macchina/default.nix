@@ -1,49 +1,35 @@
-{ lib
-, rustPlatform
-, fetchFromGitHub
-, installShellFiles
-, stdenv
-, darwin
-}:
-rustPlatform.buildRustPackage rec {
-  pname = "macchina";
-  version = "f6840f6d0193800c5ce3b7bbcae427c8fad5be05";
+{ pkgs, ... }:
+{
+  nixpkgs.overlays = [
+    (final: prev: {
+      macchina = final.callPackage prev.macchina.override {
+        rustPlatform = final.rustPlatform // {
+          buildRustPackage = args: final.rustPlatform.buildRustPackage (args // rec {
+            version = "8e1d11519be0d1052f0cbdec702a8b103941dff8";
+            
+            src = prev.fetchFromGitHub {
+              owner = "Macchina-CLI";
+              repo = prev.macchina.pname;
+              rev = "${version}";
+              hash = "sha256-EiZoTLGMrYxTjFV46gv11z2cuE+gIlF9j2nPMrrlccM=";
+            };
+            
+            cargoHash = "";
 
-  src = fetchFromGitHub {
-    owner = "Macchina-CLI";
-    repo = pname;
-    rev = "${version}";
-    hash = "sha256-JVIKA2uj5QQDxjDjegOpUcdlTntc1m4DPMqmLt4PRv4=";
-  };
-
-  nativeBuildInputs = [
-    installShellFiles
+            cargoLock = {
+              lockFile = "${src}/Cargo.lock";
+              outputHashes = {
+                "libmacchina-7.3.1" = "sha256-WuIJAMppTWjVzlWRuOkD8W5v/0D0bqDqRBPwxFs9MGg=";
+              };
+            };
+          });
+        };
+      };
+    })
   ];
 
-  buildInputs = lib.optionals stdenv.isDarwin [
-    darwin.apple_sdk.frameworks.AppKit
-    darwin.apple_sdk.frameworks.DisplayServices
+
+  environment.systemPackages = [
+    pkgs.macchina
   ];
-
-  cargoLock = {
-    lockFileContents = builtins.readFile ./Cargo.lock;
-    allowBuiltinFetchGit = true;
-  };
-  postPatch = ''
-    rm Cargo.lock
-    ln -s ${./Cargo.lock} Cargo.lock
-  '';
-
-  postInstall = ''
-    installManPage doc/macchina.{1,7}
-  '';
-
-  meta = with lib; {
-    description = "Fast, minimal and customizable system information fetcher";
-    homepage = "https://github.com/Macchina-CLI/macchina";
-    #changelog = "https://github.com/Macchina-CLI/macchina/releases/tag/v${version}";
-    license = with licenses; [ mit ];
-    maintainers = with maintainers; [ _414owen figsoda ];
-    mainProgram = "macchina";
-  };
 }

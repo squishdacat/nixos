@@ -1,6 +1,7 @@
-{ pkgs, ... }:
+{ clib, ... }:
 {
-  #nixpkgs.config.packageOverrides = super: {
-  #  macchina = pkgs.callPackage ./macchina {};
-  #};
+  imports = clib.aimport {
+    path = ./.;
+    exclude = [ ./default.nix ];
+  };
 }
