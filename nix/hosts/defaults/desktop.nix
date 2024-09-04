@@ -14,5 +14,10 @@
     path = ./../../os/sys/hardware;
   };
 
+  myNix.users = [
+    "coolgi:10"
+  ];
+
+
   hardware.wooting.enable = true;
 }

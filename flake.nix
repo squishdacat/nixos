@@ -59,7 +59,7 @@
       inherit specialArgs;
     };
 
-    homeConfigurations = import ./nix/users {
+    homeConfigurations = import ./nix/users/flake.nix {
       inherit (self) homeConfigurations;
       inherit (inputs) home-manager;
       inherit (nixpkgs) lib;

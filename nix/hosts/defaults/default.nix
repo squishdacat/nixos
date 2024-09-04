@@ -2,7 +2,8 @@
 {
   imports = [
     ./../../default.nix
-    ./users.nix
+    ./../../options
+    ./../../users/os.nix
 
     ./../../os/locale/lang
 

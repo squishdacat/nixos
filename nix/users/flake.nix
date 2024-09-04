@@ -5,7 +5,7 @@
   inputs,
   ...
 }: let
-  hosts = builtins.attrNames (lib.filterAttrs (_name: type: type == "directory") (builtins.readDir ./.));
+  hosts = lib.lists.remove "defaults" (builtins.attrNames (lib.filterAttrs (_name: type: type == "directory") (builtins.readDir ./.)));
 
   host = name: let
     inherit (homeConfigurations.${name}) config;

@@ -3,7 +3,7 @@
   nixosConfigurations,
   specialArgs,
 }: let
-  hosts = lib.lists.remove "default" (builtins.attrNames (lib.filterAttrs (_name: type: type == "directory") (builtins.readDir ./.)));
+  hosts = lib.lists.remove "defaults" (builtins.attrNames (lib.filterAttrs (_name: type: type == "directory") (builtins.readDir ./.)));
 
   host = name: let
     inherit (nixosConfigurations.${name}) config;
