@@ -21,6 +21,7 @@
 
       "lp"
       "scanner"
+      "camera"
 
       "disk"
       "optical"
