@@ -63,8 +63,8 @@
     feh
 
     jetbrains.idea-ultimate
-    jetbrains.rust-rover
-    obsidian
+    #jetbrains.rust-rover
+    #obsidian
 
     unimatrix
     cmatrix
