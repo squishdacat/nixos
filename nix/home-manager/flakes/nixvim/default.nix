@@ -46,6 +46,7 @@
     plugins = {
       nix.enable = true;
       nix-develop.enable = true;
+      transparent.enable = true;
     };
 
 
