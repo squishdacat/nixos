@@ -8,5 +8,5 @@
       General.Experimental = true; # Show battery level
     };
   };
-  services.blueman.enable = true;
+  #services.blueman.enable = true;
 }

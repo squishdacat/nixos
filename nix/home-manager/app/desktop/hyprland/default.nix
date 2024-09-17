@@ -118,6 +118,7 @@
     ];
 
 
+    debug.disable_logs = false;
     input = {
       follow_mouse = true;
       float_switch_override_focus = true;

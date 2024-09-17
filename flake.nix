@@ -7,10 +7,15 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     # ========== NIXOS ========== #
-    hardware.url = "github:nixos/nixos-hardware";
+    #hardware.url = "github:nixos/nixos-hardware";
 
     simple-nixos-mailserver = {
       url = "gitlab:simple-nixos-mailserver/nixos-mailserver";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    cosmic = {
+      url = "github:lilyinstarlight/nixos-cosmic";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

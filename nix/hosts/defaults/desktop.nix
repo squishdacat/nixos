@@ -5,11 +5,14 @@
     
     ./../../os/locale
 
-    ./../../os/login/greetd/tuigreet.nix
+    #./../../os/login/greetd/tuigreet.nix
+    ./../../os/login/cosmic.nix
     ./../../os/apps/utils/desktop.nix
     ./../../os/apps/game/steam.nix
-    ./../../os/apps/polkit/gnome.nix
+    #./../../os/apps/polkit/gnome.nix
     ./../../os/apps/tailscale.nix
+
+    ./../../os/apps/cosmic.nix
   ] ++ clib.aimport {
     path = ./../../os/sys/hardware;
   };

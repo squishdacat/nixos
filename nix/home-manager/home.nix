@@ -8,14 +8,15 @@
     ./app/shell/starship
     ./app/shell/zsh
 
-    ./app/desktop/hyprland
+    #./app/desktop/hyprland
     #./app/bar/waybar.nix
-    ./app/terminal/emulator/kitty.nix
-    #./app/terminal/emulator/foot.nix
-    ./app/launcher/wofi.nix
+    #./app/terminal/emulator/kitty.nix
+    ./app/terminal/emulator/foot.nix
+    #./app/launcher/wofi.nix
     #./app/launcher/rofi.nix
     ./app/cmd/macchina
-    ./app/cmd/ranger.nix
+    #./app/cmd/ranger.nix
+    ./app/cmd/yazi.nix
     ./app/cmd/eza.nix
     ./app/cmd/bat.nix
     ./app/cmd/lf.nix
@@ -36,11 +37,6 @@
     thunderbird
     bitwarden-desktop
     tor-browser
-
-    xfce.thunar
-    xfce.thunar-archive-plugin
-    xfce.thunar-media-tags-plugin
-    xfce.thunar-volman
 
     libreoffice-fresh
     speedcrunch
@@ -72,7 +68,7 @@
     bun
     wl-clipboard
     font-manager
-    networkmanagerapplet
+    #networkmanagerapplet
     brightnessctl
   ];
 
