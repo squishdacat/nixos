@@ -16,6 +16,14 @@
 
         default = true;
 
+        listen = [
+          {
+            port = 443;
+            addr = "*";
+            ssl = true;
+          }
+        ];
+
         #root = "/nix/store/vr9blbb7x6j4j3grzl9cfyb7di1ipmzj-zsh-5.9-doc/share/doc/zsh-5.9/";
         locations = {
           "/" = {
