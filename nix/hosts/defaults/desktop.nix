@@ -21,6 +21,8 @@
     "coolgi:10"
   ];
 
-
+  # Allow Electron/Chromium apps to run under wayland
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  # Customisation of my wooting keyboard
   hardware.wooting.enable = true;
 }
