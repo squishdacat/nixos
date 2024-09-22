@@ -22,11 +22,8 @@
 
   services.nginx.virtualHosts."coolgi.dev" = {
     listen = [
-      {
-        port = 8448;
-        addr = "*";
-        ssl = true;
-      }
+      { addr = "*";    port = 8448; ssl = true; }
+      { addr = "[::]"; port = 8448; ssl = true; }
     ];
 
     locations."/_matrix/" = {

@@ -2,12 +2,15 @@
 {
   # HTTPS happens on port 443
   networking.firewall.allowedTCPPorts = [ 443 ];
+  #networking.enableIPv6 = true;
 
   services.nginx = {
     enable = true;
 
     #defaultHTTPListenPort = 443;
-    defaultListenAddresses = [ "*" ];
+    # Same as "*" and "[::]"
+    #defaultListenAddresses = [ "0.0.0.0" "[::0]" ];
+
 
     virtualHosts = {
       "coolgi.dev" = {
@@ -17,11 +20,8 @@
         default = true;
 
         listen = [
-          {
-            port = 443;
-            addr = "*";
-            ssl = true;
-          }
+          { addr = "*";    port = 443; ssl = true; }
+          { addr = "[::]"; port = 443; ssl = true; }
         ];
 
         #root = "/nix/store/vr9blbb7x6j4j3grzl9cfyb7di1ipmzj-zsh-5.9-doc/share/doc/zsh-5.9/";
