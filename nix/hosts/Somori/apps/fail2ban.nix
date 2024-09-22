@@ -28,6 +28,7 @@
         port = 222;
       };
 
+      /*
       ngnix-botsearch.settings = { 
         enabled = true;
         filter = "nginx-botsearch";
@@ -36,6 +37,22 @@
         maxretry = 5;
         findtime = 600;
       }; 
+      */
+
+      nginx-botsearch = ''
+        enabled  = true
+        port     = http,https
+        logpath  = /var/log/nginx/access.log
+        backend  = polling
+        journalmatch =
+      '';
+      nginx-bad-request = ''
+        enabled  = true
+        port     = http,https
+        logpath  = /var/log/nginx/access.log
+        backend  = polling
+        journalmatch =
+      '';
     };
   };
 }
