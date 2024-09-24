@@ -86,6 +86,8 @@ in
     settings = {
       scrolling.smooth = true;
       content.autoplay = false;
+      # Use both host & Brave style adblocking
+      content.blocking.method = "both";
       # Pages when the browser opens
       url.start_pages = "about:blank";
       # Page when `:open` is used without anything
