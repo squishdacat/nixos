@@ -27,18 +27,24 @@
         mode = "aggressive";
         port = 222;
       };
+      dovecot.settings = {
+        # block IPs which failed to log-in
+        # aggressive mode add blocking for aborted connections
+        filter = "dovecot[mode=aggressive]";
+        maxretry = 3;
+      };
 
       /*
       ngnix-botsearch.settings = { 
         enabled = true;
         filter = "nginx-botsearch";
         logpath = "/var/log/nginx/access.log";
-        backend = "auto"; # Do not forget to specify this if your jail uses a log file
-        maxretry = 5;
-        findtime = 600;
+        backend = "polling";
+        failregex = "^ \[error\] \d+#\d+: \*\d+ (\S+ )?\"\S+\" (failed|is not found) \(2\: No such file or directory\), client\: <HOST>, server\: \S*\, request: \"(GET|POST|HEAD) \/favicon\.ico \S+\"\, host: \"\S*\".*?";
       }; 
       */
 
+      /*
       nginx-botsearch = ''
         enabled  = true
         port     = http,https
@@ -46,13 +52,15 @@
         backend  = polling
         journalmatch =
       '';
-      nginx-bad-request = ''
-        enabled  = true
-        port     = http,https
-        logpath  = /var/log/nginx/access.log
-        backend  = polling
-        journalmatch =
-      '';
+      */
+
+      nginx-bad-request.settings = {
+        enabled  = true;
+        port     = "http,https";
+        logpath  = "/var/log/nginx/access.log";
+        backend  = "polling";
+        journalmatch = "";
+      };
     };
   };
 }

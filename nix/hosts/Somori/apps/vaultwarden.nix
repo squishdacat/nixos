@@ -21,6 +21,14 @@
       SMTP_PORT = 25;
       SMTP_SSL = false;
 
+      WEB_VAULT_ENABLED = false;
+
+      PASSWORD_HINTS_ALLOWED = false;
+      SHOW_PASSWORD_HINT = false;
+
+      LOGIN_RATELIMIT_MAX_BURST = 5;
+      LOGIN_RATELIMIT_SECONDS = 86400; # One day
+
       SMTP_FROM = "vaultwarden@services.coolgi.dev";
       SMTP_FROM_NAME = "Vaultwarden Server";
     };
@@ -32,6 +40,9 @@
 
     locations."/" = {
       proxyPass = "http://127.0.0.1:${toString config.services.vaultwarden.config.ROCKET_PORT}";
+      extraConfig = ''
+        proxy_set_header X-Real-IP $remote_addr;
+      '';
     };
   };
 }
