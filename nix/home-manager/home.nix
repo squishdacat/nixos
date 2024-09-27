@@ -39,6 +39,7 @@
     tor-browser
 
     libreoffice-fresh
+    lyx
     speedcrunch
 
     vesktop
