@@ -209,7 +209,7 @@
         "ImageZoom": {
             "enabled": true,
             "size": 6305.001766784452,
-            "zoom": 3.04909280100732,
+            "zoom": 3.949092801007319,
             "nearestNeighbour": false,
             "square": false,
             "saveZoomValues": true,
@@ -573,7 +573,9 @@
         "UserVoiceShow": {
             "enabled": true,
             "showInUserProfileModal": true,
-            "showVoiceChannelSectionHeader": true
+            "showVoiceChannelSectionHeader": true,
+            "showInMemberList": true,
+            "showInMessages": true
         },
         "USRBG": {
             "enabled": false
@@ -597,7 +599,7 @@
             "unmuteMessage": "{{USER}} unmuted",
             "deafenMessage": "{{USER}} deafened",
             "undeafenMessage": "{{USER}} undeafened",
-            "voice": "English (America, New York City)+Annie espeak-ng"
+            "voice": "English (America)+Annie espeak-ng"
         },
         "VencordToolbox": {
             "enabled": true
@@ -806,6 +808,15 @@
         },
         "FullSearchContext": {
             "enabled": false
+        },
+        "AccountPanelServerProfile": {
+            "enabled": false
+        },
+        "CopyFileContents": {
+            "enabled": false
+        },
+        "StickerPaste": {
+            "enabled": false
         }
     },
     "notifications": {
@@ -818,6 +829,6 @@
         "authenticated": false,
         "url": "https://api.vencord.dev/",
         "settingsSync": false,
-        "settingsSyncVersion": 1726912651647
+        "settingsSyncVersion": 1727680352379
     }
 }

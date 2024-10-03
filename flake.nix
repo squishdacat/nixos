@@ -39,7 +39,7 @@
     #  inputs.nixpkgs.follows = "nixpkgs";
     #};
     spicetify = {
-      url = "github:A1ca7raz/spicetify-nix";
+      url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
