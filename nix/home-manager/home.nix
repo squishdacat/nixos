@@ -64,7 +64,6 @@
     #obsidian
 
     unimatrix
-    cmatrix
 
     bun
     wl-clipboard

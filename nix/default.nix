@@ -10,4 +10,9 @@
   #services.xserver.enable = true;
   #services.desktopManager.plasma6.enable = true;
   #services.xserver.displayManager.startx.enable = true;
+
+  #virtualisation.docker = {
+  #  enable = true;
+  #  storageDriver = "btrfs";
+  #};
 }

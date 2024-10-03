@@ -18,6 +18,7 @@
       "dialout"
 
       "libvirtd"
+      "docker"
 
       "lp"
       "scanner"
