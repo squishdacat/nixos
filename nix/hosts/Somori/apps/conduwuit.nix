@@ -30,8 +30,12 @@
       proxyPass = "http://[::1]:${toString config.services.matrix-conduit.settings.global.port}";
       extraConfig = ''
         proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
         proxy_buffering off;
         proxy_read_timeout 5m;
+
+
+        access_log /var/log/nginx/access_matrix.log;
       '';
     };
   };
