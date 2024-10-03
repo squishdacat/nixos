@@ -1,6 +1,6 @@
 { inputs, pkgs, ... }:
 let
-  spicePkgs = inputs.spicetify.packages.${pkgs.system};
+  spicePkgs = inputs.spicetify.legacyPackages.${pkgs.system};
 in
 {
   imports = [
@@ -10,17 +10,28 @@ in
   programs.spicetify = {
     enable = true;
 
-    theme = spicePkgs.themes.Comfy;
+    # The theme is now covered by stylix
+    #theme = spicePkgs.themes.comfy;
     #theme = spicePkgs.themes.text;
     #theme = spicePkgs.themes.DefaultDynamic;
     #theme = spicePkgs.themes.catppuccin;
     #colorScheme = "macchiato";
 
     enabledExtensions = with spicePkgs.extensions; [
+      #keyboardShortcut # Vim-like navigation
       shuffle
+
+      fullAppDisplay
       groupSession
       fullAlbumDate
+      phraseToPlaylist
+      wikify
       songStats
+      copyToClipboard
+      betterGenres
+      copyLyrics
+      playingSource
+      sectionMarker
     ];
   };
 }
