@@ -154,7 +154,7 @@
             "enabled": false
         },
         "FakeNitro": {
-            "enabled": false,
+            "enabled": true,
             "enableEmojiBypass": true,
             "emojiSize": 48,
             "transformEmojis": true,
@@ -829,6 +829,6 @@
         "authenticated": false,
         "url": "https://api.vencord.dev/",
         "settingsSync": false,
-        "settingsSyncVersion": 1727680352379
+        "settingsSyncVersion": 1728657034248
     }
 }
