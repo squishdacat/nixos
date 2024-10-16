@@ -31,6 +31,22 @@
 
 
     virtualHosts = {
+      "uwu" = {
+        serverName = "coolgi.dev";
+
+        listen = [
+          { addr = "*";    port = 80; ssl = false; }
+          { addr = "[::]"; port = 80; ssl = false; }
+        ];
+        
+          extraConfig = ''
+            if ( $http_user_agent ~ "curl" ) {
+              #proxy_pass https://coolgi.dev/uwu/;
+              #rewrite ^ https://coolgi.dev/uwu/ permanent;
+              return 301 https://coolgi.dev/uwu/;
+            }
+          '';
+      };
       "coolgi.dev" = {
         forceSSL = true;
         enableACME = true;
@@ -46,8 +62,9 @@
         locations = {
           "/" = {
             #index = "index.html";
-            #return = "307 https://coolgi.gitlab.io/";
+            return = "307 https://coolgi.gitlab.io/";
 
+            /*
             extraConfig = ''
               if ( $http_user_agent ~ "curl" ) {
                 #proxy_pass https://coolgi.dev/uwu/;
@@ -57,6 +74,7 @@
 
               return 307 https://coolgi.gitlab.io/;
             '';
+            */
           };
 
           "/uwu/" = {
