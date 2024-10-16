@@ -1,4 +1,4 @@
-{ ... }:
+{ inputs, ... }:
 {
   # HTTPS happens on port 443
   networking.firewall.allowedTCPPorts = [ 443 ];
@@ -46,9 +46,28 @@
         locations = {
           "/" = {
             #index = "index.html";
-            return = "307 https://coolgi.gitlab.io/";
+            #return = "307 https://coolgi.gitlab.io/";
+
+            extraConfig = ''
+              if ( $http_user_agent ~ "curl" ) {
+                #proxy_pass https://coolgi.dev/uwu/;
+                #rewrite ^ https://coolgi.dev/uwu/ permanent;
+                return 301 https://coolgi.dev/uwu/;
+              }
+
+              return 307 https://coolgi.gitlab.io/;
+            '';
+          };
+
+          "/uwu/" = {
+            #extraConfig = ''
+            #  rewrite ^ ${inputs.self.outPath}/ascii/uwu.ascii break;
+            #'';
+            alias = "${inputs.self.outPath}/ascii/";
+            index = "uwu.ascii";
           };
         };
+
       };
     };
   };
