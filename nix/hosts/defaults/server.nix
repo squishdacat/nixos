@@ -15,4 +15,13 @@
   system.autoUpgrade.allowReboot = true;
   # Only allow root users to access nix packages
   nix.settings.allowed-users = [ "@wheel" ];
+
+  services.tailscale = {
+    # Only allow servers to be a server (ofc)
+    useRoutingFeatures = "server";
+    extraSetFlags = [
+      # Set up tailscale as an exit node
+      "--advertise-exit-node"
+    ];
+  };
 }
