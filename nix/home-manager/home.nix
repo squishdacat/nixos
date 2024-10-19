@@ -23,7 +23,7 @@
 
     ./app/browser/firefox.nix
     #./app/browser/librewolf.nix
-    ./app/browser/qutebrowser.nix
+    #./app/browser/qutebrowser.nix
   ];
 
   #targets.genericLinux.enable = true;
@@ -37,6 +37,7 @@
     thunderbird
     bitwarden-desktop
     tor-browser
+    qbittorrent
 
     libreoffice-fresh
     lyx
@@ -59,17 +60,24 @@
     inkscape
     feh
 
+    vscodium
     jetbrains.idea-ultimate
     #jetbrains.rust-rover
     #obsidian
 
     unimatrix
+    neo
 
     bun
     wl-clipboard
     font-manager
     #networkmanagerapplet
     brightnessctl
+
+    ffmpeg
+    unzip
+    zip
+    libsixel
   ];
 
 
