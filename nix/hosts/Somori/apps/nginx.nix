@@ -31,22 +31,6 @@
 
 
     virtualHosts = {
-      "uwu" = {
-        serverName = "coolgi.dev";
-
-        listen = [
-          { addr = "*";    port = 80; ssl = false; }
-          { addr = "[::]"; port = 80; ssl = false; }
-        ];
-        
-          extraConfig = ''
-            if ( $http_user_agent ~ "curl" ) {
-              #proxy_pass https://coolgi.dev/uwu/;
-              #rewrite ^ https://coolgi.dev/uwu/ permanent;
-              return 301 https://coolgi.dev/uwu/;
-            }
-          '';
-      };
       "coolgi.dev" = {
         forceSSL = true;
         enableACME = true;
@@ -63,18 +47,6 @@
           "/" = {
             #index = "index.html";
             return = "307 https://coolgi.gitlab.io/";
-
-            /*
-            extraConfig = ''
-              if ( $http_user_agent ~ "curl" ) {
-                #proxy_pass https://coolgi.dev/uwu/;
-                #rewrite ^ https://coolgi.dev/uwu/ permanent;
-                return 301 https://coolgi.dev/uwu/;
-              }
-
-              return 307 https://coolgi.gitlab.io/;
-            '';
-            */
           };
 
           "/uwu/" = {
@@ -85,7 +57,40 @@
             index = "uwu.ascii";
           };
         };
+      };
 
+      # Default rout for curl connections to coolgi.dev
+      "_uwu" = {
+        serverName = "coolgi.dev";
+        listen = [
+          { addr = "*";    port = 80; ssl = false; }
+          { addr = "[::]"; port = 80; ssl = false; }
+        ];
+
+        extraConfig = ''
+          if ( $http_user_agent ~ "curl" ) {
+            #proxy_pass http://uwu.coolgi.dev/uwu/;
+            #rewrite ^ http://uwu.coolgi.dev/uwu/ permanent;
+            return 307 http://uwu.coolgi.dev/uwu/;
+          }
+        '';
+      };
+      "uwu.coolgi.dev" = {
+        listen = [
+          { addr = "*";    port = 80; ssl = false; }
+          { addr = "[::]"; port = 80; ssl = false; }
+        ];
+        
+        locations = {
+          "/uwu/" = {
+            alias = "${inputs.self.outPath}/ascii/";
+            index = "uwu.ascii";
+          };
+          "/nya/" = {
+            alias = "${inputs.self.outPath}/ascii/";
+            index = "catgirl-bocchi.sixel";
+          };
+        };
       };
     };
   };
