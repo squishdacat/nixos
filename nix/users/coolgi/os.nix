@@ -25,6 +25,7 @@
 
       "libvirtd"
       "docker"
+      "wireshark"
 
       "lp"
       "scanner"

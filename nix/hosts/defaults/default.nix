@@ -20,6 +20,7 @@
 
   # Use the Zen Kernel
   #boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen; 
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Set the time zone
   time.timeZone = "Australia/Adelaide";
