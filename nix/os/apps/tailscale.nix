@@ -5,6 +5,10 @@
     openFirewall = true;
 
     useRoutingFeatures = lib.mkDefault "both";
+
+    extraUpFlags = [
+      "--login-server https://headscale.funtimes909.xyz"
+    ];
   };
 
   # Disable tailscale from starting with system
