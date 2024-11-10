@@ -55,7 +55,7 @@
       */
 
       nginx-bad-request.settings = {
-        enabled  = true;
+        enabled  = false;
         port     = "http,https";
         logpath  = "/var/log/nginx/access.log";
         backend  = "polling";
