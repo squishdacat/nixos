@@ -55,7 +55,7 @@
     miru
     audacity
     kdenlive
-    blender
+    #blender
     krita
     inkscape
     feh
