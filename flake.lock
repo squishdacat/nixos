@@ -105,6 +105,21 @@
         "type": "github"
       }
     },
+    "crane": {
+      "locked": {
+        "lastModified": 1731098351,
+        "narHash": "sha256-HQkYvKvaLQqNa10KEFGgWHfMAbWBfFp+4cAgkut+NNE=",
+        "owner": "ipetkov",
+        "repo": "crane",
+        "rev": "ef80ead953c1b28316cc3f8613904edc2eb90c28",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ipetkov",
+        "repo": "crane",
+        "type": "github"
+      }
+    },
     "devshell": {
       "inputs": {
         "nixpkgs": [
@@ -418,6 +433,26 @@
         "type": "github"
       }
     },
+    "mc-honeypot": {
+      "inputs": {
+        "crane": "crane",
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "lastModified": 1731479485,
+        "narHash": "sha256-whqYhewoAazx/DcDcuKjJAsMcHrDh2ipuczWyS1dT3s=",
+        "owner": "coolGi69",
+        "repo": "mc-honeypot",
+        "rev": "c211692f397e14e7db1b047ee62c7fde2f6cac45",
+        "type": "github"
+      },
+      "original": {
+        "owner": "coolGi69",
+        "ref": "feat/nix-support",
+        "repo": "mc-honeypot",
+        "type": "github"
+      }
+    },
     "nix-darwin": {
       "inputs": {
         "nixpkgs": [
@@ -441,16 +476,16 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1730785428,
-        "narHash": "sha256-Zwl8YgTVJTEum+L+0zVAWvXAGbWAuXHax3KzuejaDyo=",
-        "owner": "nixos",
+        "lastModified": 1731245184,
+        "narHash": "sha256-vmLS8+x+gHRv1yzj3n+GTAEObwmhxmkkukB2DwtJRdU=",
+        "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "4aa36568d413aca0ea84a1684d2d46f55dbabad7",
+        "rev": "aebe249544837ce42588aa4b2e7972222ba12e8f",
         "type": "github"
       },
       "original": {
-        "owner": "nixos",
-        "ref": "nixos-unstable",
+        "owner": "NixOS",
+        "ref": "nixpkgs-unstable",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -482,6 +517,22 @@
       "original": {
         "owner": "NixOS",
         "ref": "nixos-24.05",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1730785428,
+        "narHash": "sha256-Zwl8YgTVJTEum+L+0zVAWvXAGbWAuXHax3KzuejaDyo=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "4aa36568d413aca0ea84a1684d2d46f55dbabad7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -541,11 +592,13 @@
       "inputs": {
         "cosmic": "cosmic",
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs",
+        "mc-honeypot": "mc-honeypot",
+        "nixpkgs": "nixpkgs_2",
         "nixvim": "nixvim",
         "simple-nixos-mailserver": "simple-nixos-mailserver",
         "spicetify": "spicetify",
-        "stylix": "stylix"
+        "stylix": "stylix",
+        "webhook-secrets": "webhook-secrets"
       }
     },
     "rust-overlay": {
@@ -746,6 +799,19 @@
         "owner": "numtide",
         "repo": "treefmt-nix",
         "type": "github"
+      }
+    },
+    "webhook-secrets": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1731476212,
+        "narHash": "sha256-9S+SCMV4QgDBuRFn+sTzz2hgN/XPZoIdkVrVJqd8YVw=",
+        "path": "/etc/webhooks",
+        "type": "path"
+      },
+      "original": {
+        "path": "/etc/webhooks",
+        "type": "path"
       }
     }
   },

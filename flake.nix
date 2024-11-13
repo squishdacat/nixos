@@ -14,6 +14,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    mc-honeypot.url = "github:coolGi69/mc-honeypot/feat/nix-support";
+    webhook-secrets = {
+      url = "/etc/webhooks";
+      flake = false;
+    };
+
     cosmic = {
       url = "github:lilyinstarlight/nixos-cosmic";
       inputs.nixpkgs.follows = "nixpkgs";
