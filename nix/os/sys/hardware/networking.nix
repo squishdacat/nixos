@@ -14,6 +14,7 @@
   # TODO: May be a good ida to enable this on the server
   systemd.network.wait-online.enable = false;
   boot.initrd.systemd.network.wait-online.enable = false;
+  systemd.services.NetworkManager-wait-online.enable = false;
 
   # If a network proxy is ever needed
   #networking.proxy = {
