@@ -11,6 +11,9 @@
   services.nginx = {
     enable = true;
 
+    # Set the max size to 1 GB
+    clientMaxBodySize = "1G";
+
     # Use recommended settings
     recommendedGzipSettings = true;
     recommendedOptimisation = true;
