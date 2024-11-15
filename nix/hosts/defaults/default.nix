@@ -9,6 +9,7 @@
 
     ./../../pkgs
     ./../../os/apps/utils/general.nix
+    ./../../os/apps/speech.nix
     ./../../os/apps/tailscale.nix
 
     ./../../os/shell/zsh.nix
