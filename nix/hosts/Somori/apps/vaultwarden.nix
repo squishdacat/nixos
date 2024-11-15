@@ -17,9 +17,8 @@
 
       SIGNUPS_ALLOWED = false;
 
-      SMTP_HOST = "127.0.0.1";
-      SMTP_PORT = 25;
-      SMTP_SSL = false;
+      # When a user logs in an email is required to be sent
+      REQUIRE_DEVICE_EMAIL = false;
 
       WEB_VAULT_ENABLED = false;
 
@@ -31,6 +30,9 @@
 
       SMTP_FROM = "vaultwarden@services.coolgi.dev";
       SMTP_FROM_NAME = "Vaultwarden Server";
+      SMTP_HOST = "127.0.0.1";
+      SMTP_PORT = 25;
+      SMTP_SSL = false;
     };
   };
 
