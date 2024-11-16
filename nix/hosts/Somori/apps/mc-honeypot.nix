@@ -17,7 +17,7 @@
       max-players = 69;
       online-players = 420;
 
-      motd = "OwO, attempting to access a server... that doesn\\'t exist >:3";
+      motd = "OwO, attempting to access a server... that doesnt exist >:3";
       icon-file = ./mc-honeypot-icon.png;
 
       webhook-url-file = "/etc/webhooks/mc-honeypot";
