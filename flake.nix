@@ -14,7 +14,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    mc-honeypot.url = "github:coolGi69/mc-honeypot/feat/nix-support";
+    mc-honeypot.url = "github:Duckulus/mc-honeypot";
 
     cosmic = {
       url = "github:lilyinstarlight/nixos-cosmic";
