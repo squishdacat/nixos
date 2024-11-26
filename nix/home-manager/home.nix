@@ -20,6 +20,7 @@
     ./app/cmd/eza.nix
     ./app/cmd/bat.nix
     ./app/cmd/lf.nix
+    ./app/app/vscodium.nix
 
     ./app/browser/firefox.nix
     #./app/browser/librewolf.nix
@@ -60,7 +61,6 @@
     inkscape
     feh
 
-    vscodium
     jetbrains.idea-ultimate
     #jetbrains.rust-rover
     #obsidian
