@@ -142,7 +142,7 @@
 
     general = {
       gaps_in = 5;
-      gaps_out = 20;
+      gaps_out = 10;
       border_size = 2;
       
       layout = "dwindle";
@@ -152,16 +152,18 @@
       # See https://wiki.hyprland.org/Configuring/Dwindle-Layout/ for more
       pseudotile = true; # master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
       preserve_split = true;
-      no_gaps_when_only = true;
+      #no_gaps_when_only = true;
     };
 
 
     decoration = {
       rounding = 10;
 
-      drop_shadow = true;
-      shadow_range = 4;
-      shadow_render_power = 3;
+      shadow = {
+        enabled = true;
+        range = 4;
+        render_power = 3;
+      };
 
       blur = {
         enabled = true;

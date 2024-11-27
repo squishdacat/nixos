@@ -8,11 +8,11 @@
     ./app/shell/starship
     ./app/shell/zsh
 
-    #./app/desktop/hyprland
-    #./app/bar/waybar.nix
+    ./app/desktop/hyprland
+    ./app/bar/waybar
     #./app/terminal/emulator/kitty.nix
     ./app/terminal/emulator/foot.nix
-    #./app/launcher/wofi.nix
+    ./app/launcher/wofi.nix
     #./app/launcher/rofi.nix
     ./app/cmd/macchina
     #./app/cmd/ranger.nix
@@ -34,6 +34,8 @@
   # environment.
   home.packages = with pkgs; [
     #distrobox lilipod
+
+    dolphin
 
     thunderbird
     bitwarden-desktop

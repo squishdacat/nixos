@@ -8,13 +8,15 @@
     enable = true;
 
     configDir = ./config;
+    systemd.enable = true;
 
-    #extraPackages = with pkgs; [
+    extraPackages = with pkgs; [
+      bun
     #  gtksourceview
     #  webkitgtk
     #  accountsservice
-    #];
+    ];
   };
 
-  wayland.windowManager.hyprland.settings.exec-once = "${config.programs.ags.package}/bin/ags";
+  #wayland.windowManager.hyprland.settings.exec-once = "${config.programs.ags.package}/bin/ags";
 }

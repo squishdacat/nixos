@@ -49,6 +49,7 @@
 
     userSettings = {
       # General changes
+      "window.titleBarStyle" = "custom";
       "editor.inlayHints.enabled" = "off";
       #"workbench.sideBar.location" = "right";
       "git.enableCommitSigning" = false;
