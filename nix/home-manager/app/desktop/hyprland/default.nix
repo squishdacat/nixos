@@ -36,6 +36,10 @@
   wayland.windowManager.hyprland.settings = {
     #monitor = ",preferred,auto,1";
 
+    exec-once = [
+      # Notifications
+      "${pkgs.swaynotificationcenter}/bin/swaync"
+    ];
 
     "$mod" = "SUPER";
     bind = [
@@ -61,18 +65,19 @@
       "$mod, e, movefocus, d"
       "$mod, o, movefocus, u"
       "$mod, i, movefocus, r"
-      # Change workspaces
-      "$mod SHIFT, n, workspace, e-1"
-      "$mod SHIFT, e, workspace, e+1"
-      "$mod SHIFT, o, workspace, e-1"
-      "$mod SHIFT, i, workspace, e+1"
       # Move
-      "$mod CTRL SHIFT, n, movewindow, l"
-      "$mod CTRL SHIFT, e, movewindow, d"
-      "$mod CTRL SHIFT, o, movewindow, u"
-      "$mod CTRL SHIFT, i, movewindow, r"
+      "$mod SHIFT, n, movewindow, l"
+      "$mod SHIFT, e, movewindow, d"
+      "$mod SHIFT, o, movewindow, u"
+      "$mod SHIFT, i, movewindow, r"
+      # Change workspaces
+      "$mod CTRL SHIFT, n, workspace, e-1"
+      "$mod CTRL SHIFT, e, workspace, e+1"
+      "$mod CTRL SHIFT, o, workspace, e-1"
+      "$mod CTRL SHIFT, i, workspace, e+1"
 
-      "$mod, P, togglesplit," # dwindle swap windows
+      # Dwindle swap windows
+      "$mod, P, togglesplit," 
 
 
       # IBus (Japanese)
@@ -107,9 +112,9 @@
       #", XF86KbdBrightnessUp, exec, ${pkgs.brightnessctl}/bin/brightnessctl set 5%+"
       #", XF86KbdBrightnessUp, exec, ${pkgs.brightnessctl}/bin/brightnessctl set 5%-"
       # Volume
-      #binde=, XF86AudioRaiseVolume, exec, pamixer -ui 2 && pamixer --get-volume > $WOBSOCK
-      #binde=, XF86AudioLowerVolume, exec, pamixer -ud 2 && pamixer --get-volume > $WOBSOCK
-      #binde=, XF86AudioMute, exec, pamixer --toggle-mute && ( [ "$(pamixer --get-mute)" = "true" ] && echo 0 > $WOBSOCK ) || pamixer --get-volume > $WOBSOCK
+      "     , XF86AudioRaiseVolume, exec, ${pkgs.pamixer}/bin/pamixer -ui 2"
+      "     , XF86AudioLowerVolume, exec, ${pkgs.pamixer}/bin/pamixer -ud 2"
+      "     , XF86AudioMute, exec, ${pkgs.pamixer}/bin/pamixer --toggle-mute"
     ];
 
     bindm = [

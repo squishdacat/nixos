@@ -37,7 +37,7 @@
 
     dolphin
 
-    #thunderbird
+    thunderbird
     bitwarden-desktop
     tor-browser
     qbittorrent

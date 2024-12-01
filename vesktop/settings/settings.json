@@ -162,7 +162,10 @@
             "stickerSize": 160,
             "transformStickers": true,
             "transformCompoundSentence": false,
-            "enableStreamQualityBypass": true
+            "enableStreamQualityBypass": true,
+            "hyperLinkText": "{{NAME}}",
+            "useHyperLinks": true,
+            "disableEmbedPermissionCheck": false
         },
         "FakeProfileThemes": {
             "enabled": false
@@ -209,7 +212,7 @@
         "ImageZoom": {
             "enabled": true,
             "size": 6305.001766784452,
-            "zoom": 3.949092801007319,
+            "zoom": 7.54909280100734,
             "nearestNeighbour": false,
             "square": false,
             "saveZoomValues": true,
@@ -832,6 +835,6 @@
         "authenticated": false,
         "url": "https://api.vencord.dev/",
         "settingsSync": false,
-        "settingsSyncVersion": 1732607546066
+        "settingsSyncVersion": 1732888069742
     }
 }

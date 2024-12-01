@@ -15,4 +15,6 @@
   #  enable = true;
   #  storageDriver = "btrfs";
   #};
+
+  programs.localsend.enable = true;
 }

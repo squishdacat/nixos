@@ -28,38 +28,51 @@
   programs.vscode = {
     enable = true;
     enableUpdateCheck = false;
-    #enableExtensionUpdateCheck = false;
+    enableExtensionUpdateCheck = false;
 
     package = pkgs.vscodium.fhsWithPackages (ps: with ps; [
       cargo
       pkg-config openssl
       zlib
+
+      # Needed for Rust Analyzer
+      rustup
+      rust-analyzer
     ]);
     
 
     # TODO: Make extentions declerative
     extensions = with pkgs.vscode-extensions; [
-      tamasfe.even-better-toml
+      # Auto-import directory nix stuff
       mkhl.direnv
+      # General code stuff
+      formulahendry.code-runner
+      usernamehw.errorlens
+      gruntfuggly.todo-tree
+
+      ##### Languages #####
+      # Help with nix stuff
       bbenoist.nix
+      # Rust
       rust-lang.rust-analyzer
       vadimcn.vscode-lldb
-      formulahendry.code-runner
+      tamasfe.even-better-toml
     ];
 
     userSettings = {
       # General changes
       "window.titleBarStyle" = "custom";
-      "editor.inlayHints.enabled" = "off";
+      #"editor.inlayHints.enabled" = "off";
       #"workbench.sideBar.location" = "right";
       "git.enableCommitSigning" = false;
 
       # Rust related stuff
-      "code-runner.executorMap"."rust" = "${pkgs.cargo}/bin/cargo run # $fileName";
       "files.readonlyInclude" = {
         "**/.cargo/registry/src/**/*.rs" = true;
         "**/lib/rustlib/src/rust/library/**/*.rs" = true;
       };
+      "code-runner.executorMap"."rust" = "${pkgs.cargo}/bin/cargo run # $fileName";
+      # Rust Analyzer
       "rust-analyzer.server.path" = "${pkgs.rust-analyzer}/bin/rust-analyzer";
       "rust-analyzer.check.command" = "${pkgs.clippy}/bin/cargo-clippy";
       "rust-analyzer.server.extraEnv" = {
