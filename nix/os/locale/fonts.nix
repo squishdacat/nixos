@@ -6,7 +6,8 @@
 
     packages = with pkgs; [
       # Contains alot of fonts
-      nerdfonts
+      # TODO: NixPkgs recently changed the namespace, update and look for fonts I want
+      #nerd-fonts
 
       # MS Fonts
       corefonts
@@ -32,6 +33,7 @@
       miracode
 
       # Other
+      open-dyslexic
       liberation_ttf
       proggyfonts
       dejavu_fonts
