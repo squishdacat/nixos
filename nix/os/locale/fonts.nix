@@ -4,19 +4,16 @@
     fontDir.enable = true;
     enableDefaultPackages = true;
 
-    packages = with pkgs; [
-      # Contains alot of fonts
-      # TODO: NixPkgs recently changed the namespace, update and look for fonts I want
-      #nerd-fonts
+    packages = (with pkgs; [
+      # Noto
+      noto-fonts
+      noto-fonts-extra
+      noto-fonts-cjk-sans
+      noto-fonts-emoji
 
       # MS Fonts
       corefonts
       vistafonts
-
-      # Noto
-      noto-fonts
-      noto-fonts-cjk-sans
-      noto-fonts-emoji
 
       # Monospace (Programming)
       jetbrains-mono
@@ -37,7 +34,16 @@
       liberation_ttf
       proggyfonts
       dejavu_fonts
-    ];
+    ]) ++ (with pkgs.nerd-fonts; [
+      noto
+      hack
+      meslo-lg
+
+      roboto-mono
+      ubuntu
+      ubuntu-mono
+      profont
+    ]);
 
     fontconfig = {
       subpixel.rgba = "rgb";
