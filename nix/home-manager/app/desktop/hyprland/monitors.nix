@@ -6,7 +6,7 @@
       ",preferred,auto,1"
 
       # Laptop
-      "eDP-1,1920x1080@48,auto,1"
+      "eDP-1,preferred,auto,1.5"
 
       # PC
       "DP-1,2560x1440@144,0x0,1"
