@@ -11,6 +11,7 @@
     ./../../os/apps/game/steam.nix
     ./../../os/apps/direnv.nix
     ./../../os/apps/polkit/gnome.nix
+    ./../../os/apps/keyring/gnome.nix
 
     #./../../os/apps/cosmic.nix
   ] ++ clib.aimport {
