@@ -10,7 +10,7 @@
     ./apps/nginx.nix
     ./apps/mail.nix
     ./apps/conduwuit.nix
-    #./apps/coturn.nix
+    ./apps/coturn.nix
     ./apps/vaultwarden.nix
     ./apps/fail2ban.nix
     ./apps/mc-honeypot.nix

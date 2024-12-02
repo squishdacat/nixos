@@ -12,18 +12,20 @@
     in
     {
       allowedUDPPortRanges = range;
-      allowedUDPPorts = [ 3478 5349 ];
-      allowedTCPPortRanges = [ ];
-      allowedTCPPorts = [ 3478 5349 ];
+      allowedUDPPorts = [
+        config.services.coturn.listening-port
+        5349
+      ];
     };
 
-  services.coturn = {
+  services.coturn = rec {
     enable = true;
 
     realm = "turn.coolgi.dev";
 
     use-auth-secret = true;
-    static-auth-secret-file = "/etc/matrix/coturn_key";
+    #static-auth-secret-file = "/etc/matrix/coturn_key";
+    static-auth-secret = "do i *really* need a secret >w<, pls dont hack";
 
     min-port = 49000;
     max-port = 50000;
@@ -34,11 +36,16 @@
     # I'm not gonna be needing the cli
     no-cli = true;
 
-    #cert = "/var/lib/acme/turn.coolgi.dev/full.pem";
-    #pkey = "/var/lib/acme/turn.coolgi.dev/key.pem";
+    # TODO: Find a better way of doing this
+    cert = "/var/lib/acme/${realm}/full.pem";
+    pkey = "/var/lib/acme/${realm}/key.pem";
 
-    /*
     extraConfig = ''
+      # consider whether you want to limit the quota of relayed streams per user (or total) to avoid risk of DoS.
+      user-quota=16 # 4 streams per video call, so 16 streams = 4 simultaneous relayed calls per user.
+      total-quota=1600 # 100 maxed user quotas
+
+
       # Ban private IP ranges
       # see https://www.rtcsec.com/article/slack-webrtc-turn-compromise-and-bug-bounty/#how-to-fix-an-open-turn-relay-to-address-this-vulnerability
       # and https://nixos.wiki/wiki/Matrix
@@ -65,45 +72,50 @@
       denied-peer-ip=2002::-2002:ffff:ffff:ffff:ffff:ffff:ffff:ffff
       denied-peer-ip=fc00::-fdff:ffff:ffff:ffff:ffff:ffff:ffff:ffff
       denied-peer-ip=fe80::-febf:ffff:ffff:ffff:ffff:ffff:ffff:ffff
+
+      # special case the turn server itself so that client->TURN->TURN->client flows work
+      # this should be one of the turn server's listening IPs
+      allowed-peer-ip=10.0.0.1
     '';
-    */
+  };
+
+  services.matrix-conduit.settings = {
+    global = {
+      turn_uris = [
+        "turn:${config.services.coturn.realm}:${toString config.services.coturn.listening-port}?transport=udp"
+      ];
+
+      #turn_secret_file = "${config.services.coturn.static-auth-secret-file}";
+      turn_secret = "${config.services.coturn.static-auth-secret}";
+    };
   };
 
   # get a certificate
+  services.nginx = {
+    virtualHosts = {
+      "${config.services.coturn.realm}" = {
+        forceSSL = true;
+        enableACME = true;
+
+        listen = [{
+          addr = "0.0.0.0";
+          port = 80;
+          ssl = false;
+        }];
+
+        locations."/".proxyPass = "http://127.0.0.1:1380";
+      };
+    };
+  };
+
+  # share certs with coturn and restart on renewal
   /*
   security.acme.certs = {
-    "coolgi.dev" = {
-      reloadServices = [ "coturn.service" ];
-      extraDomainNames = [ "turn.coolgi.dev" ];
-    };
-    /*
-    ${config.services.coturn.realm} = {
-      postRun = "systemctl restart coturn.service";
+    "${config.services.coturn.realm}" = {
       group = "turnserver";
+      allowKeysForGroup = true;
+      postRun = "systemctl restart coturn.service";
     };
-    * /
   };
-  */
-  /*
-  services.nginx.streamConfig = ''
-    map $ssl_preread_server_name $name {
-        coolgi.dev url_backend;
-        turn.coolgi.dev turn_server;
-    }
-
-    upstream url_backend {
-        server 127.0.0.1:4444;
-    }
-    upstream turn_server {
-        server 127.0.0.1:3478;
-    }
-
-    server {
-      listen 443;
-      listen [::]:443;
-      ssl_preread on;
-      proxy_pass $name;
-    }
-  '';
   */
 }
