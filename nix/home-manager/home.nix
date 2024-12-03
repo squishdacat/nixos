@@ -35,7 +35,7 @@
   home.packages = with pkgs; [
     #distrobox lilipod
 
-    dolphin
+    nemo-with-extensions
 
     thunderbird
     bitwarden-desktop
