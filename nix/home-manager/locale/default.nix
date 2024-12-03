@@ -1,7 +1,7 @@
 { ... }:
 {
   imports = [
-    ./lang/ja-jp.nix
+    ./lang
     ./keyboard/workman.nix
     ./spell/hunspell.nix
   ];

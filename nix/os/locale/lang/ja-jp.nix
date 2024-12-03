@@ -1,6 +1,6 @@
 { ... }:
 let
-  lang = "en_AU.UTF-8";
+  lang = "ja_JP.UTF-8";
 in
 {
   i18n = {
