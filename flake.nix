@@ -9,17 +9,18 @@
     # ========== NIXOS ========== #
     #hardware.url = "github:nixos/nixos-hardware";
 
+    #cosmic = {
+    #  url = "github:lilyinstarlight/nixos-cosmic";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #};
+
+    # ========== SERVER ========== #
     simple-nixos-mailserver = {
       url = "gitlab:simple-nixos-mailserver/nixos-mailserver";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     mc-honeypot.url = "github:Duckulus/mc-honeypot";
-
-    cosmic = {
-      url = "github:lilyinstarlight/nixos-cosmic";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
 
     # ========== HOME MANAGER ========== #
     home-manager = {
@@ -36,10 +37,6 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    #ags = {
-    #  url = "github:Aylur/ags";
-    #  inputs.nixpkgs.follows = "nixpkgs";
-    #};
     spicetify = {
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
