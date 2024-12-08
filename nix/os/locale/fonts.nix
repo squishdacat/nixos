@@ -34,6 +34,8 @@
       liberation_ttf
       proggyfonts
       dejavu_fonts
+      source-han-sans-japanese
+      source-han-serif-japanese
     ]) ++ (with pkgs.nerd-fonts; [
       noto
       hack
