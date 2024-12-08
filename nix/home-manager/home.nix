@@ -20,11 +20,12 @@
     ./app/cmd/eza.nix
     ./app/cmd/bat.nix
     ./app/cmd/lf.nix
+
     ./app/app/vscodium.nix
 
     ./app/browser/firefox.nix
     #./app/browser/librewolf.nix
-    #./app/browser/qutebrowser.nix
+    ./app/browser/qutebrowser.nix
   ];
 
   #targets.genericLinux.enable = true;
@@ -36,6 +37,7 @@
     #distrobox lilipod
 
     nemo-with-extensions
+    pavucontrol
 
     thunderbird
     bitwarden-desktop
@@ -43,7 +45,7 @@
     qbittorrent
 
     libreoffice-fresh
-    lyx
+    #lyx
     speedcrunch
 
     vesktop
@@ -58,7 +60,7 @@
     miru
     audacity
     kdenlive
-    #blender
+    blender
     krita
     inkscape
     feh
@@ -70,16 +72,22 @@
     unimatrix
     neo
 
-    bun
     wl-clipboard
     font-manager
     #networkmanagerapplet
     brightnessctl
 
     ffmpeg
+    jq
     unzip
     zip
+    hexedit
     libsixel
+    scrcpy
+    btop
+    wireshark
+
+    wlx-overlay-s
   ];
 
 
