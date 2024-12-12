@@ -37,22 +37,23 @@
 
       # Needed for Rust Analyzer
       rustup
-      rust-analyzer
+      #rust-analyzer
     ]);
     
 
     # TODO: Make extentions declerative
     extensions = with pkgs.vscode-extensions; [
-      # Auto-import directory nix stuff
-      mkhl.direnv
-      # General code stuff
-      formulahendry.code-runner
-      usernamehw.errorlens
-      gruntfuggly.todo-tree
+      mkhl.direnv # Auto-import directory nix stuff
+      formulahendry.code-runner # Add run button to file
+      usernamehw.errorlens # Easilly see error next to file
+      gruntfuggly.todo-tree # Add tab of all the TODOs
+      # asvetliakov.vscode-neovim # NeoVim (need I say more)
 
       ##### Languages #####
-      # Help with nix stuff
+      # Nix
       bbenoist.nix
+      # Markdown
+      yzhang.markdown-all-in-one
       # Rust
       rust-lang.rust-analyzer
       vadimcn.vscode-lldb
@@ -64,7 +65,10 @@
       "window.titleBarStyle" = "custom";
       #"editor.inlayHints.enabled" = "off";
       #"workbench.sideBar.location" = "right";
+      "diffEditor.ignoreTrimWhitespace" = false;
       "git.enableCommitSigning" = false;
+      "git.openRepositoryInParentFolders" = "always";
+      "direnv.restart.automatic" = true;
 
       # Rust related stuff
       "files.readonlyInclude" = {
