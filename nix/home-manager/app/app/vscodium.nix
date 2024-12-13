@@ -1,29 +1,8 @@
-{ pkgs, lib, ... }:
+{ pkgs, inputs, ... }:
 {
-  /*
   nixpkgs.overlays = [
-    (
-      self: super: {
-        vscodium = super.vscodium.overrideAttrs (oldAttrs: {
-          # extend old postInstall (if exists) with wrapProgram
-          installPhase = (oldAttrs.installPhase or "") + ''
-            wrapProgram $out/bin/codium --set LD_LIBRARY_PATH ${lib.makeLibraryPath (with pkgs; [
-              udev alsa-lib vulkan-loader
-              xorg.libX11 xorg.libXcursor xorg.libXi xorg.libXrandr # To use the x11 feature
-              libxkbcommon wayland # To use the wayland feature
-            ])}
-          '';
-
-          nativeBuildInputs = (oldAttrs.nativeBuildInputs or []) ++ (with pkgs; [
-            pkg-config
-            udev alsa-lib
-          ]);
-          propagatedBuildInputs = [ pkgs.stdenv.cc ];
-        });
-      }
-    )
+    inputs.nix-vscode-extensions.overlays.default
   ];
-  */
 
   programs.vscode = {
     enable = true;
@@ -37,22 +16,26 @@
 
       # Needed for Rust Analyzer
       rustup
-      rust-analyzer
+      #rust-analyzer
     ]);
-    
+
+    #mutableExtensionsDir = false; # Dont allow extentions via VSC
 
     # TODO: Make extentions declerative
-    extensions = with pkgs.vscode-extensions; [
-      # Auto-import directory nix stuff
-      mkhl.direnv
-      # General code stuff
-      formulahendry.code-runner
-      usernamehw.errorlens
-      gruntfuggly.todo-tree
+    extensions = with pkgs.open-vsx; [
+      mkhl.direnv # Auto-import directory nix stuff
+      usernamehw.errorlens # Easilly see error next to file
+      streetsidesoftware.code-spell-checker # Spell check
+      gruntfuggly.todo-tree # Add tab of all the TODOs
+      pkief.material-icon-theme # Material Icons
+      anweber.statusbar-commands # Custom statusbar commands
+      # asvetliakov.vscode-neovim # NeoVim (need I say more)
 
       ##### Languages #####
-      # Help with nix stuff
+      # Nix
       bbenoist.nix
+      # Markdown
+      yzhang.markdown-all-in-one
       # Rust
       rust-lang.rust-analyzer
       vadimcn.vscode-lldb
@@ -62,9 +45,32 @@
     userSettings = {
       # General changes
       "window.titleBarStyle" = "custom";
-      #"editor.inlayHints.enabled" = "off";
+      "editor.inlayHints.enabled" = "off";
       #"workbench.sideBar.location" = "right";
+      "diffEditor.ignoreTrimWhitespace" = false;
       "git.enableCommitSigning" = false;
+      "git.openRepositoryInParentFolders" = "always";
+      # Misc extention settings
+      "direnv.restart.automatic" = true;
+      "workbench.iconTheme" = "material-icon-theme";
+
+      # Extra status bar buttons
+      "statusbar_command.commands" = [
+        { # Debug
+          "text" = "$(debug) Debug "; # Displayes debug icon and text in the status bar
+          "color" = "#FF2D00"; # Colour of the text above
+          "tooltip" = "Debug Code"; # Displays following message when hovering over button
+          "alignment" = "right";
+          "command" = "workbench.action.debug.start"; # Debugging command
+        }
+        { # Run
+          "text" = "$(run) Run "; # Displays play run icon and text
+          "color" = "#66ff00"; # Colour of the text above
+          "tooltip" = "Run Code"; # Displays following text when hevering over button
+          "alignment" = "right";
+          "command" = "workbench.action.debug.run"; # Running without debugging command
+        }
+      ];
 
       # Rust related stuff
       "files.readonlyInclude" = {
@@ -78,14 +84,6 @@
       "rust-analyzer.server.extraEnv" = {
         "CARGO" = "${pkgs.cargo}/bin/cargo";
       };
-
-      #"terminal.integrated.env.linux" = {
-      #  "LD_LIBRARY_PATH" = lib.makeLibraryPath (with pkgs; [
-      #    udev alsa-lib vulkan-loader
-      #    xorg.libX11 xorg.libXcursor xorg.libXi xorg.libXrandr # To use the x11 feature
-      #    libxkbcommon wayland # To use the wayland feature
-      #  ]);
-      #};
     };
   };
 }
