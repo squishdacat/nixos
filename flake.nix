@@ -14,6 +14,8 @@
     #  inputs.nixpkgs.follows = "nixpkgs";
     #};
 
+    nixpkgs-xr.url = "github:nix-community/nixpkgs-xr";
+
     # ========== SERVER ========== #
     simple-nixos-mailserver = {
       url = "gitlab:simple-nixos-mailserver/nixos-mailserver";

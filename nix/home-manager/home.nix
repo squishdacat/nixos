@@ -86,8 +86,6 @@
     scrcpy
     btop
     wireshark
-
-    wlx-overlay-s
   ];
 
 

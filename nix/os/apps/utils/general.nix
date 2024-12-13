@@ -6,8 +6,12 @@
     wget
 
     neovim
-    git
 
     nh
   ];
+
+  programs.git = {
+    enable = true;
+    lfs.enable = true;
+  };
 }
