@@ -19,10 +19,10 @@
       #rust-analyzer
     ]);
 
-    #mutableExtensionsDir = false; # Dont allow extentions via VSC
+    mutableExtensionsDir = false; # Dont allow extentions via VSC
 
     # TODO: Make extentions declerative
-    extensions = with pkgs.open-vsx; [
+    extensions = (with pkgs.open-vsx; [
       mkhl.direnv # Auto-import directory nix stuff
       usernamehw.errorlens # Easilly see error next to file
       streetsidesoftware.code-spell-checker # Spell check
@@ -40,12 +40,14 @@
       rust-lang.rust-analyzer
       vadimcn.vscode-lldb
       tamasfe.even-better-toml
-    ];
+    ]) ++ (with pkgs.vscode-marketplace; [
+      # Nothing atm
+    ]);
 
     userSettings = {
       # General changes
       "window.titleBarStyle" = "custom";
-      "editor.inlayHints.enabled" = "off";
+      "editor.inlayHints.enabled" = "offUnlessPressed"; # Ctrl+Alt
       #"workbench.sideBar.location" = "right";
       "diffEditor.ignoreTrimWhitespace" = false;
       "git.enableCommitSigning" = false;
