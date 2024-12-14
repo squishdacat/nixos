@@ -1,6 +1,7 @@
 { ... }:
 {
   services.gnome.gnome-keyring.enable = true;
+  programs.seahorse.enable = true;
 
   xdg.portal.config = {
     pantheon = {
