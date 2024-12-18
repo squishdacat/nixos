@@ -29,7 +29,7 @@
       gruntfuggly.todo-tree # Add tab of all the TODOs
       pkief.material-icon-theme # Material Icons
       anweber.statusbar-commands # Custom statusbar commands
-      # asvetliakov.vscode-neovim # NeoVim (need I say more)
+      asvetliakov.vscode-neovim # NeoVim (need I say more)
 
       ##### Languages #####
       # Nix
@@ -55,6 +55,11 @@
       # Misc extention settings
       "direnv.restart.automatic" = true;
       "workbench.iconTheme" = "material-icon-theme";
+
+      # Improve VSCode-NeoVim performance
+      "extensions.experimental.affinity" = {
+        "asvetliakov.vscode-neovim" = 1;
+      };
 
       # Extra status bar buttons
       "statusbar_command.commands" = [
