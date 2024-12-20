@@ -1,11 +1,27 @@
-{ pkgs, config, ... }:
+{ lib, config, pkgs, inputs, ... }:
 {
   # 8448 is needed for federation
   networking.firewall.allowedTCPPorts = [ 8448 ];
 
+
+  nix.settings = {
+    substituters = [
+      #"https://attic.kennel.juneis.dog/conduit"
+      "https://attic.kennel.juneis.dog/conduwuit"
+      #"https://conduwuit.cachix.org"
+    ];
+    trusted-public-keys = [
+      #"conduit:eEKoUwlQGDdYmAI/Q/0slVlegqh/QmAvQd7HBSm21Wk="
+      "conduwuit:lYPVh7o1hLu1idH4Xt2QHaRa49WRGSAqzcfFd94aOTw="
+      #"conduwuit.cachix.org-1:MFRm6jcnfTf0jSAbmvLfhO3KBMt4px+1xaereWXp8Xg="
+    ];
+  };
+
   services.matrix-conduit = {
     enable = true;
-    package = pkgs.conduwuit;
+
+    package = inputs.conduwuit.packages.x86_64-linux.all-features;
+    #package = pkgs.conduwuit;
 
     settings = {
       global = {
@@ -29,6 +45,9 @@
       };
     };
   };
+
+  # We use our own package for conduwuit, so we need to change the systemd service exec
+  systemd.services.conduit.serviceConfig.ExecStart = lib.mkForce "${config.services.matrix-conduit.package}/bin/conduwuit";
 
   services.nginx.virtualHosts."coolgi.dev" = {
     listen = [

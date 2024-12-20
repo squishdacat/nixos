@@ -22,6 +22,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    conduwuit = {
+      url = "github:girlbossceo/conduwuit";
+      #inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     mc-honeypot.url = "github:Duckulus/mc-honeypot";
 
     # ========== HOME ========== #
