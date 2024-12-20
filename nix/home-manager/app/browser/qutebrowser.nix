@@ -11,7 +11,7 @@ in
     enable = true;
 
     searchEngines = {
-      DEFAULT = "https://searx.be/search?q={}";
+      DEFAULT = "https://search.brave.com/search?q={}";
       # Search Engines
       sx = "https://searx.be/search?q={}";
       bv = "https://search.brave.com/search?q={}";

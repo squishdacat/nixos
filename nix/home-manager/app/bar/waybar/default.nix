@@ -21,6 +21,7 @@
         modules-right = [
           "tray"
           "privacy"
+          "battery"
           "wireplumber"
           "network"
         ];
