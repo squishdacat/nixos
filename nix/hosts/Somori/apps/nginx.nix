@@ -52,6 +52,10 @@
             return = "307 https://coolgi.gitlab.io/";
           };
 
+          "/.well-known/" = {
+            alias = "${inputs.self.outPath}/well-known/";
+          };
+
           "/uwu/" = {
             #extraConfig = ''
             #  rewrite ^ ${inputs.self.outPath}/ascii/uwu.ascii break;
