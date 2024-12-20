@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 {
   imports = [
+    ./../notifications/swaync.nix
     ./../lock/hyprlock
 
     ./windowrules.nix
@@ -35,11 +36,6 @@
 
   wayland.windowManager.hyprland.settings = {
     #monitor = ",preferred,auto,1";
-
-    exec-once = [
-      # Notifications
-      "${pkgs.swaynotificationcenter}/bin/swaync"
-    ];
 
     "$mod" = "SUPER";
     bind = [

@@ -1,5 +1,9 @@
-{ ... }:
+{ pkgs, ... }:
 {
+  wayland.windowManager.hyprland.settings.bind = [
+      "$mod, L, exec, ${pkgs.hyprlock}/bin/hyprlock"
+  ];
+
   programs.hyprlock = {
     enable = true;
 
