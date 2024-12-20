@@ -11,7 +11,9 @@
     # if reboot is allowed (like on a server), then add a reboot window
     rebootWindow = { lower = "03:00"; upper = "05:00"; };
 
-    flake = inputs.self.outPath;
+    # TODO: Add a way to get this from the git repo's upstream url
+    flake = "gitlab:coolGi/dotfiles";
+
     flags = [
       "--update-input"
       "nixpkgs"
