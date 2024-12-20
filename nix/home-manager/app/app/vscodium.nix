@@ -28,8 +28,9 @@
       streetsidesoftware.code-spell-checker # Spell check
       gruntfuggly.todo-tree # Add tab of all the TODOs
       pkief.material-icon-theme # Material Icons
+      #formulahendry.code-runner # Add run button to file
       anweber.statusbar-commands # Custom statusbar commands
-      asvetliakov.vscode-neovim # NeoVim (need I say more)
+      #asvetliakov.vscode-neovim # NeoVim (need I say more)
 
       ##### Languages #####
       # Nix
@@ -61,6 +62,10 @@
         "asvetliakov.vscode-neovim" = 1;
       };
 
+      # LLDB
+      "lldb.cargo" = "${pkgs.cargo}/bin/cargo";
+      "lldb.launch.expressions" = "native";
+
       # Extra status bar buttons
       "statusbar_command.commands" = [
         { # Debug
@@ -80,11 +85,11 @@
       ];
 
       # Rust related stuff
+      "code-runner.executorMap"."rust" = "${pkgs.cargo}/bin/cargo run # $fileName";
       "files.readonlyInclude" = {
         "**/.cargo/registry/src/**/*.rs" = true;
         "**/lib/rustlib/src/rust/library/**/*.rs" = true;
       };
-      "code-runner.executorMap"."rust" = "${pkgs.cargo}/bin/cargo run # $fileName";
       # Rust Analyzer
       "rust-analyzer.server.path" = "${pkgs.rust-analyzer}/bin/rust-analyzer";
       "rust-analyzer.check.command" = "${pkgs.clippy}/bin/cargo-clippy";
