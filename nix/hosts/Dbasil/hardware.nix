@@ -40,9 +40,16 @@
     }
   ];
 
+
   fileSystems."/drives/steam" =
     {
       device = "/dev/disk/by-uuid/709d872b-2a86-470e-9ebc-fbf73c12b973";
+      fsType = "btrfs";
+    };
+
+  fileSystems."/drives/bulk" =
+    {
+      device = "/dev/disk/by-uuid/37dc177f-fb4c-4c90-8610-0395c2fd8278";
       fsType = "btrfs";
     };
 
