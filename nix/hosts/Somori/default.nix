@@ -4,7 +4,7 @@
     ./../defaults/server.nix
     ./apps/networking.nix
 
-    ./../../os/boot/loader/grub.nix
+    ./../../os/startup/loader/grub.nix
 
     ./apps/acme.nix
     ./apps/nginx.nix
