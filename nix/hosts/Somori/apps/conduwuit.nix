@@ -20,7 +20,7 @@
   services.matrix-conduit = {
     enable = true;
 
-    package = inputs.conduwuit.packages.x86_64-linux.all-features;
+    package = inputs.conduwuit.packages.${config.nixpkgs.hostPlatform}.all-features;
     #package = pkgs.conduwuit;
 
     settings = {
