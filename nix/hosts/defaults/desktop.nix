@@ -1,12 +1,12 @@
 { clib, ... }:
 {
   imports = [
-    ./../../os/boot/loader/systemd.nix
+    ./../../os/startup/loader/systemd.nix
     
     ./../../os/locale
 
-    ./../../os/login/greetd/tuigreet.nix
-    #./../../os/login/cosmic.nix
+    ./../../os/startup/login/tuigreet.nix
+    ./../../os/startup/splash/plymouth.nix
     ./../../os/apps/utils/desktop.nix
     ./../../os/apps/game/steam.nix
     ./../../os/apps/direnv.nix

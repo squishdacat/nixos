@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   imports = [
-    ./default.nix
+    ./greetd-generic.nix
   ];
 
   services.greetd.settings = {

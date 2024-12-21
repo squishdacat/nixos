@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   # This file is a quick and easy way to add stuff
   #  in the nix configs.
