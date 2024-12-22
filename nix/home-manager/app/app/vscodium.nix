@@ -57,6 +57,11 @@
       "direnv.restart.automatic" = true;
       "workbench.iconTheme" = "material-icon-theme";
 
+      # Remove error lense for some stuff
+      "errorLens.excludeBySource" = [
+        "cSpell"
+      ];
+
       # Improve VSCode-NeoVim performance
       "extensions.experimental.affinity" = {
         "asvetliakov.vscode-neovim" = 1;
