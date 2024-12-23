@@ -57,10 +57,12 @@
       "direnv.restart.automatic" = true;
       "workbench.iconTheme" = "material-icon-theme";
 
-      # Remove error lense for some stuff
+      # Disable Error Lens For Sources
       "errorLens.excludeBySource" = [
-        "cSpell"
+        "cSpell" # Error lens would be filled if this is allowed
       ];
+      # Makes cSpell use 3 dots rather than an underline
+      "cSpell.diagnosticLevel" = "Hint";
 
       # Improve VSCode-NeoVim performance
       "extensions.experimental.affinity" = {
@@ -94,6 +96,11 @@
       "files.readonlyInclude" = {
         "**/.cargo/registry/src/**/*.rs" = true;
         "**/lib/rustlib/src/rust/library/**/*.rs" = true;
+      };
+      # Format on save
+      "[rust]" = {
+        "editor.defaultFormatter" = "rust-lang.rust-analyzer";
+        "editor.formatOnSave" = true;
       };
       # Rust Analyzer
       "rust-analyzer.server.path" = "${pkgs.rust-analyzer}/bin/rust-analyzer";
