@@ -11,13 +11,11 @@
     # if reboot is allowed (like on a server), then add a reboot window
     rebootWindow = { lower = "03:00"; upper = "05:00"; };
 
-    # TODO: Add a way to get this from the git repo's upstream url
-    flake = "gitlab:coolGi/dotfiles";
+    flake = inputs.self.outPath;
 
     flags = [
-      "--update-input"
-      "nixpkgs"
-      #"--no-write-lock-file"
+      "--recreate-lock-file"
+      "--no-write-lock-file"
       "-L" # print build logs
     ];
   };
