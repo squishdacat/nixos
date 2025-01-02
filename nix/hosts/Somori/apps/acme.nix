@@ -9,10 +9,10 @@
     defaults.email = "me@coolgi.dev";
 
     certs."coolgi.dev" = {
-      dnsProvider = "porkbun";
+      dnsProvider = "cloudflare";
       webroot = null;
 
-      environmentFile = "/etc/ssl/porkbun-tokens";
+      environmentFile = "/etc/ssl/cloudflare-tokens";
     };
   };
 }
