@@ -2,6 +2,7 @@
 {
   imports = [
     ./../../os/startup/loader/systemd.nix
+    ./../../os/drivers/school/numworks.nix
     
     ./../../os/locale
 
