@@ -6,6 +6,7 @@
 
 
     nameservers = [
+      /*
       ##### Porkbun Name Servers #####
       # alvador.ns.porkbun.com
       "162.159.10.150"
@@ -19,6 +20,10 @@
       # maceio.ns.porkbun.com
       "162.159.11.180"
       "2400:cb00:2049:1::a29f:bb4"
+      */
+
+      # Cloudflare
+      "1.1.1.1"
     ];
   };
 
