@@ -26,21 +26,46 @@
     settings = {
       global = {
         #address = "::1";
-        server_name = "coolgi.dev";
-
+        server_name = "coolgi.dev"; # Cannot be changed!
         max_request_size = 100000000; # 100MB (in bytes)
 
+        # Allow for accessing admin commands out of the room
+        admin_escape_commands = true;
+
+        # 1 - Ipv4Only (Only query for A records, no AAAA/IPv6)
+        # 2 - Ipv6Only (Only query for AAAA records, no A/IPv4)
+        # 3 - Ipv4AndIpv6 (Query for A and AAAA records in parallel, uses whatever
+        #                   returns a successful response first)
+        # 4 - Ipv6thenIpv4 (Query for AAAA record, if that fails then query the A record)
+        # 5 - Ipv4thenIpv6 (Query for A record, if that fails then query the AAAA record)
+        ip_lookup_strategy = 4;
+
+        # Allow the public room dir to be publically federated
+        allow_public_room_directory_over_federation = true;
+
+        # Trusted servers to get some keys from
         trusted_servers = [
           "matrix.org"
         ];
 
+        # URL previews
         url_preview_check_root_domain = true;
         url_preview_max_spider_size = 256000; # 256KB (in bytes)
         url_preview_domain_explicit_allowlist = [
+          # Git
+          "github.com"
+          "gitlab.com"
+          "codeberg.org"
+          # General
           "wikipedia.org"
+          "xkcd.com"
+          # Streaming
           "youtube.com"
           "youtu.be"
-          "xkcd.com"
+          "spotify.com"
+          # Social Media
+          "x.com"
+          "xcancel.com"
         ];
       };
     };
