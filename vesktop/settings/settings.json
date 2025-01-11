@@ -146,7 +146,7 @@
             "enabled": false
         },
         "Experiments": {
-            "enabled": true,
+            "enabled": false,
             "enableIsStaff": false,
             "toolbarDevMenu": false
         },
@@ -161,7 +161,7 @@
             "enableStickerBypass": true,
             "stickerSize": 160,
             "transformStickers": true,
-            "transformCompoundSentence": false,
+            "transformCompoundSentence": true,
             "enableStreamQualityBypass": true,
             "hyperLinkText": "{{NAME}}",
             "useHyperLinks": true,
@@ -207,7 +207,14 @@
             "enabled": true
         },
         "IgnoreActivities": {
-            "enabled": false
+            "enabled": false,
+            "listMode": 0,
+            "idsList": "",
+            "ignorePlaying": false,
+            "ignoreStreaming": false,
+            "ignoreListening": false,
+            "ignoreWatching": false,
+            "ignoreCompeting": false
         },
         "ImageZoom": {
             "enabled": true,
@@ -404,7 +411,7 @@
             "enabled": false
         },
         "petpet": {
-            "enabled": false
+            "enabled": true
         },
         "PictureInPicture": {
             "enabled": true,
@@ -541,7 +548,9 @@
             "receivedInput": "auto",
             "receivedOutput": "en",
             "showChatBarButton": true,
-            "service": "google"
+            "service": "google",
+            "deeplApiKey": "",
+            "showAutoTranslateTooltip": true
         },
         "TypingIndicator": {
             "enabled": true,
@@ -557,7 +566,7 @@
             "alternativeFormatting": true
         },
         "Unindent": {
-            "enabled": false
+            "enabled": true
         },
         "UnsuppressEmbeds": {
             "enabled": true
@@ -583,7 +592,7 @@
         },
         "VcNarrator": {
             "enabled": true,
-            "volume": 0.25107837144141726,
+            "volume": 0.2535211267605634,
             "rate": 1,
             "sayOwnName": false,
             "latinOnly": false,
@@ -690,7 +699,9 @@
             "disableDisallowedDiscoveryFilters": true
         },
         "BetterSessions": {
-            "enabled": false
+            "enabled": false,
+            "backgroundCheck": false,
+            "checkInterval": 20
         },
         "ImplicitRelationships": {
             "enabled": true,
@@ -774,7 +785,8 @@
             "enabled": false
         },
         "CopyEmojiMarkdown": {
-            "enabled": false
+            "enabled": true,
+            "copyUnicode": true
         },
         "NoOnboardingDelay": {
             "enabled": true
@@ -823,6 +835,9 @@
         },
         "DynamicImageModalAPI": {
             "enabled": true
+        },
+        "FullUserInChatbox": {
+            "enabled": false
         }
     },
     "notifications": {
@@ -835,6 +850,6 @@
         "authenticated": false,
         "url": "https://api.vencord.dev/",
         "settingsSync": false,
-        "settingsSyncVersion": 1733227224185
+        "settingsSyncVersion": 1736574568799
     }
 }

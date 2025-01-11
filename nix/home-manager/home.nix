@@ -59,10 +59,15 @@
     #memento
     miru
     audacity
+
     kdenlive
     blender
     krita
     inkscape
+    gimp
+    pinta
+
+    exhibit
     feh
 
     jetbrains.idea-ultimate
