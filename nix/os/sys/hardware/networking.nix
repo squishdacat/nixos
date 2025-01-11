@@ -7,16 +7,15 @@
     ethernet.macAddress = "preserve";
 
     #wifi.powersave = true;
-
-    
-    # Provide different DNS servers
-    nameservers = [
-      # Cloudflare
-      "1.1.1.1"
-      # quad9
-      "9.9.9.10"
-    ];
   };
+
+  # Provide different DNS servers
+  networking.nameservers = [
+    # Cloudflare
+    "1.1.1.1"
+    # quad9
+    "9.9.9.10"
+  ];
 
   # Disable networkmanager from trying to connect to the network on boot,
   #  (improving boot speed)

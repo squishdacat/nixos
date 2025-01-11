@@ -40,8 +40,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
-    nixvim = {
-      url = "github:nix-community/nixvim";
+    #nixvim = {
+    #  url = "github:nix-community/nixvim";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #};
+    nvf = {
+      url = "github:notashelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     spicetify = {
@@ -53,7 +57,6 @@
       url = "github:nix-community/nix-vscode-extensions";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
   };
 
   outputs = { self, nixpkgs, ... } @inputs:
