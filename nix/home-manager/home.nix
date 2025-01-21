@@ -91,7 +91,10 @@
     scrcpy
     btop
     wireshark
+
+    brave
   ];
+
 
 
   programs.git = {
