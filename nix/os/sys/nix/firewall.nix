@@ -1,8 +1,7 @@
-{ lib, ... }:
-{
+{lib, ...}: {
   networking.firewall = {
     # True by default on nix
-    enable = false;
+    enable = true;
 
     # Disallow ipv4 pinging to this computer
     allowPing = lib.mkDefault false;

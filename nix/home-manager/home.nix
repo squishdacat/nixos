@@ -1,5 +1,8 @@
-{ config, pkgs, ... }:
 {
+  config,
+  pkgs,
+  ...
+}: {
   imports = [
     ./locale/default.nix
 
@@ -29,7 +32,6 @@
   ];
 
   #targets.genericLinux.enable = true;
-
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
@@ -91,11 +93,7 @@
     scrcpy
     btop
     wireshark
-
-    brave
   ];
-
-
 
   programs.git = {
     enable = true;
@@ -103,7 +101,6 @@
     userEmail = "me@coolgi.dev";
     userName = "coolGi";
   };
-
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.

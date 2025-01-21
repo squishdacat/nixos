@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   # This file is a quick and easy way to add stuff
   #  in the nix configs.
   #
@@ -18,6 +17,7 @@
 
   programs.localsend.enable = true;
 
+  /*
   networking.firewall = {
     allowedUDPPorts = [ 5353 ]; # For device discovery
     allowedUDPPortRanges = [{ from = 32768; to = 61000; }];   # For Streaming
@@ -30,7 +30,7 @@
 
   services.avahi = {
     enable = true;
-    nssmdns = true;
+    nssmdns4 = true;
     publish = {
       enable = true;
       addresses = true;
@@ -40,4 +40,5 @@
       workstation = true;
     };
   };
+  */
 }
