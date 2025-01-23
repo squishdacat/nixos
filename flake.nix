@@ -40,14 +40,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
-    #nixvim = {
-    #  url = "github:nix-community/nixvim";
-    #  inputs.nixpkgs.follows = "nixpkgs";
-    #};
-    nvf = {
-      url = "github:notashelf/nvf";
+    nixvim = {
+      url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    #nvf = {
+    #  url = "github:notashelf/nvf";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #};
     spicetify = {
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";

@@ -47,12 +47,12 @@
 
       # Change workspaces with mouse
       "$mod, mouse_down, workspace, e+1"
-	    "$mod, mouse_up, workspace, e-1"
+      "$mod, mouse_up, workspace, e-1"
 
-	    # Screenshot a region
+      # Screenshot a region
       ", PRINT, exec, ${pkgs.hyprshot}/bin/hyprshot -m region --clipboard-only"
       "SHIFT, PRINT, exec, ${pkgs.hyprshot}/bin/hyprshot -m region -o $HOME/Pictures/screenshots/"
-	    # Screenshot a window
+      # Screenshot a window
       "$mod, PRINT, exec, ${pkgs.hyprshot}/bin/hyprshot -m window --clipboard-only"
       "$mod SHIFT, PRINT, exec, ${pkgs.hyprshot}/bin/hyprshot -m window -o $HOME/Pictures/screenshots/"
 

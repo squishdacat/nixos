@@ -3,6 +3,7 @@
 {
   programs.nixvim.plugins.fidget = {
     enable = true;
+    settings = {
     logger = {
       level = "warn"; # “off”, “error”, “warn”, “info”, “debug”, “trace”
       floatPrecision = 0.01; # Limit the number of decimals displayed for floats
@@ -65,7 +66,7 @@
       filter = "info"; # “off”, “error”, “warn”, “info”, “debug”, “trace”
       historySize = 128; # Number of removed messages to retain in history
       overrideVimNotify = true;
-      redirect = ''
+      /*redirect = ''
         function(msg, level, opts)
           if opts and opts.on_open then
             return require("fidget.integration.nvim-notify").delegate(msg, level, opts)
@@ -74,7 +75,7 @@
       '';
       configs = {
         default = "require('fidget.notification').default_config";
-      };
+      };*/
 
       window = {
         normalHl = "Comment";
@@ -96,6 +97,7 @@
           # Highlight group used for group separator
           "Comment";
       };
+    };
     };
   };
 }
