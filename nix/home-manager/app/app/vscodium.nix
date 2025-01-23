@@ -41,6 +41,9 @@
       rust-lang.rust-analyzer
       vadimcn.vscode-lldb
       tamasfe.even-better-toml
+      tauri-apps.tauri-vscode
+      # Web
+      ecmel.vscode-html-css
     ]) ++ (with pkgs.vscode-marketplace; [
       # Nothing atm
     ]);
