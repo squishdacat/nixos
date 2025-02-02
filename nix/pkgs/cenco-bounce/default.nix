@@ -34,10 +34,9 @@ stdenv.mkDerivation {
       progress = 1;
       frame = null;
       fun refresh_callback (){
-        if(Math.Int(progress)<=nframes){
-          frame = frames_buffer[Math.Int(progress)];
-          progress = progress + ((nframes/nseconds)/50);
-        }
+        frame = frames_buffer[Math.Int(progress) % nframes];
+        progress = progress + ((nframes/nseconds)/50);
+
         video.SetImage(frame);
       }
 
