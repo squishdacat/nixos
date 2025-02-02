@@ -7,7 +7,6 @@
 
     ./../../os/locale/lang
 
-    ./../../pkgs
     ./../../os/apps/utils/general.nix
     ./../../os/apps/speech.nix
     ./../../os/apps/tailscale.nix

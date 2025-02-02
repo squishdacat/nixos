@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, outputs, ... }:
 {
   boot.plymouth = let
     #theme = "circle";
@@ -14,5 +14,10 @@
     #    selected_themes = [ theme ];
     #  })
     #];
+
+    theme = "cenco-bounce";
+    themePackages = [(
+      outputs.packages.${pkgs.system}.plymouth-cenco-bounce-theme
+    )];
   };
 }

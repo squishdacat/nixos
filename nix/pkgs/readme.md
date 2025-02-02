@@ -1,1 +1,1 @@
-# coolGi's pkg repo
+# coolGi's Package Repository

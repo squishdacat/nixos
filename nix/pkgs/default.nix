@@ -1,7 +1,7 @@
-{ clib, ... }:
 {
-  imports = clib.aimport {
-    path = ./.;
-    exclude = [ ./default.nix ];
-  };
+  pkgs ? import <nixpkgs> { },
+  inputs, ...
+}:
+{
+  plymouth-cenco-bounce-theme = pkgs.callPackage ./cenco-bounce { };
 }
