@@ -336,7 +336,7 @@
         },
         "NoBlockedMessages": {
             "enabled": false,
-            "ignoreBlockedMessages": false
+            "ignoreMessages": false
         },
         "NoDevtoolsWarning": {
             "enabled": true
@@ -427,7 +427,7 @@
             "enabled": true,
             "list": true,
             "badges": true,
-            "messages": true,
+            "messages": false,
             "colorMobileIndicator": true
         },
         "PreviewMessage": {
@@ -437,7 +437,8 @@
             "enabled": false
         },
         "QuickReply": {
-            "enabled": false
+            "enabled": true,
+            "shouldMention": 2
         },
         "ReactErrorDecoder": {
             "enabled": true
@@ -609,7 +610,9 @@
             "enabled": true
         },
         "ViewIcons": {
-            "enabled": true
+            "enabled": true,
+            "format": "webp",
+            "imgSize": "1024"
         },
         "ViewRaw": {
             "enabled": true,
@@ -826,7 +829,7 @@
             "enabled": false
         },
         "UserMessagesPronouns": {
-            "enabled": true,
+            "enabled": false,
             "pronounsFormat": "LOWERCASE",
             "pronounSource": 0,
             "showSelf": true,
@@ -838,6 +841,13 @@
         },
         "FullUserInChatbox": {
             "enabled": false
+        },
+        "IrcColors": {
+            "enabled": true,
+            "memberListColors": true,
+            "lightness": 70,
+            "applyColorOnlyInDms": false,
+            "applyColorOnlyToUsersWithoutColor": false
         }
     },
     "notifications": {
@@ -850,6 +860,6 @@
         "authenticated": false,
         "url": "https://api.vencord.dev/",
         "settingsSync": false,
-        "settingsSyncVersion": 1736574568799
+        "settingsSyncVersion": 1738491609593
     }
 }
