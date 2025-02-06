@@ -603,8 +603,7 @@
             "muteMessage": "{{USER}} Muted",
             "unmuteMessage": "{{USER}} unmuted",
             "deafenMessage": "{{USER}} deafened",
-            "undeafenMessage": "{{USER}} undeafened",
-            "voice": "English (America)+Annie espeak-ng"
+            "undeafenMessage": "{{USER}} undeafened"
         },
         "VencordToolbox": {
             "enabled": true
@@ -860,6 +859,6 @@
         "authenticated": false,
         "url": "https://api.vencord.dev/",
         "settingsSync": false,
-        "settingsSyncVersion": 1738491609593
+        "settingsSyncVersion": 1738826493739
     }
 }

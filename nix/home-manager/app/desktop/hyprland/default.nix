@@ -141,6 +141,11 @@
       #hide_cursor_on_touch = true; # for touchscreen
     };
 
+    ecosystem = {
+      no_update_news = true;
+      no_donation_nag = true;
+    };
+
     general = {
       gaps_in = 5;
       gaps_out = 10;
