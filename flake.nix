@@ -8,25 +8,11 @@
 
     # ========== NIXOS ========== #
     #hardware.url = "github:nixos/nixos-hardware";
-
-    cosmic = {
-      url = "github:lilyinstarlight/nixos-cosmic";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     nixpkgs-xr.url = "github:nix-community/nixpkgs-xr";
 
     # ========== SERVER ========== #
-    simple-nixos-mailserver = {
-      url = "gitlab:simple-nixos-mailserver/nixos-mailserver";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    conduwuit = {
-      url = "github:girlbossceo/conduwuit";
-      #inputs.nixpkgs.follows = "nixpkgs";
-    };
-
+    simple-nixos-mailserver.url = "gitlab:simple-nixos-mailserver/nixos-mailserver";
+    conduwuit.url = "github:girlbossceo/conduwuit";
     mc-honeypot.url = "github:Duckulus/mc-honeypot";
 
     # ========== HOME ========== #
@@ -40,24 +26,22 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
-    nixvim = {
-      url = "github:nix-community/nixvim";
+    cosmic = {
+      url = "github:lilyinstarlight/nixos-cosmic";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    #nvf = {
-    #  url = "github:notashelf/nvf";
-    #  inputs.nixpkgs.follows = "nixpkgs";
-    #};
-    spicetify = {
+
+
+    moonlight.url = "github:moonlight-mod/moonlight";
+    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
+    nixvim.url = "github:nix-community/nixvim";
+    #nvf.url = "github:notashelf/nvf";
+
+    spicetify = { # Spotify
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    moonlight.url = "github:moonlight-mod/moonlight";
-    nix-vscode-extensions = {
-      url = "github:nix-community/nix-vscode-extensions";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = { self, nixpkgs, ... } @inputs:
