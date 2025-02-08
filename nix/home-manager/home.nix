@@ -13,11 +13,13 @@
     ./app/shell/zsh
 
     ./app/desktop/hyprland
+    #./app/desktop/cosmic.nix
     ./app/bar/waybar
-    #./app/terminal/emulator/kitty.nix
-    ./app/terminal/emulator/foot.nix
     ./app/launcher/wofi.nix
     #./app/launcher/rofi.nix
+    
+    #./app/terminal/emulator/kitty.nix
+    ./app/terminal/emulator/foot.nix
     ./app/cmd/macchina
     #./app/cmd/ranger.nix
     ./app/cmd/yazi.nix

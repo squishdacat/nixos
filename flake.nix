@@ -9,10 +9,10 @@
     # ========== NIXOS ========== #
     #hardware.url = "github:nixos/nixos-hardware";
 
-    #cosmic = {
-    #  url = "github:lilyinstarlight/nixos-cosmic";
-    #  inputs.nixpkgs.follows = "nixpkgs";
-    #};
+    cosmic = {
+      url = "github:lilyinstarlight/nixos-cosmic";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     nixpkgs-xr.url = "github:nix-community/nixpkgs-xr";
 
