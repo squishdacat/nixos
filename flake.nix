@@ -53,6 +53,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    moonlight.url = "github:moonlight-mod/moonlight";
     nix-vscode-extensions = {
       url = "github:nix-community/nix-vscode-extensions";
       inputs.nixpkgs.follows = "nixpkgs";

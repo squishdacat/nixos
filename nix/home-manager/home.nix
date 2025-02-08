@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  inputs,
   ...
 }: {
   imports = [
@@ -93,7 +94,10 @@
     scrcpy
     btop
     wireshark
+
+    inputs.moonlight.packages.${pkgs.system}.discord-canary
   ];
+
 
   programs.git = {
     enable = true;
