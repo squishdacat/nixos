@@ -16,4 +16,9 @@ in
     kb_variant = "${variant}";
     kb_options = "${options}";
   };
+  programs.niri.settings.input.keyboard.xkb = {
+    layout = "${layout}";
+    variant = "${variant}";
+    options = "${options}";
+  };
 }

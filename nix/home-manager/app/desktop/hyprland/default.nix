@@ -1,13 +1,10 @@
 { config, pkgs, ... }:
 {
   imports = [
-    ./../notifications/swaync.nix
     ./../lock/hyprlock
 
     ./windowrules.nix
     ./monitors.nix
-    ./../wallpaper/hyprpaper.nix
-    #./wallpaper/wpaperd.nix
   ];
 
   home.packages = [ pkgs.hyprland ];

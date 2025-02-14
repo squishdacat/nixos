@@ -12,12 +12,19 @@
     ./app/shell/starship
     ./app/shell/zsh
 
-    ./app/desktop/hyprland
-    #./app/desktop/cosmic.nix
+    #./app/desktop/hyprland
+    ./app/desktop/niri
+    #./app/desktop/cosmic
+
+    ./app/desktop/notifications/swaync.nix
+    ./app/desktop/wallpaper/hyprpaper.nix
+    #./app/desktop/wallpaper/wpaperd.nix
+    ./app/desktop/xwayland-satellite.nix
+    
     ./app/bar/waybar
     ./app/launcher/wofi.nix
     #./app/launcher/rofi.nix
-    
+
     #./app/terminal/emulator/kitty.nix
     ./app/terminal/emulator/foot.nix
     ./app/cmd/macchina

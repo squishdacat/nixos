@@ -36,6 +36,7 @@
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     nixvim.url = "github:nix-community/nixvim";
     #nvf.url = "github:notashelf/nvf";
+    niri.url = "github:sodiboo/niri-flake";
 
     spicetify = { # Spotify
       url = "github:Gerg-L/spicetify-nix";
