@@ -13,7 +13,7 @@
     #./apps/coturn.nix
     ./apps/vaultwarden.nix
     ./apps/fail2ban.nix
-    ./apps/mc-honeypot.nix
+    #./apps/mc-honeypot.nix
   ];
 
 
