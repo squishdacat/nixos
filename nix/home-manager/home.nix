@@ -60,8 +60,15 @@
     #lyx
     speedcrunch
 
-    vesktop
+    #vesktop
+    (discord-canary.override (old: {
+      withMoonlight=true;
+      withOpenASAR=true;
+    }))
     element-desktop
+
+    pw-viz
+    qpwgraph
 
     prismlauncher
     osu-lazer-bin
@@ -103,8 +110,6 @@
     scrcpy
     btop
     wireshark
-
-    inputs.moonlight.packages.${pkgs.system}.discord-canary
   ];
 
 
