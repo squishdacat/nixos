@@ -1,9 +1,5 @@
 { config, ... }:
 {
-  networking.firewall.allowedTCPPorts = [
-    config.services.vaultwarden.config.ROCKET_PORT
-  ];
-
   services.vaultwarden = {
     enable = true;
     backupDir = "/var/backup/vaultwarden";
@@ -41,7 +37,7 @@
     enableACME = true;
 
     locations."/" = {
-      proxyPass = "http://127.0.0.1:${toString config.services.vaultwarden.config.ROCKET_PORT}";
+      proxyPass = "http://${toString config.services.vaultwarden.config.ROCKET_ADDRESS}:${toString config.services.vaultwarden.config.ROCKET_PORT}";
       extraConfig = ''
         proxy_set_header X-Real-IP $remote_addr;
       '';

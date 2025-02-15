@@ -1,7 +1,7 @@
 { inputs, ... }:
 {
   # HTTPS happens on port 443
-  networking.firewall.allowedTCPPorts = [ 443 ];
+  networking.firewall.allowedTCPPorts = [ 80 443 ];
   #networking.enableIPv6 = true;
 
   # Rotate the logs

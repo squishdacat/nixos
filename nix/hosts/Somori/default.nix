@@ -2,7 +2,7 @@
 {
   imports = [
     ./../defaults/server.nix
-    ./apps/networking.nix
+    ./networking.nix
 
     ./../../os/startup/loader/grub.nix
 
@@ -14,6 +14,7 @@
     ./apps/vaultwarden.nix
     ./apps/fail2ban.nix
     #./apps/mc-honeypot.nix
+    ./apps/anki-sync.nix
   ];
 
 

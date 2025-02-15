@@ -1,7 +1,5 @@
 { config, ... }:
 {
-  networking.firewall.allowedTCPPorts = [ 5232 ];
-
   services.radicale = {
     enable = true;
 
