@@ -9,6 +9,10 @@
         username = "coolGi";
         passwordFile = "/etc/anki/passwords/coolGi";
       }
+      {
+        username = "octy";
+        passwordFile = "/etc/anki/passwords/octy";
+      }
     ];
   };
 
