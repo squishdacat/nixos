@@ -55,6 +55,7 @@
 
     binds = with config.lib.niri.actions; {
       "Mod+Shift+Space".action = show-hotkey-overlay;
+      "Mod+Shift+Delete".action = quit;
 
       "Mod+Q".action = close-window;
       "Print".action = screenshot;
