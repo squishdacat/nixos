@@ -6,6 +6,7 @@
 }: {
   imports = [
     ./locale/default.nix
+    ./app/tts/piper.nix
 
     ./icons
 
@@ -111,6 +112,11 @@
     scrcpy
     btop
     wireshark
+
+    #piper-tts
+    #pied
+    #sox
+    #alsa-utils
   ];
 
 
