@@ -1,23 +1,25 @@
 { pkgs, outputs, ... }:
 let
+  voice_wanted = "en/en_US/libritts_r/medium/en_US-libritts_r-medium.onnx";
+
   piper = pkgs.fetchgit {
     url = "https://huggingface.co/rhasspy/piper-voices";
     rev = "293cad0539066f86e6bce3b9780c472cc9157489";
     sha256 = "sha256-1Uql+Ewa7SMUWkLLOweY2Ehlc2Mz18PnR5btr2REck8=";
     fetchLFS = true;
-    sparseCheckout = [
-      "en/en_US/libritts_r/medium"
-    ];
+    sparseCheckout = ( builtins.match
+      "(.+)/.*" # Get the file's directory
+      voice_wanted
+    );
   };
 
-  libritts_r = "${piper}/en/en_US/libritts_r/medium/en_US-libritts_r-medium.onnx";
+  model = "${piper}/${voice_wanted}";
 in
 {
   home.file = {
     ".config/speech-dispatcher/modules/piper.conf".text = ''
-      ### GenericExecuteSynth "echo '$DATA' | ${pkgs.piper-tts}/bin/piper --model ${libritts_r} -s 0 --output_raw | ${pkgs.sox}/bin/sox -r 22050 -c 1 -b 16 -e signed-integer -t raw - -t wav - tempo $RATE pitch $PITCH norm | ${pkgs.alsa-utils}/bin/aplay -t raw -c 1 -r 22050 -f S16_LE"
       GenericExecuteSynth "echo '$DATA'\
-        | ${pkgs.piper-tts}/bin/piper --model ${libritts_r} -s 0 --output_raw\
+        | ${pkgs.piper-tts}/bin/piper --model ${model} -s 0 --output_raw\
         | ${pkgs.sox}/bin/sox -r 22050 -c 1 -b 16 -e signed-integer -t raw - -t wav - tempo $RATE pitch $PITCH norm\
         | ${pkgs.alsa-utils}/bin/aplay -t raw -c 1 -r 22050 -f S16_LE"
 
