@@ -27,6 +27,9 @@
           "contact@coolgi.dev"
         ];
       };
+      "octy@coolgi.dev" = {
+        hashedPasswordFile = "/etc/mail/passwords/octy@coolgi.dev";
+      };
 
       # Used to notify me about security stuff
       #"security@coolgi.dev" = {
