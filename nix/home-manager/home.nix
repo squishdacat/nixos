@@ -82,7 +82,7 @@
     miru
     audacity
 
-    kdenlive
+    kdePackages.kdenlive
     blender
     krita
     inkscape
