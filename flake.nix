@@ -7,7 +7,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     # ========== NIXOS ========== #
-    #hardware.url = "github:nixos/nixos-hardware";
+    hardware.url = "github:nixos/nixos-hardware";
     nixpkgs-xr.url = "github:nix-community/nixpkgs-xr";
 
     # ========== SERVER ========== #
