@@ -15,7 +15,7 @@
     base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
 
     cursor = {
-      package = pkgs.kdePackages.breeze-gtk;
+      package = pkgs.kdePackages.breeze;
       name = "breeze_cursors";
     };
 
