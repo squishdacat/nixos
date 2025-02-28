@@ -45,11 +45,16 @@
   programs.niri.enable = true;
   programs.niri.settings = {
     prefer-no-csd = true;
+    hotkey-overlay.skip-at-startup = true;
 
     input = {
+      warp-mouse-to-focus = true;
       focus-follows-mouse.enable = true;
       tablet = {
         map-to-output = "DP-1";
+      };
+      touchpad = {
+        natural-scroll = false;
       };
     };
 
@@ -95,6 +100,8 @@
       "Mod+Shift+7".action = move-column-to-workspace 7;
       "Mod+Shift+8".action = move-column-to-workspace 8;
       "Mod+Shift+9".action = move-column-to-workspace 9;
+
+      "Mod+Space".action.spawn = [ "${pkgs.fcitx5}/bin/fcitx5-remote" "-t" ];
     };
   };
 }

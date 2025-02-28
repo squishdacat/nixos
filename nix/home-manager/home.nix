@@ -58,7 +58,8 @@
     tor-browser
     qbittorrent
 
-    libreoffice-fresh
+    #libreoffice-fresh
+    libreoffice-still
     #lyx
     speedcrunch
 
@@ -81,7 +82,7 @@
     miru
     audacity
 
-    kdenlive
+    kdePackages.kdenlive
     blender
     krita
     inkscape

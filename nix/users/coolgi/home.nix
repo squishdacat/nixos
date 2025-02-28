@@ -7,6 +7,5 @@
     ./../../home-manager/flakes/nixvim
     #./../../home-manager/flakes/nvf
     #./../../home-manager/flakes/ags
-    ./../../home-manager/flakes/spicetify
   ];
 }

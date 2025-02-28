@@ -7,7 +7,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     # ========== NIXOS ========== #
-    #hardware.url = "github:nixos/nixos-hardware";
+    hardware.url = "github:nixos/nixos-hardware";
     nixpkgs-xr.url = "github:nix-community/nixpkgs-xr";
 
     # ========== SERVER ========== #
@@ -35,11 +35,6 @@
     nixvim.url = "github:nix-community/nixvim";
     #nvf.url = "github:notashelf/nvf";
     niri.url = "github:sodiboo/niri-flake";
-
-    spicetify = { # Spotify
-      url = "github:Gerg-L/spicetify-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = { self, nixpkgs, ... } @inputs:
