@@ -67,6 +67,7 @@
       };
 
       # Default rout for curl connections to coolgi.dev
+      /*
       "_uwu" = {
         serverName = "coolgi.dev";
         listen = [
@@ -99,6 +100,7 @@
           };
         };
       };
+      */
     };
   };
 }

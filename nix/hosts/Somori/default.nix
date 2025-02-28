@@ -12,7 +12,7 @@
     ./apps/conduwuit.nix
     #./apps/coturn.nix
     ./apps/vaultwarden.nix
-    ./apps/fail2ban.nix
+    #./apps/fail2ban.nix
     #./apps/mc-honeypot.nix
     ./apps/anki-sync.nix
   ];
