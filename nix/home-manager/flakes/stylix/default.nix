@@ -8,15 +8,15 @@
     enable = true;
     polarity = "dark";
 
-    image = ./wallpaper.jpg;
+    image = ./head_dark.png;
     
     #base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-night-terminal-dark.yaml";
     #base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyodark.yaml";
     base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
 
     cursor = {
-      package = pkgs.kdePackages.breeze;
-      name = "breeze_cursors";
+      package = pkgs.libsForQt5.breeze-gtk;
+      name = "Breeze-gtk";
     };
 
     opacity = {

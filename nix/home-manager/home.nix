@@ -53,7 +53,7 @@
     nemo-with-extensions
     pavucontrol
 
-    thunderbird
+    thunderbird-latest
     bitwarden-desktop
     tor-browser
     qbittorrent
@@ -82,6 +82,8 @@
     miru
     audacity
 
+    gnome-nibbles
+
     kdePackages.kdenlive
     blender
     krita
@@ -91,13 +93,11 @@
 
     exhibit
     feh
+    kdePackages.gwenview
 
     #jetbrains.idea-ultimate
     #jetbrains.rust-rover
     #obsidian
-
-    unimatrix
-    neo
 
     wl-clipboard
     font-manager
