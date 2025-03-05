@@ -37,6 +37,7 @@
       "coolgi.dev" = {
         forceSSL = true;
         enableACME = true;
+        #useACMEHost = "coolgi.dev";
 
         default = true;
 
@@ -56,6 +57,7 @@
             alias = "${inputs.self.outPath}/well-known/";
           };
 
+          /*
           "/uwu/" = {
             #extraConfig = ''
             #  rewrite ^ ${inputs.self.outPath}/ascii/uwu.ascii break;
@@ -63,6 +65,7 @@
             alias = "${inputs.self.outPath}/ascii/";
             index = "uwu.ascii";
           };
+          */
         };
       };
 

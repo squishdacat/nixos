@@ -6,9 +6,9 @@
   # Configuration for ACME
   security.acme = {
     acceptTerms = true;
-    defaults.email = "me@coolgi.dev";
+    defaults = {
+      email = "me@coolgi.dev";
 
-    certs."coolgi.dev" = {
       dnsProvider = "porkbun";
       webroot = null;
 
