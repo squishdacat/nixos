@@ -26,7 +26,7 @@
       extensions = (with pkgs.open-vsx; [
         mkhl.direnv # Auto-import directory nix stuff
         usernamehw.errorlens # Easilly see error next to file
-        streetsidesoftware.code-spell-checker # Spell check
+        streetsidesoftware.code-spell-checker-australian-english # Spell check
         gruntfuggly.todo-tree # Add tab of all the TODOs
         pkief.material-icon-theme # Material Icons
         #formulahendry.code-runner # Add run button to file
