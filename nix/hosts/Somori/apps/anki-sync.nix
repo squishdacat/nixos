@@ -16,15 +16,16 @@
     ];
   };
 
-  services.nginx.virtualHosts."anki.coolgi.dev" = {
-    forceSSL = true;
-    enableACME = true;
-
-    locations."/" = {
-      proxyPass = "http://[::1]:${toString config.services.anki-sync-server.port}";
-      extraConfig = ''
-        proxy_set_header X-Real-IP $remote_addr;
-      '';
+  services.nginx.virtualHosts."coolgi.dev" = {
+    locations = let
+      url = "http://[::1]:${toString config.services.anki-sync-server.port}";
+    in {
+      "/sync/" = {
+        proxyPass = url;
+      };
+      "/msync/" = {
+        proxyPass = url;
+      };
     };
   };
 }
