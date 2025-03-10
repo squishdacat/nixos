@@ -26,6 +26,8 @@
 
     targets = {
       kitty.variant256Colors = true;
+      # TODO: Make this declarative
+      vscode.profileNames = [ "default" ];
     };
   };
 }
