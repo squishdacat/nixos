@@ -93,7 +93,7 @@
 
     exhibit
     feh
-    kdePackages.gwenview
+    vipsdisp
 
     #jetbrains.idea-ultimate
     #jetbrains.rust-rover
