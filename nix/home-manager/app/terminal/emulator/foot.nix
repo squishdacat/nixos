@@ -1,8 +1,17 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 {
   programs.foot = {
     enable = true;
     server.enable = true;
+
+    settings = {
+      key-bindings = {
+        spawn-terminal = "none";
+
+        # Copy the command output to the terminal
+        pipe-command-output = "[${pkgs.wl-clipboard}/bin/wl-copy --type text/plain] Control+Alt+c";
+      };
+    };
   };
 
   wayland.windowManager.hyprland.settings.bind = [
