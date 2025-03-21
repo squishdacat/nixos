@@ -95,7 +95,7 @@
     feh
     vipsdisp
 
-    #jetbrains.idea-ultimate
+    jetbrains.idea-ultimate
     #jetbrains.rust-rover
     #obsidian
 
