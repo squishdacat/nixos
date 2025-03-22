@@ -38,7 +38,7 @@
         #                   returns a successful response first)
         # 4 - Ipv6thenIpv4 (Query for AAAA record, if that fails then query the A record)
         # 5 - Ipv4thenIpv6 (Query for A record, if that fails then query the AAAA record)
-        ip_lookup_strategy = 4;
+        ip_lookup_strategy = 5;
 
         # Allow the public room dir to be publically federated
         allow_public_room_directory_over_federation = true;
@@ -56,9 +56,15 @@
           "github.com"
           "gitlab.com"
           "codeberg.org"
+          # Git Pages
+          "github.io"
+          "gitlab.io"
+          "codeberg.page"
           # General
           "wikipedia.org"
           "xkcd.com"
+          "bandcamp.com"
+          "steampowered.com"
           # Streaming
           "youtube.com"
           "youtu.be"
