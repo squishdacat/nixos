@@ -58,8 +58,8 @@
     tor-browser
     qbittorrent
 
-    #libreoffice-fresh
-    libreoffice-still
+    libreoffice-fresh
+    #libreoffice-still
     #lyx
     speedcrunch
 
