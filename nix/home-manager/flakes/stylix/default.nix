@@ -17,6 +17,8 @@
     cursor = {
       package = pkgs.libsForQt5.breeze-gtk;
       name = "breeze_cursors";
+
+      size = 32;
     };
 
     opacity = {
@@ -26,6 +28,8 @@
 
     targets = {
       kitty.variant256Colors = true;
+      # TODO: Make this declarative
+      vscode.profileNames = [ "default" ];
     };
   };
 }

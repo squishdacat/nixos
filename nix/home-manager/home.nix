@@ -58,8 +58,8 @@
     tor-browser
     qbittorrent
 
-    #libreoffice-fresh
-    libreoffice-still
+    libreoffice-fresh
+    #libreoffice-still
     #lyx
     speedcrunch
 
@@ -93,7 +93,7 @@
 
     exhibit
     feh
-    kdePackages.gwenview
+    vipsdisp
 
     #jetbrains.idea-ultimate
     #jetbrains.rust-rover
