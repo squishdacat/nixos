@@ -26,12 +26,15 @@
       extensions = (with pkgs.open-vsx; [
         mkhl.direnv # Auto-import directory nix stuff
         usernamehw.errorlens # Easilly see error next to file
-        streetsidesoftware.code-spell-checker-australian-english # Spell check
         gruntfuggly.todo-tree # Add tab of all the TODOs
         pkief.material-icon-theme # Material Icons
         #formulahendry.code-runner # Add run button to file
         anweber.statusbar-commands # Custom statusbar commands
         #asvetliakov.vscode-neovim # NeoVim (need I say more)
+
+        # Spell Checker
+        streetsidesoftware.code-spell-checker
+        streetsidesoftware.code-spell-checker-australian-english
 
         ##### Languages #####
         # Nix
