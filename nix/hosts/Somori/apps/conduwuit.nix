@@ -73,6 +73,11 @@
           "x.com"
           "xcancel.com"
         ];
+
+        auto_deactivate_banned_room_attempts = true;
+
+        # Logging/Debugging
+        #log = "debug";
       };
     };
   };
@@ -99,6 +104,19 @@
 
 
           access_log /var/log/nginx/access_matrix.log;
+        '';
+      };
+      # Small little joke :3
+      "/_matrix/federation/v1/version" = {
+        priority = 999; # Default is 1000, so this is lower
+        return = "200 '" + (builtins.toJSON {
+          server = {
+            name = "UwU";
+            version = "0.69.420 (furry edition!)";
+          };
+        }) + "'";
+        extraConfig = ''
+          add_header Content-Type application/json;
         '';
       };
     };
