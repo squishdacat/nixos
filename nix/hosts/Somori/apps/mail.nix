@@ -31,6 +31,12 @@
         hashedPasswordFile = "/etc/mail/passwords/octy@coolgi.dev";
       };
 
+      # Relay account for a friend
+      "razor@coolgi.dev" = {
+        hashedPasswordFile = "/etc/mail/passwords/razor@coolgi.dev";
+        sendOnly = true;
+      };
+
       # Used to notify me about security stuff
       #"security@coolgi.dev" = {
       #  sendOnly = true;
