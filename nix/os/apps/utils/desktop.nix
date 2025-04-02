@@ -1,5 +1,9 @@
 { ... }:
 {
+  imports = [
+    ./v4l.nix
+  ];
+
   # The set of english words (at $WORDLIST env var)
   #environment.wordList.enable = true;
   
