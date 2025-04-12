@@ -37,6 +37,7 @@
 
     ./app/app/vscodium.nix
     ./app/app/anki.nix
+    ./app/app/mpv.nix
 
     ./app/browser/firefox.nix
     #./app/browser/librewolf.nix
@@ -77,7 +78,6 @@
     osu-lazer-bin
 
     obs-studio
-    mpv
     #memento
     miru
     audacity
