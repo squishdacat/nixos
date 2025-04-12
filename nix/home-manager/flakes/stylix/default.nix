@@ -30,6 +30,10 @@
       kitty.variant256Colors = true;
       # TODO: Make this declarative
       vscode.profileNames = [ "default" ];
+
+      # Disable some targets that I don't want to be themed
+      alacritty.enable = false;
+      firefox.enable = false;
     };
   };
 }
