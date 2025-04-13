@@ -65,10 +65,10 @@
     speedcrunch
 
     #vesktop
-    (discord-canary.override (old: {
-      withMoonlight=true;
-      withOpenASAR=true;
-    }))
+    #(discord-canary.override (old: {
+    #  withMoonlight=true;
+    #  withOpenASAR=true;
+    #}))
     element-desktop
 
     pw-viz

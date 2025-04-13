@@ -35,6 +35,8 @@
     nixvim.url = "github:nix-community/nixvim";
     #nvf.url = "github:notashelf/nvf";
     niri.url = "github:sodiboo/niri-flake";
+    #discord-moonlight.url = "github:moonlight-mod/moonlight";
+    discord-moonlight.url = "github:ilyist/nixpkgs/bda4e8dcdbb55bb201fdeab87264b3aa6229f339";
   };
 
   outputs = { self, nixpkgs, ... } @inputs:
