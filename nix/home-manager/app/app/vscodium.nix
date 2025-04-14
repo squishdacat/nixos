@@ -11,10 +11,6 @@
       cargo
       pkg-config openssl
       zlib
-
-      # Needed for Rust Analyzer
-      rustup
-      #rust-analyzer
     ]);
 
     mutableExtensionsDir = false; # Dont allow extentions via VSC
@@ -45,7 +41,7 @@
         rust-lang.rust-analyzer
         vadimcn.vscode-lldb
         tamasfe.even-better-toml
-        tauri-apps.tauri-vscode
+        #tauri-apps.tauri-vscode
         # Web
         ecmel.vscode-html-css
         # Flutter & Dart
@@ -68,6 +64,9 @@
         # Misc extention settings
         "direnv.restart.automatic" = true;
         "workbench.iconTheme" = "material-icon-theme";
+        "files.exclude" = {
+          "**/.direnv" = true;
+        };
 
         # Disable Error Lens For Sources
         "errorLens.excludeBySource" = [
@@ -82,7 +81,7 @@
         };
 
         # LLDB
-        "lldb.cargo" = "${pkgs.cargo}/bin/cargo";
+        #"lldb.cargo" = "${pkgs.cargo}/bin/cargo";
         "lldb.launch.expressions" = "native";
 
         # Extra status bar buttons
@@ -115,11 +114,11 @@
           "editor.formatOnSave" = true;
         };
         # Rust Analyzer
-        "rust-analyzer.server.path" = "${pkgs.rust-analyzer}/bin/rust-analyzer";
-        "rust-analyzer.check.command" = "${pkgs.clippy}/bin/cargo-clippy";
-        "rust-analyzer.server.extraEnv" = {
-          "CARGO" = "${pkgs.cargo}/bin/cargo";
-        };
+        #"rust-analyzer.server.path" = "${pkgs.rust-analyzer}/bin/rust-analyzer";
+        #"rust-analyzer.check.command" = "${pkgs.clippy}/bin/cargo-clippy";
+        #"rust-analyzer.server.extraEnv" = {
+        #  "CARGO" = "${pkgs.cargo}/bin/cargo";
+        #};
 
         # Dart related stuff
         "[dart]" = {
