@@ -4,7 +4,7 @@
     ./../defaults/server.nix
     #./apps/networking.nix
 
-    ./../../os/boot/loader/systemd.nix
+    ./../../os/startup/loader/systemd.nix
     
     ./apps/networking.nix
   ];
