@@ -1,9 +1,5 @@
 { inputs, pkgs, ... }:
 let
-  moonlight-pkgs = import inputs.discord-moonlight {
-    system = "x86_64-linux";
-    config.allowUnfree = true;
-  };
 in
 {
   # TODO: Fix up their flake to make this work
@@ -18,7 +14,7 @@ in
     };
   };*/
 
-  home.packages = with moonlight-pkgs; [
+  home.packages = with pkgs; [
     #inputs.discord-moonlight.packages.x86_64-linux.discord-canary
 
     (discord-canary.override (old: {
