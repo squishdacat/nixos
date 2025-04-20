@@ -31,7 +31,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
+    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions/f0555ec37883d2bddca658cad7bfe995bc195217";
     nixvim.url = "github:nix-community/nixvim";
     #nvf.url = "github:notashelf/nvf";
     niri.url = "github:sodiboo/niri-flake";

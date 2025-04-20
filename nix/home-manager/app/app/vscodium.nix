@@ -48,7 +48,8 @@
         dart-code.dart-code
         dart-code.flutter
       ]) ++ (with pkgs.vscode-marketplace; [
-        # Nothing atm
+        # Dioxus
+        dioxuslabs.dioxus
       ]);
 
       userSettings = {
@@ -104,6 +105,7 @@
 
         # Rust related stuff
         "code-runner.executorMap"."rust" = "${pkgs.cargo}/bin/cargo run # $fileName";
+        "rust-analyzer.cargo.features" = "all";
         "files.readonlyInclude" = {
           "**/.cargo/registry/src/**/*.rs" = true;
           "**/lib/rustlib/src/rust/library/**/*.rs" = true;
