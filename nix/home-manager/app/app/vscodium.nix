@@ -105,7 +105,7 @@
 
         # Rust related stuff
         "code-runner.executorMap"."rust" = "${pkgs.cargo}/bin/cargo run # $fileName";
-        "rust-analyzer.cargo.features" = "all";
+        #"rust-analyzer.cargo.features" = ["default"];
         "files.readonlyInclude" = {
           "**/.cargo/registry/src/**/*.rs" = true;
           "**/lib/rustlib/src/rust/library/**/*.rs" = true;

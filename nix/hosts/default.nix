@@ -20,12 +20,16 @@
       specialArgs = extraSpecialArgs;
       modules = [
         ./${name} # Main System Conf
-        ./${name}/hardware.nix # Hardware Conf (partitions & stuff)
 
         ./defaults # Shared Sys Conf
 
         { networking.hostName = name; } # System Name
-      ];
+      ] ++ (
+        # If it's not an ISO
+        if builtins.substring 0 1 name != "I" then [
+          ./${name}/hardware.nix # Hardware Conf (partitions & stuff)
+        ] else []
+      );
     };
 in
   builtins.listToAttrs (builtins.map (name: {

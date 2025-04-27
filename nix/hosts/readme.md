@@ -12,6 +12,7 @@ what
 | Desktop | D |
 | Laptop  | L |
 | Server  | S |
+| ISO/USB | I |
 
 Afterwards, comes with a random name. This name should be unique (in
 the fact that even without the prefix, it is recognisable) and should
