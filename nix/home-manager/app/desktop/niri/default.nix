@@ -1,7 +1,13 @@
-{ inputs, config, pkgs, ... }:
+{ inputs, config, pkgs, lib, ... }:
 {
   nixpkgs.overlays = [ inputs.niri.overlays.niri ];
   programs.niri.package = inputs.niri.packages.${pkgs.system}.niri-unstable;
+  #programs.zsh.initContent = lib.mkOrder 1001 (
+  #  builtins.readFile (
+  #    pkgs.runCommand "niri-zsh" {} 
+  #    "${config.programs.niri.package}/bin/niri completions zsh > $out"
+  #  )
+  #);
 
   imports = [
     inputs.niri.homeModules.niri
@@ -48,8 +54,15 @@
     hotkey-overlay.skip-at-startup = true;
 
     input = {
+      # TODO: Add lock
+      # See https://github.com/YaLTeR/niri/wiki/Configuration:-Switch-Events
+      power-key-handling.enable = true;
+
       warp-mouse-to-focus = true;
-      focus-follows-mouse.enable = true;
+      focus-follows-mouse = {
+        enable = true;
+        max-scroll-amount = "70%";
+      };
       tablet = {
         map-to-output = "DP-1";
       };
@@ -58,18 +71,37 @@
       };
     };
 
+    # TODO: This is not implemented in niri nix flake
+    #gestures = {
+    #  hot-corners = false;
+    #};
+
     binds = with config.lib.niri.actions; {
-      "Mod+Shift+Space".action = show-hotkey-overlay;
-      "Mod+Shift+Delete".action = quit;
+      "Mod+Shift+Ctrl+E".action = quit;
+      #"Mod+Shift+Delete".action = quit;
+      "Mod+Escape".action = toggle-keyboard-shortcuts-inhibit;
 
       "Mod+Q".action = close-window;
       "Print".action = screenshot;
+      "Mod+W".action = toggle-overview;
 
       "Mod+F".action = fullscreen-window;
       "Mod+V".action = toggle-window-floating;
 
       "Mod+WheelScrollUp".action = focus-column-right;
       "Mod+WheelScrollDown".action = focus-column-left;
+      "Mod+Ctrl+WheelScrollUp" = {
+        action = focus-workspace-up;
+        cooldown-ms = 150;
+      };
+      "Mod+Ctrl+WheelScrollDown" = {
+        action = focus-workspace-down;
+        cooldown-ms = 150;
+      };
+
+      "xf86audioraisevolume".action.spawn = [ "${pkgs.pulseaudio}/bin/pactl" "set-sink-volume" "@DEFAULT_SINK@" "+5%" ];
+      "xf86audiolowervolume".action.spawn = [ "${pkgs.pulseaudio}/bin/pactl" "set-sink-volume" "@DEFAULT_SINK@" "-5%" ];
+      "XF86AudioMute".action.spawn = [ "${pkgs.pulseaudio}/bin/pactl" "set-sink-mute" "@DEFAULT_SINK@" "toggle" ];
 
       "Mod+N".action = focus-column-left;
       "Mod+E".action = focus-window-down;
@@ -102,6 +134,38 @@
       "Mod+Shift+9".action = move-column-to-workspace 9;
 
       "Mod+Space".action.spawn = [ "${pkgs.fcitx5}/bin/fcitx5-remote" "-t" ];
+      "Mod+Shift+P".action = power-off-monitors;
     };
+
+    window-rules = [
+      {
+        geometry-corner-radius = let
+          r = 12.0;
+        in {
+          top-left = r;
+          top-right = r;
+          bottom-left = r;
+          bottom-right = r;
+        };
+        # This will cut out any client-side window shadows
+        clip-to-geometry = true;
+      }
+      # Remove certain things from showing on streams
+      {
+        matches = [
+          { app-id = "^thunderbird$"; }
+        ];
+        block-out-from = "screen-capture";
+      }
+    ];
+
+    layer-rules = [
+      {
+        matches = [
+          { namespace = "notification"; }
+        ];
+        block-out-from = "screen-capture";
+      }
+    ];
   };
 }
