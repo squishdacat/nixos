@@ -12,7 +12,8 @@
     
     #base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-night-terminal-dark.yaml";
     #base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyodark.yaml";
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+    #base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/da-one-ocean.yaml";
 
     cursor = {
       package = pkgs.libsForQt5.breeze-gtk;
