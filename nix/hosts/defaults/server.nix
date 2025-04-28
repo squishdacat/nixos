@@ -8,6 +8,7 @@
     "coolgi:0"
   ];
 
+  services.sshguard.enable = true;
 
   # On a server, it makes sense to be able to ping
   networking.firewall.allowPing = true;

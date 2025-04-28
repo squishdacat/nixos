@@ -6,15 +6,6 @@
 
     ./../../os/startup/loader/systemd.nix
     
-    ./apps/networking.nix
+    ./networking.nix
   ];
-
-
-  #boot.loader.grub = {
-  #  enable = true;
-  #  device = "/dev/sda";
-  #  efiSupport = false;
-  #};
-
-  services.sshguard.enable = true;
 }

@@ -23,6 +23,4 @@
     device = "/dev/sda";
     efiSupport = false;
   };
-
-  services.sshguard.enable = true;
 }

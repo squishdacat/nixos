@@ -2,6 +2,8 @@
 {
   programs.nh = {
     enable = true;
+
+    # TODO: Make this not hard-coded
     #flake = inputs.self.outPath;
     flake = "/home/coolgi/.dotfiles/";
 
