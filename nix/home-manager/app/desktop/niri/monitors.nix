@@ -4,6 +4,7 @@
     # Laptop
     "eDP-1" = {
       scale = 1.5;
+      variable-refresh-rate = true;
     };
 
     # PC

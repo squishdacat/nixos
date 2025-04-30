@@ -12,6 +12,7 @@
   imports = [
     inputs.niri.homeModules.niri
     ./monitors.nix
+    ./../lock/hyprlock
   ];
 
   #niri-flake.cache.enable = true;
@@ -77,7 +78,7 @@
     #};
 
     binds = with config.lib.niri.actions; {
-      "Mod+Shift+Ctrl+E".action = quit;
+      "Mod+Shift+Backspace".action = quit;
       #"Mod+Shift+Delete".action = quit;
       "Mod+Escape".action = toggle-keyboard-shortcuts-inhibit;
 
@@ -99,9 +100,22 @@
         cooldown-ms = 150;
       };
 
+      # Audio Keys
       "xf86audioraisevolume".action.spawn = [ "${pkgs.pulseaudio}/bin/pactl" "set-sink-volume" "@DEFAULT_SINK@" "+5%" ];
       "xf86audiolowervolume".action.spawn = [ "${pkgs.pulseaudio}/bin/pactl" "set-sink-volume" "@DEFAULT_SINK@" "-5%" ];
       "XF86AudioMute".action.spawn = [ "${pkgs.pulseaudio}/bin/pactl" "set-sink-mute" "@DEFAULT_SINK@" "toggle" ];
+
+      # Brightness Keys
+      "XF86MonBrightnessUp".action.spawn = [ "${pkgs.brightnessctl}/bin/brightnessctl" "set" "5%+" ];
+      "XF86MonBrightnessDown".action.spawn = [ "${pkgs.brightnessctl}/bin/brightnessctl" "set" "5%-" ];
+      "Shift+XF86MonBrightnessUp".action.spawn = [ "${pkgs.brightnessctl}/bin/brightnessctl" "set" "1%+" ];
+      "Shift+XF86MonBrightnessDown".action.spawn = [ "${pkgs.brightnessctl}/bin/brightnessctl" "set" "1%-" ];
+
+      # Media Keys
+      "XF86AudioPlay".action.spawn = [ "${pkgs.playerctl}/bin/playerctl" "play-pause" ];
+      "XF86AudioPause".action.spawn = [ "${pkgs.playerctl}/bin/playerctl" "play-pause" ];
+      "XF86AudioNext".action.spawn = [ "${pkgs.playerctl}/bin/playerctl" "next" ];
+      "XF86AudioPrev".action.spawn = [ "${pkgs.playerctl}/bin/playerctl" "previous" ];
 
       "Mod+N".action = focus-column-left;
       "Mod+E".action = focus-window-down;
@@ -112,6 +126,11 @@
       "Mod+Shift+E".action = move-window-down;
       "Mod+Shift+O".action = move-window-up;
       "Mod+Shift+I".action = move-column-right;
+
+      "Mod+Ctrl+E".action = focus-workspace-down;
+      "Mod+Ctrl+O".action = focus-workspace-up;
+      "Mod+Shift+Ctrl+E".action = move-window-to-workspace-down;
+      "Mod+Shift+Ctrl+O".action = move-window-to-workspace-up;
 
       # TODO: Change to a more nixy way of doing this
       "Mod+1".action = focus-workspace 1;
@@ -140,7 +159,7 @@
     window-rules = [
       {
         geometry-corner-radius = let
-          r = 12.0;
+          r = 8.0;
         in {
           top-left = r;
           top-right = r;
@@ -167,5 +186,17 @@
         block-out-from = "screen-capture";
       }
     ];
+
+    animations = {
+      window-close.easing = {
+        duration-ms = 500;
+        #duration-ms = 1000;
+        curve = "linear";
+      };
+      shaders = {
+        #window-close = builtins.readFile ./shaders/close/fall_and_rotate.glsl;
+        window-close = builtins.readFile ./shaders/close/fire.glsl;
+      };
+    };
   };
 }
