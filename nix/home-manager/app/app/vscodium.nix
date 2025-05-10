@@ -50,6 +50,10 @@
       ]) ++ (with pkgs.vscode-marketplace; [
         # Dioxus
         dioxuslabs.dioxus
+      ]) ++ (with pkgs.vscode-extensions; [
+        # Using an old version of the rust analyzer as the
+        # latest version have an issue for me
+        #rust-lang.rust-analyzer
       ]);
 
       userSettings = {

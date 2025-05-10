@@ -84,6 +84,7 @@
 
       "Mod+Q".action = close-window;
       "Print".action = screenshot;
+      "Mod+Print".action = screenshot-window;
       "Mod+W".action = toggle-overview;
 
       "Mod+F".action = fullscreen-window;
