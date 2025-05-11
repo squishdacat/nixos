@@ -8,5 +8,7 @@
       General.Experimental = true; # Show battery level
     };
   };
-  #services.blueman.enable = true;
+
+  # A GUI Bluetooth manager
+  services.blueman.enable = true;
 }
