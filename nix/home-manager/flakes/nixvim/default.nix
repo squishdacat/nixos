@@ -11,7 +11,7 @@
 
   programs.nixvim = {
     enable = true;
-    defaultEditor = true;
+    #defaultEditor = true;
 
     colorschemes.base16.enable = true;
 

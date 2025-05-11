@@ -34,6 +34,7 @@
     ./app/cmd/eza.nix
     ./app/cmd/bat.nix
     ./app/cmd/lf.nix
+    ./app/cmd/helix
 
     ./app/app/vscodium.nix
     ./app/app/anki.nix
