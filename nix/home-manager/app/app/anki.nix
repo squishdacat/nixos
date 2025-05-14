@@ -17,7 +17,12 @@ in
 
     terminal = false;
     type = "Application";
-    categories = [ "Education" "Languages" "KDE" "Qt" ];
+    categories = [
+      "Education"
+      "Languages"
+      "KDE"
+      "Qt"
+    ];
     mimeType = [
       "application/x-apkg"
       "application/x-anki"

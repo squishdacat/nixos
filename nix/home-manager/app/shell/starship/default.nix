@@ -9,7 +9,6 @@
         show_always = true;
       };
 
-
       aws.symbol = "  ";
       buf.symbol = " ";
       c.symbol = " ";

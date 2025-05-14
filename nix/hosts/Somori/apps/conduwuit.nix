@@ -1,8 +1,13 @@
-{ lib, config, pkgs, inputs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 {
   # 8448 is needed for federation
   networking.firewall.allowedTCPPorts = [ 8448 ];
-
 
   nix.settings = {
     substituters = [
@@ -83,42 +88,56 @@
   };
 
   # We use our own package for conduwuit, so we need to change the systemd service exec
-  systemd.services.conduit.serviceConfig.ExecStart = lib.mkForce "${config.services.matrix-conduit.package}/bin/conduwuit";
+  systemd.services.conduit.serviceConfig.ExecStart =
+    lib.mkForce "${config.services.matrix-conduit.package}/bin/conduwuit";
 
   services.nginx.virtualHosts."coolgi.dev" = {
     listen = [
-      { addr = "*";    port = 8448; ssl = true; }
-      { addr = "[::]"; port = 8448; ssl = true; }
+      {
+        addr = "*";
+        port = 8448;
+        ssl = true;
+      }
+      {
+        addr = "[::]";
+        port = 8448;
+        ssl = true;
+      }
     ];
 
-    locations = let
-      url = "http://[::1]:${toString config.services.matrix-conduit.settings.global.port}";
-    in {
-      "/_matrix/" = {
-        proxyPass = url;
-        extraConfig = ''
-          proxy_set_header Host $host;
-          proxy_set_header X-Real-IP $remote_addr;
-          proxy_buffering off;
-          proxy_read_timeout 5m;
+    locations =
+      let
+        url = "http://[::1]:${toString config.services.matrix-conduit.settings.global.port}";
+      in
+      {
+        "/_matrix/" = {
+          proxyPass = url;
+          extraConfig = ''
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_buffering off;
+            proxy_read_timeout 5m;
 
 
-          access_log /var/log/nginx/access_matrix.log;
-        '';
+            access_log /var/log/nginx/access_matrix.log;
+          '';
+        };
+        # Small little joke :3
+        "/_matrix/federation/v1/version" = {
+          priority = 999; # Default is 1000, so this is lower
+          return =
+            "200 '"
+            + (builtins.toJSON {
+              server = {
+                name = "UwU";
+                version = "0.69.420 (furry edition!)";
+              };
+            })
+            + "'";
+          extraConfig = ''
+            add_header Content-Type application/json;
+          '';
+        };
       };
-      # Small little joke :3
-      "/_matrix/federation/v1/version" = {
-        priority = 999; # Default is 1000, so this is lower
-        return = "200 '" + (builtins.toJSON {
-          server = {
-            name = "UwU";
-            version = "0.69.420 (furry edition!)";
-          };
-        }) + "'";
-        extraConfig = ''
-          add_header Content-Type application/json;
-        '';
-      };
-    };
   };
 }

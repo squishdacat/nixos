@@ -6,7 +6,7 @@
 
   # The set of english words (at $WORDLIST env var)
   #environment.wordList.enable = true;
-  
+
   # Android Debugger
   programs.adb.enable = true;
   # Configs

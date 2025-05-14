@@ -43,7 +43,6 @@
       #};
     };
 
-
     extraVirtualAliases = {
       "admin@coolgi.dev" = "me@coolgi.dev";
       "abuse@coolgi.dev" = "me@coolgi.dev";

@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   # See https://lvra.gitlab.io/docs/distros/nixos/#steamvr
   boot.kernelPatches = [
     {

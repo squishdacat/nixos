@@ -1,22 +1,23 @@
 { pkgs, clib, ... }:
 {
-  imports = [
-    ./../../default.nix
-    ./../../options
-    ./../../users/os.nix
+  imports =
+    [
+      ./../../default.nix
+      ./../../options
+      ./../../users/os.nix
 
-    ./../../os/locale/lang
+      ./../../os/locale/lang
 
-    ./../../os/apps/utils/general.nix
-    ./../../os/apps/speech.nix
-    #./../../os/apps/tailscale.nix
+      ./../../os/apps/utils/general.nix
+      ./../../os/apps/speech.nix
+      #./../../os/apps/tailscale.nix
 
-    ./../../os/shell/zsh.nix
-  ] ++ clib.aimport {
-    path = ./../../os/sys/nix; # Defaults for nix stuff
-    exclude = [ ./../../os/sys/nix/gc.nix ];
-  };
-
+      ./../../os/shell/zsh.nix
+    ]
+    ++ clib.aimport {
+      path = ./../../os/sys/nix; # Defaults for nix stuff
+      exclude = [ ./../../os/sys/nix/gc.nix ];
+    };
 
   # Use the Zen Kernel
   #boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
@@ -25,7 +26,6 @@
 
   # Set the time zone
   time.timeZone = "Australia/Adelaide";
-
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

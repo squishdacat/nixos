@@ -17,15 +17,17 @@
   };
 
   services.nginx.virtualHosts."coolgi.dev" = {
-    locations = let
-      url = "http://[::1]:${toString config.services.anki-sync-server.port}";
-    in {
-      "/sync/" = {
-        proxyPass = url;
+    locations =
+      let
+        url = "http://[::1]:${toString config.services.anki-sync-server.port}";
+      in
+      {
+        "/sync/" = {
+          proxyPass = url;
+        };
+        "/msync/" = {
+          proxyPass = url;
+        };
       };
-      "/msync/" = {
-        proxyPass = url;
-      };
-    };
   };
 }

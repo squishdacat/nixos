@@ -2,43 +2,45 @@
 { ... }:
 {
   programs.nixvim.plugins = {
-    lsp-format = { enable = true; };
+    lsp-format = {
+      enable = true;
+    };
     lsp = {
       enable = true;
       servers = {
-        astro.enable = true;        # Astro
-        bashls.enable = true;       # Bash
-        ccls.enable = true;         # C/C++
-        cmake.enable = true;        # CMake
-        csharp_ls.enable = true;    # C#
-        cssls.enable = true;        # CSS
-        dockerls.enable = true;     # Dockerfile
+        astro.enable = true; # Astro
+        bashls.enable = true; # Bash
+        ccls.enable = true; # C/C++
+        cmake.enable = true; # CMake
+        csharp_ls.enable = true; # C#
+        cssls.enable = true; # CSS
+        dockerls.enable = true; # Dockerfile
         #gdscript.enable = true;     # GDScript (Godot)
-        html.enable = true;         # HTML
-        htmx.enable = true;         # HTMX
+        html.enable = true; # HTML
+        htmx.enable = true; # HTMX
         java_language_server.enable = true; # Java
-        jsonls.enable = true;       # JSON
+        jsonls.enable = true; # JSON
         kotlin_language_server.enable = true; # Kotlin
-        lemminx.enable = true;      # XML
+        lemminx.enable = true; # XML
         #ltex.enable = true;         # LanguageTool # TODO: Requires additional setup
-        lua_ls.enable = true;       # Lua
-        marksman.enable = true;     # Markdown
+        lua_ls.enable = true; # Lua
+        marksman.enable = true; # Markdown
         #nginx-language-server.enable = true; # nginx.conf
         #nil-ls.enable = true;       # Nix (Rust)
-        nixd.enable = true;         # Nix (Nix-Community Owned)
+        nixd.enable = true; # Nix (Nix-Community Owned)
         #pylsp.enable = true;        # Python (Original)
-        pylyzer.enable = true;      # Python (Rust)
+        pylyzer.enable = true; # Python (Rust)
         #pyright.enable = true;      # Python (Microsoft Owned)
         #ruff.enable = true;         # Python (Rust)
         #ruff_lsp.enable = true;     # Python (Rust)
-        rust_analyzer.enable = true;# Rust
+        rust_analyzer.enable = true; # Rust
         rust_analyzer.installCargo = true;
         rust_analyzer.installRustc = true;
-        taplo.enable = true;        # TOML
-        texlab.enable = true;       # LaTeX
+        taplo.enable = true; # TOML
+        texlab.enable = true; # LaTeX
         #tsserver.enable = true;     # TypeScript
         #typos_lsp.enable = true;    # Spell Check
-        yamlls.enable = true;       # YAML
+        yamlls.enable = true; # YAML
       };
       keymaps = {
         silent = true;

@@ -15,13 +15,12 @@
 
     colorschemes.base16.enable = true;
 
-
     opts = {
       # Left side collums
       number = true;
       relativenumber = true;
       #signcolumn = true;
-      
+
       # Turn tabs into two spaces
       tabstop = 2;
       softtabstop = 2;
@@ -41,14 +40,12 @@
     filetype.extension = {
       mdx = "markdown";
     };
-    
 
     plugins = {
       nix.enable = true;
       nix-develop.enable = true;
       transparent.enable = true;
     };
-
 
     clipboard = {
       register = "unnamedplus";

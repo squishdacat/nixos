@@ -7,9 +7,9 @@ let
     rev = "293cad0539066f86e6bce3b9780c472cc9157489";
     sha256 = "sha256-1Uql+Ewa7SMUWkLLOweY2Ehlc2Mz18PnR5btr2REck8=";
     fetchLFS = true;
-    sparseCheckout = ( builtins.match
-      "(.+)/.*" # Get the file's directory
-      voice_wanted
+    sparseCheckout = (
+      builtins.match "(.+)/.*" # Get the file's directory
+        voice_wanted
     );
   };
 

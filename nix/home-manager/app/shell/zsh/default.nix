@@ -5,7 +5,7 @@
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
-    
+
     dotDir = ".config/zsh";
 
     history = {
@@ -24,7 +24,6 @@
       hm-update = "nh home switch";
       nixGL = "nix run --impure github:nix-community/nixGL --";
     };
-    
 
     plugins = [
       {
@@ -39,9 +38,6 @@
       }
     ];
   };
-
-
-
 
   programs.zsh.oh-my-zsh = {
     enable = true;

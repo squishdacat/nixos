@@ -1,4 +1,5 @@
-{lib, ...}: {
+{ lib, ... }:
+{
   networking.firewall = {
     # True by default on nix
     enable = true;

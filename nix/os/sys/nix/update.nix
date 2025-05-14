@@ -9,7 +9,10 @@
     persistent = lib.mkDefault false;
     allowReboot = lib.mkDefault false;
     # if reboot is allowed (like on a server), then add a reboot window
-    rebootWindow = { lower = "03:00"; upper = "05:00"; };
+    rebootWindow = {
+      lower = "03:00";
+      upper = "05:00";
+    };
 
     flake = inputs.self.outPath;
 

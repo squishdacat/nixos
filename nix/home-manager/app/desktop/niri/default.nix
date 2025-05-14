@@ -1,10 +1,16 @@
-{ inputs, config, pkgs, lib, ... }:
+{
+  inputs,
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 {
   nixpkgs.overlays = [ inputs.niri.overlays.niri ];
   programs.niri.package = inputs.niri.packages.${pkgs.system}.niri-unstable;
   #programs.zsh.initContent = lib.mkOrder 1001 (
   #  builtins.readFile (
-  #    pkgs.runCommand "niri-zsh" {} 
+  #    pkgs.runCommand "niri-zsh" {}
   #    "${config.programs.niri.package}/bin/niri completions zsh > $out"
   #  )
   #);
@@ -17,14 +23,14 @@
 
   #niri-flake.cache.enable = true;
   /*
-  nix.settings = {
-    substituters = [
-      "https://niri.cachix.org"
-    ];
-    trusted-public-keys = [
-      "niri.cachix.org-1:Wv0OmO7PsuocRKzfDoJ3mulSl7Z6oezYhGhR+3W2964="
-    ];
-  };
+    nix.settings = {
+      substituters = [
+        "https://niri.cachix.org"
+      ];
+      trusted-public-keys = [
+        "niri.cachix.org-1:Wv0OmO7PsuocRKzfDoJ3mulSl7Z6oezYhGhR+3W2964="
+      ];
+    };
   */
 
   xdg.portal = {
@@ -102,21 +108,64 @@
       };
 
       # Audio Keys
-      "xf86audioraisevolume".action.spawn = [ "${pkgs.pulseaudio}/bin/pactl" "set-sink-volume" "@DEFAULT_SINK@" "+5%" ];
-      "xf86audiolowervolume".action.spawn = [ "${pkgs.pulseaudio}/bin/pactl" "set-sink-volume" "@DEFAULT_SINK@" "-5%" ];
-      "XF86AudioMute".action.spawn = [ "${pkgs.pulseaudio}/bin/pactl" "set-sink-mute" "@DEFAULT_SINK@" "toggle" ];
+      "xf86audioraisevolume".action.spawn = [
+        "${pkgs.pulseaudio}/bin/pactl"
+        "set-sink-volume"
+        "@DEFAULT_SINK@"
+        "+5%"
+      ];
+      "xf86audiolowervolume".action.spawn = [
+        "${pkgs.pulseaudio}/bin/pactl"
+        "set-sink-volume"
+        "@DEFAULT_SINK@"
+        "-5%"
+      ];
+      "XF86AudioMute".action.spawn = [
+        "${pkgs.pulseaudio}/bin/pactl"
+        "set-sink-mute"
+        "@DEFAULT_SINK@"
+        "toggle"
+      ];
 
       # Brightness Keys
-      "XF86MonBrightnessUp".action.spawn = [ "${pkgs.brightnessctl}/bin/brightnessctl" "set" "5%+" ];
-      "XF86MonBrightnessDown".action.spawn = [ "${pkgs.brightnessctl}/bin/brightnessctl" "set" "5%-" ];
-      "Shift+XF86MonBrightnessUp".action.spawn = [ "${pkgs.brightnessctl}/bin/brightnessctl" "set" "1%+" ];
-      "Shift+XF86MonBrightnessDown".action.spawn = [ "${pkgs.brightnessctl}/bin/brightnessctl" "set" "1%-" ];
+      "XF86MonBrightnessUp".action.spawn = [
+        "${pkgs.brightnessctl}/bin/brightnessctl"
+        "set"
+        "5%+"
+      ];
+      "XF86MonBrightnessDown".action.spawn = [
+        "${pkgs.brightnessctl}/bin/brightnessctl"
+        "set"
+        "5%-"
+      ];
+      "Shift+XF86MonBrightnessUp".action.spawn = [
+        "${pkgs.brightnessctl}/bin/brightnessctl"
+        "set"
+        "1%+"
+      ];
+      "Shift+XF86MonBrightnessDown".action.spawn = [
+        "${pkgs.brightnessctl}/bin/brightnessctl"
+        "set"
+        "1%-"
+      ];
 
       # Media Keys
-      "XF86AudioPlay".action.spawn = [ "${pkgs.playerctl}/bin/playerctl" "play-pause" ];
-      "XF86AudioPause".action.spawn = [ "${pkgs.playerctl}/bin/playerctl" "play-pause" ];
-      "XF86AudioNext".action.spawn = [ "${pkgs.playerctl}/bin/playerctl" "next" ];
-      "XF86AudioPrev".action.spawn = [ "${pkgs.playerctl}/bin/playerctl" "previous" ];
+      "XF86AudioPlay".action.spawn = [
+        "${pkgs.playerctl}/bin/playerctl"
+        "play-pause"
+      ];
+      "XF86AudioPause".action.spawn = [
+        "${pkgs.playerctl}/bin/playerctl"
+        "play-pause"
+      ];
+      "XF86AudioNext".action.spawn = [
+        "${pkgs.playerctl}/bin/playerctl"
+        "next"
+      ];
+      "XF86AudioPrev".action.spawn = [
+        "${pkgs.playerctl}/bin/playerctl"
+        "previous"
+      ];
 
       "Mod+N".action = focus-column-left;
       "Mod+E".action = focus-window-down;
@@ -153,20 +202,25 @@
       "Mod+Shift+8".action = move-column-to-workspace 8;
       "Mod+Shift+9".action = move-column-to-workspace 9;
 
-      "Mod+Space".action.spawn = [ "${pkgs.fcitx5}/bin/fcitx5-remote" "-t" ];
+      "Mod+Space".action.spawn = [
+        "${pkgs.fcitx5}/bin/fcitx5-remote"
+        "-t"
+      ];
       "Mod+Shift+P".action = power-off-monitors;
     };
 
     window-rules = [
       {
-        geometry-corner-radius = let
-          r = 8.0;
-        in {
-          top-left = r;
-          top-right = r;
-          bottom-left = r;
-          bottom-right = r;
-        };
+        geometry-corner-radius =
+          let
+            r = 8.0;
+          in
+          {
+            top-left = r;
+            top-right = r;
+            bottom-left = r;
+            bottom-right = r;
+          };
         # This will cut out any client-side window shadows
         clip-to-geometry = true;
       }

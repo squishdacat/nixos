@@ -46,6 +46,6 @@ flutter324.buildFlutterApplication (
     };
   }
   // lib.optionalAttrs (targetFlutterPlatform == "linux") {
-    #nativeBuildInputs = [ mpv ]; 
+    #nativeBuildInputs = [ mpv ];
   }
 )
