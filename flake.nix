@@ -32,49 +32,56 @@
     };
 
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
-    nixvim.url = "github:nix-community/nixvim";
+    #nixvim.url = "github:nix-community/nixvim";
     #nvf.url = "github:notashelf/nvf";
     niri.url = "github:sodiboo/niri-flake/dc5e21a5189a919a95e9650930d1f67aebed7533";
   };
 
-  outputs = { self, nixpkgs, ... } @inputs:
-  let
-    inherit (self) outputs;
-    inherit (nixpkgs) lib;
-    # TODO: Make it import everything in the clib location
-    clib = import ./nix/clib { inherit lib; };
-
-    specialArgs = { 
-      inherit inputs outputs nixpkgs lib clib;
-    };
-
-
-    systems = [
-      "x86_64-linux"
-      "aarch64-linux"
-    ];
-    pkgsFor = lib.genAttrs systems (system: import nixpkgs { inherit system; });
-    forEachSystem = f: lib.genAttrs systems (system: f pkgsFor.${system});
-  in
-  {
-    packages = forEachSystem (pkgs: import ./nix/pkgs { inherit pkgs inputs; });
-    devShells = forEachSystem (pkgs: {
-      default = import ./nix/shell.nix { inherit pkgs; };
-    });
-
-    nixosConfigurations = import ./nix/hosts {
-      inherit (self) nixosConfigurations;
+  outputs =
+    { self, nixpkgs, ... }@inputs:
+    let
+      inherit (self) outputs;
       inherit (nixpkgs) lib;
-      inherit clib;
-      inherit specialArgs;
-    };
+      # TODO: Make it import everything in the clib location
+      clib = import ./nix/clib { inherit lib; };
 
-    homeConfigurations = import ./nix/users/flake.nix {
-      inherit (self) homeConfigurations;
-      inherit (inputs) home-manager;
-      inherit (nixpkgs) lib;
-      inherit (inputs) nixpkgs;
-      inherit inputs;
+      specialArgs = {
+        inherit
+          inputs
+          outputs
+          nixpkgs
+          lib
+          clib
+          ;
+      };
+
+      systems = [
+        "x86_64-linux"
+        "aarch64-linux"
+      ];
+      pkgsFor = lib.genAttrs systems (system: import nixpkgs { inherit system; });
+      forEachSystem = f: lib.genAttrs systems (system: f pkgsFor.${system});
+    in
+    {
+      formatter = forEachSystem (pkgs: pkgs.nixfmt-rfc-style);
+      packages = forEachSystem (pkgs: import ./nix/pkgs { inherit pkgs inputs; });
+      devShells = forEachSystem (pkgs: {
+        default = import ./nix/shell.nix { inherit pkgs; };
+      });
+
+      nixosConfigurations = import ./nix/hosts {
+        inherit (self) nixosConfigurations;
+        inherit (nixpkgs) lib;
+        inherit clib;
+        inherit specialArgs;
+      };
+
+      homeConfigurations = import ./nix/users/flake.nix {
+        inherit (self) homeConfigurations;
+        inherit (inputs) home-manager;
+        inherit (nixpkgs) lib;
+        inherit (inputs) nixpkgs;
+        inherit inputs;
+      };
     };
-  };
 }
