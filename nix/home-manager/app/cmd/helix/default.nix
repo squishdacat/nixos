@@ -1,5 +1,9 @@
 { lib, pkgs, ... }:
 {
+  imports = [
+    ./workman.nix
+  ];
+
   programs.helix = {
     enable = true;
     defaultEditor = true;
@@ -11,12 +15,17 @@
         select = "underline";
       };
     };
-    languages.language = [
-      {
-        name = "nix";
-        auto-format = true;
-        formatter.command = lib.getExe pkgs.nixfmt-rfc-style;
-      }
-    ];
+    languages = {
+      language-server = {
+
+      };
+      language = [
+        {
+          name = "nix";
+          auto-format = true;
+          formatter.command = lib.getExe pkgs.nixfmt-rfc-style;
+        }
+      ];
+    };
   };
 }
