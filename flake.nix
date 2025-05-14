@@ -63,7 +63,7 @@
       forEachSystem = f: lib.genAttrs systems (system: f pkgsFor.${system});
     in
     {
-      formatter = forEachSystem (pkgs: pkgs.nixfmt-rfc-style);
+      formatter = forEachSystem (pkgs: pkgs.nixfmt-tree);
       packages = forEachSystem (pkgs: import ./nix/pkgs { inherit pkgs inputs; });
       devShells = forEachSystem (pkgs: {
         default = import ./nix/shell.nix { inherit pkgs; };
