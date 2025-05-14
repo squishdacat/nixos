@@ -11,7 +11,6 @@
       ./../../os/startup/splash/plymouth.nix
       ./../../os/apps/utils/desktop.nix
       ./../../os/apps/game/steam.nix
-      ./../../os/apps/direnv.nix
       ./../../os/apps/polkit/gnome.nix
       ./../../os/apps/keyring/gnome.nix
 
