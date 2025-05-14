@@ -1,7 +1,7 @@
 { config, ... }:
 {
   # Firewall for this
-  networking.firewall = 
+  networking.firewall =
     let
       range = with config.services.coturn; [
         {
@@ -97,11 +97,13 @@
         forceSSL = true;
         enableACME = true;
 
-        listen = [{
-          addr = "0.0.0.0";
-          port = 80;
-          ssl = false;
-        }];
+        listen = [
+          {
+            addr = "0.0.0.0";
+            port = 80;
+            ssl = false;
+          }
+        ];
 
         locations."/".proxyPass = "http://127.0.0.1:1380";
       };
@@ -110,12 +112,12 @@
 
   # share certs with coturn and restart on renewal
   /*
-  security.acme.certs = {
-    "${config.services.coturn.realm}" = {
-      group = "turnserver";
-      allowKeysForGroup = true;
-      postRun = "systemctl restart coturn.service";
+    security.acme.certs = {
+      "${config.services.coturn.realm}" = {
+        group = "turnserver";
+        allowKeysForGroup = true;
+        postRun = "systemctl restart coturn.service";
+      };
     };
-  };
   */
 }

@@ -1,23 +1,25 @@
 { clib, ... }:
 {
-  imports = [
-    ./../../os/startup/loader/systemd.nix
-    ./../../os/drivers/school/numworks.nix
-    
-    ./../../os/locale
+  imports =
+    [
+      ./../../os/startup/loader/systemd.nix
+      ./../../os/drivers/school/numworks.nix
 
-    ./../../os/startup/login/tuigreet.nix
-    ./../../os/startup/splash/plymouth.nix
-    ./../../os/apps/utils/desktop.nix
-    ./../../os/apps/game/steam.nix
-    ./../../os/apps/direnv.nix
-    ./../../os/apps/polkit/gnome.nix
-    ./../../os/apps/keyring/gnome.nix
+      ./../../os/locale
 
-    #./../../os/apps/cosmic.nix
-  ] ++ clib.aimport {
-    path = ./../../os/sys/hardware;
-  };
+      ./../../os/startup/login/tuigreet.nix
+      ./../../os/startup/splash/plymouth.nix
+      ./../../os/apps/utils/desktop.nix
+      ./../../os/apps/game/steam.nix
+      ./../../os/apps/direnv.nix
+      ./../../os/apps/polkit/gnome.nix
+      ./../../os/apps/keyring/gnome.nix
+
+      #./../../os/apps/cosmic.nix
+    ]
+    ++ clib.aimport {
+      path = ./../../os/sys/hardware;
+    };
 
   myNix.users = [
     "coolgi:10"
@@ -27,4 +29,9 @@
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   # Customisation of my wooting keyboard
   hardware.wooting.enable = true;
+
+  programs.localsend = {
+    enable = true;
+    openFirewall = true;
+  };
 }

@@ -14,7 +14,10 @@
           ];
         }
         {
-          on = [ "g" "r" ];
+          on = [
+            "g"
+            "r"
+          ];
           run = ''shell 'ya pub dds-cd --str "$(${pkgs.git}/bin/git rev-parse --show-toplevel)"' --confirm'';
         }
       ];

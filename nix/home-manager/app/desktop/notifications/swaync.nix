@@ -17,7 +17,8 @@
 
     binds = {
       "Mod+U".action.spawn = [
-        "${pkgs.swaynotificationcenter}/bin/swaync-client" "--toggle-panel"
+        "${pkgs.swaynotificationcenter}/bin/swaync-client"
+        "--toggle-panel"
       ];
     };
   };

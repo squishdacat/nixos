@@ -23,8 +23,10 @@
       name = "eth0";
 
       # Use the vendors thingie for IPv4 DHCP
-      dhcpV4Config = { UseDNS = true; UseRoutes = true; };
-
+      dhcpV4Config = {
+        UseDNS = true;
+        UseRoutes = true;
+      };
 
       # Somori's spesific network settings
       address = [

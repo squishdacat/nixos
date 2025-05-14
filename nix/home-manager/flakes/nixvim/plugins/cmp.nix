@@ -2,20 +2,32 @@
 { ... }:
 {
   programs.nixvim.plugins = {
-    cmp-emoji = { enable = true; };
+    cmp-emoji = {
+      enable = true;
+    };
     cmp = {
       enable = true;
       settings = {
         preselect = "cmp.PreselectMode.None";
         autoEnableSources = true;
-        experimental = { ghost_text = true; };
+        experimental = {
+          ghost_text = true;
+        };
         performance = {
           debounce = 60;
           fetchingTimeout = 200;
           maxViewEntries = 30;
         };
-        snippet = { expand = "luasnip"; };
-        formatting = { fields = [ "kind" "abbr" "menu" ]; };
+        snippet = {
+          expand = "luasnip";
+        };
+        formatting = {
+          fields = [
+            "kind"
+            "abbr"
+            "menu"
+          ];
+        };
         sources = [
           { name = "nvim_lsp"; }
           { name = "emoji"; }
@@ -23,8 +35,12 @@
         ];
 
         window = {
-          completion = { border = "solid"; };
-          documentation = { border = "solid"; };
+          completion = {
+            border = "solid";
+          };
+          documentation = {
+            border = "solid";
+          };
         };
 
         mapping = {
@@ -43,8 +59,14 @@
     };
 
     # Used as sources
-    cmp-nvim-lsp = { enable = true; }; # lsp
-    cmp-path = { enable = true; }; # file system paths
-    cmp-cmdline = { enable = false; }; # autocomplete for cmdline
+    cmp-nvim-lsp = {
+      enable = true;
+    }; # lsp
+    cmp-path = {
+      enable = true;
+    }; # file system paths
+    cmp-cmdline = {
+      enable = false;
+    }; # autocomplete for cmdline
   };
 }

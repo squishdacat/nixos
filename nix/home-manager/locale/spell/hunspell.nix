@@ -10,4 +10,4 @@
     # toki pona
     hunspellDicts.tok
   ];
-} 
+}

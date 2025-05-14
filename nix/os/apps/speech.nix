@@ -3,6 +3,8 @@
   services.speechd = {
     enable = true;
 
-    package = pkgs.speechd.overrideAttrs (o: { withEspeak = true; });
+    package = pkgs.speechd.overrideAttrs (o: {
+      withEspeak = true;
+    });
   };
 }

@@ -3,7 +3,8 @@
   pkgs,
   inputs,
   ...
-}: {
+}:
+{
   imports = [
     ./locale/default.nix
     ./app/tts/piper.nix
@@ -21,7 +22,7 @@
     ./app/desktop/wallpaper/hyprpaper.nix
     #./app/desktop/wallpaper/wpaperd.nix
     ./app/desktop/xwayland-satellite.nix
-    
+
     ./app/bar/waybar
     ./app/launcher/wofi.nix
     #./app/launcher/rofi.nix
@@ -34,6 +35,7 @@
     ./app/cmd/eza.nix
     ./app/cmd/bat.nix
     ./app/cmd/lf.nix
+    ./app/cmd/helix
 
     ./app/app/vscodium.nix
     ./app/app/anki.nix
@@ -120,12 +122,19 @@
     #alsa-utils
   ];
 
-
   programs.git = {
     enable = true;
 
     userEmail = "me@coolgi.dev";
     userName = "coolGi";
+
+    extraConfig = {
+      mergetool.nixfmt = {
+        # TODO: Figure out if I should make this use a global version, or local
+        cmd = "nixfmt --mergetool \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"";
+        trustExitCode = true;
+      };
+    };
   };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

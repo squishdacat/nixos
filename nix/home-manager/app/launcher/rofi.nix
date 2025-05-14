@@ -4,23 +4,21 @@
     enable = true;
     package = pkgs.rofi-wayland;
 
-
     extraConfig = {
       modi = "drun,run";
 
       hide-scrollbar = true;
       disable-history = false;
-      
+
       display-app = " ";
       display-run = " ";
       display-Network = "󰤨 ";
       drun-display-format = "{icon} {name}";
-      
+
       show-icons = true;
       window-thumbnail = true;
       markup = true;
     };
-
 
     theme = {
       listview = {
@@ -37,6 +35,6 @@
   };
 
   wayland.windowManager.hyprland.settings.bind = [
-    "bind = $mod, d, exec, rofi -show combi -combi-modi \"drun,run\"" 
+    "bind = $mod, d, exec, rofi -show combi -combi-modi \"drun,run\""
   ];
 }

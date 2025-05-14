@@ -35,30 +35,30 @@
       };
 
       /*
-      ngnix-botsearch.settings = { 
-        enabled = true;
-        filter = "nginx-botsearch";
-        logpath = "/var/log/nginx/access.log";
-        backend = "polling";
-        failregex = "^ \[error\] \d+#\d+: \*\d+ (\S+ )?\"\S+\" (failed|is not found) \(2\: No such file or directory\), client\: <HOST>, server\: \S*\, request: \"(GET|POST|HEAD) \/favicon\.ico \S+\"\, host: \"\S*\".*?";
-      }; 
+        ngnix-botsearch.settings = {
+          enabled = true;
+          filter = "nginx-botsearch";
+          logpath = "/var/log/nginx/access.log";
+          backend = "polling";
+          failregex = "^ \[error\] \d+#\d+: \*\d+ (\S+ )?\"\S+\" (failed|is not found) \(2\: No such file or directory\), client\: <HOST>, server\: \S*\, request: \"(GET|POST|HEAD) \/favicon\.ico \S+\"\, host: \"\S*\".*?";
+        };
       */
 
       /*
-      nginx-botsearch = ''
-        enabled  = true
-        port     = http,https
-        logpath  = /var/log/nginx/access.log
-        backend  = polling
-        journalmatch =
-      '';
+        nginx-botsearch = ''
+          enabled  = true
+          port     = http,https
+          logpath  = /var/log/nginx/access.log
+          backend  = polling
+          journalmatch =
+        '';
       */
 
       nginx-bad-request.settings = {
-        enabled  = false;
-        port     = "http,https";
-        logpath  = "/var/log/nginx/access.log";
-        backend  = "polling";
+        enabled = false;
+        port = "http,https";
+        logpath = "/var/log/nginx/access.log";
+        backend = "polling";
         journalmatch = "";
       };
     };

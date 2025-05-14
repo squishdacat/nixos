@@ -1,6 +1,7 @@
-{ lib, pkgs, ... }: {
+{ lib, pkgs, ... }:
+{
   boot.kernelPackages = lib.mkForce pkgs.linuxPackages_latest;
-  
+
   boot.kernelPatches = [
     {
       name = "bits-per-pixel fix + bigscreen EDID quirk";

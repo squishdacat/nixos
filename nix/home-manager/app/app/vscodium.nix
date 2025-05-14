@@ -7,11 +7,14 @@
   programs.vscode = {
     enable = true;
 
-    package = pkgs.vscodium.fhsWithPackages (ps: with ps; [
-      cargo
-      pkg-config openssl
-      zlib
-    ]);
+    package = pkgs.vscodium.fhsWithPackages (
+      ps: with ps; [
+        cargo
+        pkg-config
+        openssl
+        zlib
+      ]
+    );
 
     mutableExtensionsDir = false; # Dont allow extentions via VSC
 
@@ -19,38 +22,45 @@
       enableUpdateCheck = false;
       enableExtensionUpdateCheck = false;
 
-      extensions = (with pkgs.open-vsx; [
-        mkhl.direnv # Auto-import directory nix stuff
-        usernamehw.errorlens # Easilly see error next to file
-        gruntfuggly.todo-tree # Add tab of all the TODOs
-        pkief.material-icon-theme # Material Icons
-        #formulahendry.code-runner # Add run button to file
-        anweber.statusbar-commands # Custom statusbar commands
-        #asvetliakov.vscode-neovim # NeoVim (need I say more)
+      extensions =
+        (with pkgs.open-vsx; [
+          mkhl.direnv # Auto-import directory nix stuff
+          usernamehw.errorlens # Easilly see error next to file
+          gruntfuggly.todo-tree # Add tab of all the TODOs
+          pkief.material-icon-theme # Material Icons
+          #formulahendry.code-runner # Add run button to file
+          anweber.statusbar-commands # Custom statusbar commands
+          #asvetliakov.vscode-neovim # NeoVim (need I say more)
 
-        # Spell Checker
-        streetsidesoftware.code-spell-checker
-        streetsidesoftware.code-spell-checker-australian-english
+          # Spell Checker
+          streetsidesoftware.code-spell-checker
+          streetsidesoftware.code-spell-checker-australian-english
 
-        ##### Languages #####
-        # Nix
-        bbenoist.nix
-        # Markdown
-        yzhang.markdown-all-in-one
-        # Rust
-        rust-lang.rust-analyzer
-        vadimcn.vscode-lldb
-        tamasfe.even-better-toml
-        #tauri-apps.tauri-vscode
-        # Web
-        ecmel.vscode-html-css
-        # Flutter & Dart
-        dart-code.dart-code
-        dart-code.flutter
-      ]) ++ (with pkgs.vscode-marketplace; [
-        # Dioxus
-        dioxuslabs.dioxus
-      ]);
+          ##### Languages #####
+          # Nix
+          bbenoist.nix
+          # Markdown
+          yzhang.markdown-all-in-one
+          # Rust
+          rust-lang.rust-analyzer
+          vadimcn.vscode-lldb
+          tamasfe.even-better-toml
+          #tauri-apps.tauri-vscode
+          # Web
+          ecmel.vscode-html-css
+          # Flutter & Dart
+          dart-code.dart-code
+          dart-code.flutter
+        ])
+        ++ (with pkgs.vscode-marketplace; [
+          # Dioxus
+          dioxuslabs.dioxus
+        ])
+        ++ (with pkgs.vscode-extensions; [
+          # Using an old version of the rust analyzer as the
+          # latest version have an issue for me
+          #rust-lang.rust-analyzer
+        ]);
 
       userSettings = {
         # General changes
@@ -87,14 +97,16 @@
 
         # Extra status bar buttons
         "statusbar_command.commands" = [
-          { # Debug
+          {
+            # Debug
             "text" = "$(debug) Debug "; # Displayes debug icon and text in the status bar
             "color" = "#FF2D00"; # Colour of the text above
             "tooltip" = "Debug Code"; # Displays following message when hovering over button
             "alignment" = "right";
             "command" = "workbench.action.debug.start"; # Debugging command
           }
-          { # Run
+          {
+            # Run
             "text" = "$(run) Run "; # Displays play run icon and text
             "color" = "#66ff00"; # Colour of the text above
             "tooltip" = "Run Code"; # Displays following text when hevering over button
@@ -127,27 +139,27 @@
           ##### What the Dart plugin wants us to add to the config #####
           # Automatically format code on save and during typing of certain characters
           # (like `;` and `}`).
-		      "editor.formatOnSave" = true;
-		      "editor.formatOnType" = true;
+          "editor.formatOnSave" = true;
+          "editor.formatOnType" = true;
 
           # Draw a guide line at 80 characters, where Dart's formatting will wrap code.
-		      "editor.rulers" = [80];
+          "editor.rulers" = [ 80 ];
 
           # Disables built-in highlighting of words that match your selection. Without
           # this, all instances of the selected text will be highlighted, interfering
           # with Dart's ability to highlight only exact references to the selected variable.
-		      "editor.selectionHighlight" = false;
+          "editor.selectionHighlight" = false;
 
           # Allows pressing <TAB> to complete snippets such as `for` even when the
           # completion list is not visible.
-		      "editor.tabCompletion" = "onlySnippets";
+          "editor.tabCompletion" = "onlySnippets";
 
           # By default, VS Code will populate code completion with words found in the
           # matching documents when a language service does not provide its own completions.
           # This results in code completion suggesting words when editing comments and
           # strings. This setting will prevent that.
-		      "editor.wordBasedSuggestions" = "off";
-	      };
+          "editor.wordBasedSuggestions" = "off";
+        };
       };
     };
   };

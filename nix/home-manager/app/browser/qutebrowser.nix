@@ -44,7 +44,6 @@ in
         #"gs" = "spawn --userscript ${yomichad}";
         #"gS" = "spawn --userscript ${yomichad} --prefix-search";
 
-
         ##### More usable on Workman #####
         # Opening links
         "t" = "cmd-set-text -sr :open";
@@ -54,8 +53,8 @@ in
         "gE" = "tab-move +";
         "gO" = "tab-move -";
         # Searching (using `/` keybind)
-        "k" = "search-next";
-        "K" = "search-prev";
+        "j" = "search-next";
+        "J" = "search-prev";
         # Scrolling
         "n" = "scroll left";
         "e" = "scroll down";
@@ -67,10 +66,10 @@ in
         "<Ctrl-o>" = "cmd-run-with-count 10 scroll up";
         "<Ctrl-i>" = "cmd-run-with-count 10 scroll right";
         # More navigation
-        "N" = "back"; #in history
+        "N" = "back"; # in history
         "E" = "tab-next";
         "O" = "tab-prev";
-        "I" = "forward"; #in history
+        "I" = "forward"; # in history
         # Insert mode was overwritten, so readd it
         "<Ctrl-I>" = "mode-enter insert";
 

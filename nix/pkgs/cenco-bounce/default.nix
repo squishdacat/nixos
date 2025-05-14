@@ -15,7 +15,7 @@ stdenv.mkDerivation {
     text = ''
       Window.SetBackgroundTopColor (0.0, 0.0, 0.0);
       Window.SetBackgroundBottomColor (0.0, 0.0, 0.0);
-      
+
       # The animation information
       # TODO: Make these 2 depend on the video file
       nframes = 14;

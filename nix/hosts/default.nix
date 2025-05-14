@@ -1,39 +1,49 @@
-{ lib,
+{
+  lib,
   clib,
   nixosConfigurations,
   specialArgs,
-}: let
-  hosts = lib.lists.remove "defaults" (builtins.attrNames (lib.filterAttrs (_name: type: type == "directory") (builtins.readDir ./.)));
+}:
+let
+  hosts = lib.lists.remove "defaults" (
+    builtins.attrNames (lib.filterAttrs (_name: type: type == "directory") (builtins.readDir ./.))
+  );
 
-  host = name: let
-    inherit (nixosConfigurations.${name}) config;
+  host =
+    name:
+    let
+      inherit (nixosConfigurations.${name}) config;
 
-    extraSpecialArgs =
-      specialArgs
-      // {
+      extraSpecialArgs = specialArgs // {
         host = config.host;
         module-functions = specialArgs.module-functions config;
         option-functions = specialArgs.option-functions config;
       };
-  in
+    in
     lib.nixosSystem {
       specialArgs = extraSpecialArgs;
-      modules = [
-        ./${name} # Main System Conf
+      modules =
+        [
+          ./${name} # Main System Conf
 
-        ./defaults # Shared Sys Conf
+          ./defaults # Shared Sys Conf
 
-        { networking.hostName = name; } # System Name
-      ] ++ (
-        # If it's not an ISO
-        if builtins.substring 0 1 name != "I" then [
-          ./${name}/hardware.nix # Hardware Conf (partitions & stuff)
-        ] else []
-      );
+          { networking.hostName = name; } # System Name
+        ]
+        ++ (
+          # If it's not an ISO
+          if builtins.substring 0 1 name != "I" then
+            [
+              ./${name}/hardware.nix # Hardware Conf (partitions & stuff)
+            ]
+          else
+            [ ]
+        );
     };
 in
-  builtins.listToAttrs (builtins.map (name: {
-      inherit name;
-      value = host name;
-    })
-    hosts)
+builtins.listToAttrs (
+  builtins.map (name: {
+    inherit name;
+    value = host name;
+  }) hosts
+)

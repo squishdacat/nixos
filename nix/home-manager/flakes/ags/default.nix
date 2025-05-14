@@ -1,4 +1,9 @@
-{ inputs, config, pkgs, ... }:
+{
+  inputs,
+  config,
+  pkgs,
+  ...
+}:
 {
   imports = [
     inputs.ags.homeManagerModules.default
@@ -12,9 +17,9 @@
 
     extraPackages = with pkgs; [
       bun
-    #  gtksourceview
-    #  webkitgtk
-    #  accountsservice
+      #  gtksourceview
+      #  webkitgtk
+      #  accountsservice
     ];
   };
 

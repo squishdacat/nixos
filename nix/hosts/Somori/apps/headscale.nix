@@ -1,6 +1,9 @@
 { config, ... }:
 {
-  networking.firewall.allowedTCPPorts = [ 8080 9090 ];
+  networking.firewall.allowedTCPPorts = [
+    8080
+    9090
+  ];
 
   services.headscale = {
     enable = true;

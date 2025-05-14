@@ -27,7 +27,6 @@
     };
   };
 
-
   services.nginx.virtualHosts."calendar.coolgi.dev" = {
     forceSSL = true;
     enableACME = true;

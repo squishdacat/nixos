@@ -4,22 +4,21 @@
     # We are using systemd.network instead
     useDHCP = false;
 
-
     nameservers = [
       /*
-      ##### Porkbun Name Servers #####
-      # alvador.ns.porkbun.com
-      "162.159.10.150"
-      "2400:cb00:2049:1::a29f:a96"
-      # curitiba.ns.porkbun.com
-      "173.245.58.37"
-      "2400:cb00:2049:1::adf5:3a25"
-      # fortaleza.ns.porkbun.com
-      "162.159.8.140"
-      "2400:cb00:2049:1::a29f:88c"
-      # maceio.ns.porkbun.com
-      "162.159.11.180"
-      "2400:cb00:2049:1::a29f:bb4"
+        ##### Porkbun Name Servers #####
+        # alvador.ns.porkbun.com
+        "162.159.10.150"
+        "2400:cb00:2049:1::a29f:a96"
+        # curitiba.ns.porkbun.com
+        "173.245.58.37"
+        "2400:cb00:2049:1::adf5:3a25"
+        # fortaleza.ns.porkbun.com
+        "162.159.8.140"
+        "2400:cb00:2049:1::a29f:88c"
+        # maceio.ns.porkbun.com
+        "162.159.11.180"
+        "2400:cb00:2049:1::a29f:bb4"
       */
 
       # Cloudflare
@@ -36,7 +35,9 @@
     enable = true;
 
     # Use the vendors thingie for IPv4 DHCP
-    config.dhcpV4Config = { DUIDType = "vendor"; };
+    config.dhcpV4Config = {
+      DUIDType = "vendor";
+    };
 
     networks."Somori-contabo" = {
       enable = true;
@@ -45,8 +46,10 @@
       name = "eth0";
 
       # Use the vendors thingie for IPv4 DHCP
-      dhcpV4Config = { UseDNS = true; UseRoutes = true; };
-
+      dhcpV4Config = {
+        UseDNS = true;
+        UseRoutes = true;
+      };
 
       # Somori's spesific network settings
       address = [
