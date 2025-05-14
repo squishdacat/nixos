@@ -123,8 +123,9 @@
         e = "extend_line_down";
         o = "extend_line_up";
 
-        g = "extend_to_file_start"; # default
-        G = "extend_to_last_line"; # e
+        # These are part of Helix Git
+        #g = "extend_to_file_start"; # default
+        #G = "extend_to_last_line"; # e
       };
     };
   };
