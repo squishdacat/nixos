@@ -12,7 +12,7 @@
 
     # ========== SERVER ========== #
     simple-nixos-mailserver.url = "gitlab:simple-nixos-mailserver/nixos-mailserver";
-    conduwuit.url = "github:girlbossceo/conduwuit";
+    tuwunel.url = "github:matrix-construct/tuwunel";
     mc-honeypot.url = "github:Duckulus/mc-honeypot";
 
     # ========== HOME ========== #

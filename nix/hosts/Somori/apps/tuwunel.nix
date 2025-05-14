@@ -4,24 +4,11 @@
   networking.firewall.allowedTCPPorts = [ 8448 ];
 
 
-  nix.settings = {
-    substituters = [
-      #"https://attic.kennel.juneis.dog/conduit"
-      "https://attic.kennel.juneis.dog/conduwuit"
-      #"https://conduwuit.cachix.org"
-    ];
-    trusted-public-keys = [
-      #"conduit:eEKoUwlQGDdYmAI/Q/0slVlegqh/QmAvQd7HBSm21Wk="
-      "conduwuit:lYPVh7o1hLu1idH4Xt2QHaRa49WRGSAqzcfFd94aOTw="
-      #"conduwuit.cachix.org-1:MFRm6jcnfTf0jSAbmvLfhO3KBMt4px+1xaereWXp8Xg="
-    ];
-  };
-
   services.matrix-conduit = {
     enable = true;
 
-    package = inputs.conduwuit.packages.x86_64-linux.all-features;
-    #package = pkgs.conduwuit;
+    package = inputs.tuwunel.packages.x86_64-linux.all-features;
+    #package = pkgs.tuwunel;
 
     settings = {
       global = {
@@ -74,7 +61,7 @@
           "xcancel.com"
         ];
 
-        auto_deactivate_banned_room_attempts = true;
+        #auto_deactivate_banned_room_attempts = true;
 
         # Logging/Debugging
         #log = "debug";
@@ -83,7 +70,7 @@
   };
 
   # We use our own package for conduwuit, so we need to change the systemd service exec
-  systemd.services.conduit.serviceConfig.ExecStart = lib.mkForce "${config.services.matrix-conduit.package}/bin/conduwuit";
+  systemd.services.conduit.serviceConfig.ExecStart = lib.mkForce "${config.services.matrix-conduit.package}/bin/tuwunel";
 
   services.nginx.virtualHosts."coolgi.dev" = {
     listen = [

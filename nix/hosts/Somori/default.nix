@@ -9,7 +9,7 @@
     ./apps/acme.nix
     ./apps/nginx.nix
     ./apps/mail.nix
-    ./apps/conduwuit.nix
+    ./apps/tuwunel.nix
     #./apps/coturn.nix
     ./apps/vaultwarden.nix
     #./apps/fail2ban.nix
