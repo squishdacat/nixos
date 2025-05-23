@@ -11,7 +11,7 @@ let
       ${lib.elemAt (lib.splitString ":" a) 0} = lib.elemAt (lib.splitString ":" a) 1;
     }
     # FIXME: For some reason using `config.myNix.users` causes an "infinet recursion"?
-  ) { } [ "coolgi:0" ];
+  ) { } [ "michaelw:0" ];
 in
 {
   imports = map (x: ./${x}/os.nix) (builtins.attrNames users);

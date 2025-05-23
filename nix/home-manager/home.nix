@@ -97,7 +97,7 @@
     feh
     vipsdisp
 
-    jetbrains.idea-ultimate
+    #jetbrains.idea-ultimate
     #jetbrains.rust-rover
     #obsidian
 
@@ -110,7 +110,7 @@
     jq
     unzip
     zip
-    hexedit
+    #hexedit
     libsixel
     scrcpy
     btop
@@ -125,8 +125,8 @@
   programs.git = {
     enable = true;
 
-    userEmail = "me@coolgi.dev";
-    userName = "coolGi";
+    userEmail = "git@agreat.email";
+    userName = "generically-named";
 
     extraConfig = {
       mergetool.nixfmt = {

@@ -1,5 +1,5 @@
 {
-  description = "coolGi's Nix Configs";
+  description = "Adaption of coolGi's Nix Configs";
 
   inputs = {
     #nixpkgs.url = "github:nixos/nixpkgs/release-24.05";

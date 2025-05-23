@@ -21,7 +21,7 @@
     };
 
   myNix.users = [
-    "coolgi:10"
+    "michaelw:10"
   ];
 
   # Allow Electron/Chromium apps to run under wayland
