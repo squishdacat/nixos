@@ -5,7 +5,7 @@
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
-    initContent = "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+    #initContent = "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
 
     dotDir = ".config/zsh";
 
@@ -42,6 +42,7 @@
     oh-my-zsh = {
         enable = true;
         plugins = ["git" "sudo" "docker" "kubectl"];
+        theme = "bureau";
     };
 
   
