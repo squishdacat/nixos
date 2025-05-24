@@ -38,7 +38,10 @@
 
       # Disable some targets that I don't want to be themed
       alacritty.enable = true;
-      firefox.enable = false;
+      librewolf = {
+        enable = true;
+        profileNames = ["michael"];
+      };
     };
   };
 }

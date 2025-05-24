@@ -38,7 +38,7 @@
 
     ./app/app/vscodium.nix
 
-    #./app/browser/librewolf.nix
+    ./app/browser/librewolf.nix
     ./app/browser/qutebrowser.nix
   ];
 
