@@ -5,6 +5,7 @@
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
+    initContent = "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
 
     dotDir = ".config/zsh";
 
@@ -37,17 +38,17 @@
         };
       }
     ];
+
+    oh-my-zsh = {
+        enable = true;
+        plugins = ["git" "sudo" "docker" "kubectl"];
+    };
+
+  
+
   };
 
-  programs.zsh.oh-my-zsh = {
-    enable = true;
-    plugins = [
-      "git"
-      "sudo"
-    ];
-  };
-
-  #programs.zsh.zplug = {
+ #programs.zsh.zplug = {
   #  enable = true;
   #
   #  zplugHome = "${config.xdg.configHome}/zsh/zplug";

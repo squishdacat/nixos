@@ -7,16 +7,15 @@
 {
   imports = [
     ./locale/default.nix
-    #./app/tts/piper.nix
+    ./app/tts/piper.nix
+
+    ./flakes/nvf/default.nix
 
     ./icons
 
-    #./app/shell/starship
     ./app/shell/zsh
 
-    #./app/desktop/hyprland
     ./app/desktop/niri
-    #./app/desktop/cosmic
 
     ./app/desktop/notifications/swaync.nix
     ./app/desktop/wallpaper/hyprpaper.nix
@@ -28,7 +27,7 @@
     #./app/launcher/rofi.nix
 
     #./app/terminal/emulator/kitty.nix
-    ./app/terminal/emulator/foot.nix
+    #./app/terminal/emulator/foot.nix
     ./app/cmd/macchina
     #./app/cmd/ranger.nix
     ./app/cmd/yazi.nix
@@ -38,10 +37,7 @@
     #./app/cmd/helix
 
     ./app/app/vscodium.nix
-    ./app/app/anki.nix
-    ./app/app/mpv.nix
 
-    #./app/browser/firefox.nix
     #./app/browser/librewolf.nix
     ./app/browser/qutebrowser.nix
   ];
@@ -57,10 +53,7 @@
     nemo-with-extensions
     pavucontrol
 
-    thunderbird-latest
-    bitwarden-desktop
     tor-browser
-    qbittorrent
 
     libreoffice-fresh
     #libreoffice-still
@@ -83,23 +76,14 @@
     obs-studio
     #memento
     miru
-    audacity
-
     gnome-nibbles
 
     kdePackages.kdenlive
-    blender
-    krita
-    inkscape
-    gimp
-    pinta
 
     exhibit
     feh
     vipsdisp
 
-    #jetbrains.idea-ultimate
-    #jetbrains.rust-rover
     #obsidian
 
     wl-clipboard
@@ -107,11 +91,12 @@
     #networkmanagerapplet
     brightnessctl
 
+    gimp
+
     ffmpeg
     jq
     unzip
     zip
-    #hexedit
     libsixel
     scrcpy
     btop

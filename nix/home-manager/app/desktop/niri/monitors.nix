@@ -3,7 +3,7 @@
   programs.niri.settings.outputs = {
     # Laptop
     "eDP-1" = {
-      scale = 1.5;
+      scale = 1.2;
       variable-refresh-rate = true;
     };
 

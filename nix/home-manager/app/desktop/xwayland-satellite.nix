@@ -3,7 +3,7 @@
   programs.niri.settings = {
     spawn-at-startup = [
       {
-        command = [ "${pkgs.xwayland-satellite}/bin/xwayland-satellite" ];
+        command = [ "${pkgs.xwayland-satellite}/bin/xwayland-satellite" "nm-applet"];
       }
     ];
 

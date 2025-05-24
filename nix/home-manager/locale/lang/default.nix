@@ -1,6 +1,6 @@
 { ... }:
 {
   imports = [
-    ./ja-jp.nix
+    ./en-au.nix
   ];
 }

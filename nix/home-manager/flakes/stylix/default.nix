@@ -13,7 +13,7 @@
     enable = true;
     polarity = "dark";
 
-    image = ./head_dark.png;
+    image = ./wallpaper.jpg;
 
     #base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-night-terminal-dark.yaml";
     #base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyodark.yaml";
@@ -37,7 +37,7 @@
       vscode.profileNames = [ "default" ];
 
       # Disable some targets that I don't want to be themed
-      alacritty.enable = false;
+      alacritty.enable = true;
       firefox.enable = false;
     };
   };

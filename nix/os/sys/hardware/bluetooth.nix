@@ -2,7 +2,7 @@
 {
   hardware.bluetooth = {
     enable = true;
-    powerOnBoot = false; # Whether to power up the bluetooth controller on boot
+    powerOnBoot = true; # Whether to power up the bluetooth controller on boot
 
     settings = {
       General.Experimental = true; # Show battery level

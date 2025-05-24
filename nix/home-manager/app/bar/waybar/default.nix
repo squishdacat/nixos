@@ -24,6 +24,7 @@
           "battery"
           "wireplumber"
           "network"
+          "nm-applet"
         ];
 
         privacy = {

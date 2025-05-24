@@ -59,6 +59,7 @@
   programs.niri.settings = {
     prefer-no-csd = true;
     hotkey-overlay.skip-at-startup = false;
+    layout.gaps = 5;
 
     input = {
       # TODO: Add lock
@@ -76,6 +77,9 @@
       touchpad = {
         natural-scroll = false;
       };
+      trackpoint = {
+        accel-speed = 0.1;
+      };
     };
 
     # TODO: This is not implemented in niri nix flake
@@ -87,6 +91,9 @@
       "Mod+Shift+Backspace".action = quit;
       #"Mod+Shift+Delete".action = quit;
       "Mod+Escape".action = toggle-keyboard-shortcuts-inhibit;
+
+      "Mod+Shift+Ctrl+H".action = show-hotkey-overlay;
+      "Mod+Shift+F".action = maximize-column;
 
       "Mod+Q".action = close-window;
       "Print".action = screenshot;
@@ -106,6 +113,19 @@
         action = focus-workspace-down;
         cooldown-ms = 150;
       };
+
+
+      "Mod+TouchpadScrollLeft".action = focus-column-right;
+      "Mod+TouchpadScrollRight".action = focus-column-left;
+      "Mod+Ctrl+TouchpadScrollUp" = {
+        action = focus-workspace-up;
+        cooldown-ms = 150;
+      };
+      "Mod+Ctrl+TouchpadScrollDown" = {
+        action = focus-workspace-down;
+        cooldown-ms = 150;
+      };
+
 
       #Terminal launch
       "Mod+T".action.spawn = "alacritty";
@@ -175,10 +195,10 @@
       "Mod+O".action = focus-window-up;
       "Mod+I".action = focus-column-right;
 
-      "Mod+Shift+N".action = move-column-left;
-      "Mod+Shift+E".action = move-window-down;
-      "Mod+Shift+O".action = move-window-up;
-      "Mod+Shift+I".action = move-column-right;
+      "Mod+Shift+H".action = move-column-left;
+      "Mod+Shift+J".action = move-window-down;
+      "Mod+Shift+K".action = move-window-up;
+      "Mod+Shift+L".action = move-column-right;
 
       "Mod+Ctrl+E".action = focus-workspace-down;
       "Mod+Ctrl+O".action = focus-workspace-up;
@@ -205,10 +225,6 @@
       "Mod+Shift+8".action = move-column-to-workspace 8;
       "Mod+Shift+9".action = move-column-to-workspace 9;
 
-      "Mod+Space".action.spawn = [
-        "${pkgs.fcitx5}/bin/fcitx5-remote"
-        "-t"
-      ];
       "Mod+Shift+P".action = power-off-monitors;
     };
 
@@ -216,7 +232,7 @@
       {
         geometry-corner-radius =
           let
-            r = 8.0;
+            r = 2.0;
           in
           {
             top-left = r;
