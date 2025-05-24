@@ -115,13 +115,13 @@
       };
 
 
-      "Mod+TouchpadScrollLeft".action = focus-column-right;
-      "Mod+TouchpadScrollRight".action = focus-column-left;
-      "Mod+Ctrl+TouchpadScrollUp" = {
+      "Mod+TouchpadScrollRight".action = focus-column-right;
+      "Mod+TouchpadScrollLeft".action = focus-column-left;
+      "Mod+TouchpadScrollUp" = {
         action = focus-workspace-up;
         cooldown-ms = 150;
       };
-      "Mod+Ctrl+TouchpadScrollDown" = {
+      "Mod+TouchpadScrollDown" = {
         action = focus-workspace-down;
         cooldown-ms = 150;
       };
