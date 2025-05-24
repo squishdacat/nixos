@@ -58,7 +58,7 @@
   programs.niri.enable = true;
   programs.niri.settings = {
     prefer-no-csd = true;
-    hotkey-overlay.skip-at-startup = true;
+    hotkey-overlay.skip-at-startup = false;
 
     input = {
       # TODO: Add lock
@@ -106,6 +106,9 @@
         action = focus-workspace-down;
         cooldown-ms = 150;
       };
+
+      #Terminal launch
+      "Mod+T".action.spawn = "alacritty";
 
       # Audio Keys
       "xf86audioraisevolume".action.spawn = [

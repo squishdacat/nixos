@@ -7,11 +7,11 @@
 {
   imports = [
     ./locale/default.nix
-    ./app/tts/piper.nix
+    #./app/tts/piper.nix
 
     ./icons
 
-    ./app/shell/starship
+    #./app/shell/starship
     ./app/shell/zsh
 
     #./app/desktop/hyprland
@@ -35,13 +35,13 @@
     ./app/cmd/eza.nix
     ./app/cmd/bat.nix
     ./app/cmd/lf.nix
-    ./app/cmd/helix
+    #./app/cmd/helix
 
     ./app/app/vscodium.nix
     ./app/app/anki.nix
     ./app/app/mpv.nix
 
-    ./app/browser/firefox.nix
+    #./app/browser/firefox.nix
     #./app/browser/librewolf.nix
     ./app/browser/qutebrowser.nix
   ];
@@ -52,6 +52,7 @@
   # environment.
   home.packages = with pkgs; [
     #distrobox lilipod
+    alacritty
 
     nemo-with-extensions
     pavucontrol

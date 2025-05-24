@@ -10,7 +10,7 @@
       ./../../os/startup/login/tuigreet.nix
       ./../../os/startup/splash/plymouth.nix
       ./../../os/apps/utils/desktop.nix
-      ./../../os/apps/game/steam.nix
+      #./../../os/apps/game/steam.nix
       ./../../os/apps/polkit/gnome.nix
       ./../../os/apps/keyring/gnome.nix
 

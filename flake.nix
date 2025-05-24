@@ -33,7 +33,7 @@
 
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     #nixvim.url = "github:nix-community/nixvim";
-    #nvf.url = "github:notashelf/nvf";
+    nvf.url = "github:notashelf/nvf";
     niri.url = "github:sodiboo/niri-flake/dc5e21a5189a919a95e9650930d1f67aebed7533";
   };
 

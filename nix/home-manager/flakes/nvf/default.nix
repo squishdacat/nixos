@@ -1,6 +1,7 @@
 {
   inputs,
   config,
+  lib,
   ...
 }:
 {
@@ -17,7 +18,7 @@
     settings.vim = {
       theme = {
         enable = true;
-        name = "catppuccin";
+        name = lib.mkDefault "catppuccin";
         style = "mocha";
         transparent = true;
       };

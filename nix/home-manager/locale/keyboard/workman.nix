@@ -1,7 +1,7 @@
 { ... }:
 let
   layout = "us";
-  variant = "workman";
+  variant = "qwerty";
   options = "caps:backspace";
 in
 {
