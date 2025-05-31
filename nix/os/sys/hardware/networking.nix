@@ -24,6 +24,8 @@
   boot.initrd.systemd.network.wait-online.enable = false;
   systemd.services.NetworkManager-wait-online.enable = false;
 
+  networking.firewall.allowedUDPPorts = [2021 1900];
+  networking.firewall.allowedTCPPorts = [1883 322 990];
   # If a network proxy is ever needed
   #networking.proxy = {
   #  default = "http://user:password@proxy:port/";

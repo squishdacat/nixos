@@ -9,7 +9,7 @@
     inputs.nvf.homeManagerModules.default
   ];
 
-  home.sessionVariables.EDITOR = "${config.programs.nvf.settings.vim.package}/bin/nvim";
+  home.sessionVariables.EDITOR = "nvim";
 	programs.nvf = {
                 enable = true;
                 settings.vim = {

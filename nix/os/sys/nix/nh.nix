@@ -5,7 +5,7 @@
 
     # TODO: Make this not hard-coded
     #flake = inputs.self.outPath;
-    flake = "/home/michaelw/.modifiedRemyDotfiles/dotfiles/";
+    flake = "/home/michaelw/.dotfiles/";
 
     # Garbage Collection
     clean = {

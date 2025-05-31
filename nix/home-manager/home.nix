@@ -17,6 +17,8 @@
 
     ./app/desktop/niri
 
+    ./app/desktop/niri/wlsunset/default.nix
+
     ./app/desktop/notifications/swaync.nix
     ./app/desktop/wallpaper/hyprpaper.nix
     #./app/desktop/wallpaper/wpaperd.nix
@@ -49,6 +51,8 @@
   home.packages = with pkgs; [
     #distrobox lilipod
     alacritty
+    jellyfin-media-player
+    brave
 
     nemo-with-extensions
     pavucontrol

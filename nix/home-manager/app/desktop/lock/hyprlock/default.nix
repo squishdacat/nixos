@@ -4,7 +4,7 @@
     "$mod, L, exec, ${pkgs.hyprlock}/bin/hyprlock"
   ];
   programs.niri.settings.binds = with config.lib.niri.actions; {
-    "Mod+L".action.spawn = [ "${pkgs.hyprlock}/bin/hyprlock" ];
+    "Mod+R".action.spawn = [ "${pkgs.hyprlock}/bin/hyprlock" ];
   };
 
   programs.hyprlock = {

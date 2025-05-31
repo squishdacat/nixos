@@ -103,6 +103,11 @@
       "Mod+F".action = fullscreen-window;
       "Mod+V".action = toggle-window-floating;
 
+
+      "Mod+H".action = focus-column-left;
+      "Mod+L".action = focus-column-right;
+      "Mod+J".action = focus-workspace-down;
+      "Mod+K".action = focus-workspace-up;
       "Mod+WheelScrollUp".action = focus-column-right;
       "Mod+WheelScrollDown".action = focus-column-left;
       "Mod+Ctrl+WheelScrollUp" = {
@@ -190,10 +195,6 @@
         "previous"
       ];
 
-      "Mod+N".action = focus-column-left;
-      "Mod+E".action = focus-window-down;
-      "Mod+O".action = focus-window-up;
-      "Mod+I".action = focus-column-right;
 
       "Mod+Shift+H".action = move-column-left;
       "Mod+Shift+J".action = move-window-down;

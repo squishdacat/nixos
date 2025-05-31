@@ -38,7 +38,7 @@
   };
 
   outputs =
-    { self, nixpkgs, nvf, ... }@inputs:
+    { self, nixpkgs, ... }@inputs:
     let
       inherit (self) outputs;
       inherit (nixpkgs) lib;

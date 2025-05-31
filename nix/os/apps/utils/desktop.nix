@@ -1,14 +1,20 @@
-{ ... }:
+{ pkgs, ... }:
 {
   imports = [
     ./v4l.nix
   ];
 
+  environment.systemPackages = with pkgs; [
+    mullvad
+    mullvad-vpn
+  ];
+
+  services.mullvad-vpn.enable = true;
+
+
   # The set of english words (at $WORDLIST env var)
   #environment.wordList.enable = true;
 
-  # Android Debugger
-  programs.adb.enable = true;
   # Configs
   programs.dconf.enable = true;
   programs.xfconf.enable = true;
@@ -18,4 +24,6 @@
   programs.gphoto2.enable = true;
   # Thumbnail managment
   services.tumbler.enable = true;
+
+
 }
