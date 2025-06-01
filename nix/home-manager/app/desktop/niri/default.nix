@@ -119,6 +119,9 @@
         cooldown-ms = 150;
       };
 
+      "Mod+Ctrl+H".action = move-workspace-to-monitor-left;
+      "Mod+Ctrl+L".action = move-workspace-to-monitor-right;
+
 
       "Mod+TouchpadScrollRight".action = focus-column-right;
       "Mod+TouchpadScrollLeft".action = focus-column-left;

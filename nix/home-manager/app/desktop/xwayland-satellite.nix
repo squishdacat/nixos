@@ -1,5 +1,6 @@
 { pkgs, ... }:
 {
+  home.packages = [pkgs.xwayland-satellite];
   programs.niri.settings = {
     spawn-at-startup = [
       {

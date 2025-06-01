@@ -8,39 +8,27 @@
     };
 
     # PC
-    "DP-1" = {
+    "DP-3" = {
       mode = {
-        height = 2560;
-        width = 1440;
-        refresh = 144.0;
+        height = 1440;
+        width = 2560;
+        refresh = 143.999;
       };
       position = {
         x = 0;
         y = 0;
       };
     };
-    "HDMI-A-1" = {
+    "DP-2" = {
       mode = {
-        height = 1920;
-        width = 1080;
-        refresh = 60.0;
-      };
-      position = {
-        x = -1920;
-        y = 0;
-      };
-    };
-    "HDMI-A-2" = {
-      mode = {
-        height = 1920;
-        width = 1080;
-        refresh = 60.0;
+        height = 1050;
+        width = 1680;
+        refresh = 59.883;
       };
       position = {
         x = 2560;
         y = 0;
       };
-      transform.rotation = 90;
     };
   };
 }

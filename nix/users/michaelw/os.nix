@@ -34,5 +34,13 @@
       "floppy"
       "storage"
     ];
+
+    
   };
+
+  #This is what fixes the issue of xwayland-satellite not running unless started by the user
+  #The xwayland-satellite package contains a systemd unit file but it is disabled by default?
+  systemd.user.targets.graphical-session = {
+      wants = [ "xwayland-satellite.service" ];
+    };
 }
