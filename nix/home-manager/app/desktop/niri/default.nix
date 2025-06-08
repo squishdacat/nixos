@@ -59,7 +59,14 @@
   programs.niri.settings = {
     prefer-no-csd = true;
     hotkey-overlay.skip-at-startup = false;
-    layout.gaps = 5;
+    layout = {
+        gaps = 5;
+        preset-column-widths = [
+                {proportion = 1. / 3.;}
+                {proportion = 1. / 2.;}
+                {proportion = 2. / 3.;}
+        ];
+    };
 
     input = {
       # TODO: Add lock
@@ -92,7 +99,7 @@
       #"Mod+Shift+Delete".action = quit;
       "Mod+Escape".action = toggle-keyboard-shortcuts-inhibit;
 
-      "Mod+Shift+Ctrl+H".action = show-hotkey-overlay;
+      "Mod+Shift+Ctrl+O".action = show-hotkey-overlay;
       "Mod+Shift+F".action = maximize-column;
 
       "Mod+Q".action = close-window;
@@ -121,6 +128,11 @@
 
       "Mod+Ctrl+H".action = move-workspace-to-monitor-left;
       "Mod+Ctrl+L".action = move-workspace-to-monitor-right;
+      "Mod+Ctrl+Shift+H".action = move-window-to-monitor-left;
+      "Mod+Ctrl+Shift+L".action = move-window-to-monitor-right;
+
+
+      "Mod+Ctrl+W".action = switch-preset-column-width;
 
 
       "Mod+TouchpadScrollRight".action = focus-column-right;
@@ -206,8 +218,8 @@
 
       "Mod+Ctrl+E".action = focus-workspace-down;
       "Mod+Ctrl+O".action = focus-workspace-up;
-      "Mod+Shift+Ctrl+E".action = move-window-to-workspace-down;
-      "Mod+Shift+Ctrl+O".action = move-window-to-workspace-up;
+      "Mod+Shift+Ctrl+J".action = move-window-to-workspace-down;
+      "Mod+Shift+Ctrl+K".action = move-window-to-workspace-up;
 
       # TODO: Change to a more nixy way of doing this
       "Mod+1".action = focus-workspace 1;

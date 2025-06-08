@@ -1,11 +1,13 @@
 { ... }:
 {
   imports = [
-    ./../../os/apps/server/ssh.nix
+    #./../../os/apps/server/ssh.nix
+    ./../../os/apps/utils/general.nix
+    ./../../os/startup/loader/systemd.nix
   ];
 
   myNix.users = [
-    "coolgi:0"
+    "michaelw:0"
   ];
 
   services.sshguard.enable = true;

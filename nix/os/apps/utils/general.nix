@@ -19,7 +19,10 @@
 
   programs.ssh.startAgent = false;
   #programs.ssh.askPassword = true;
-
+  services.openssh.settings = {
+        PermitRootLogin = "no";
+        PasswordAuthentication = false;
+  };
   services.pcscd.enable = true;
 
   programs.gnupg.agent = {
