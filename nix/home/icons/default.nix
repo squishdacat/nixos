@@ -1,0 +1,6 @@
+{ ... }:
+{
+  imports = [
+    ./epapirus-dark.nix
+  ];
+}
