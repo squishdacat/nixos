@@ -7,7 +7,7 @@ let
   userModules = builtins.listToAttrs (
     map (name: {
       inherit name;
-      value = import ./${name}/home.nix;
+      value = import ./../${name}/home.nix;
     }) userDirs
   );
 in

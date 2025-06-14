@@ -2,7 +2,7 @@
 {
   imports = [
     ./lang
-    ./keyboard/workman.nix
+    ./keyboard/qwerty.nix
     ./spell/hunspell.nix
   ];
 }

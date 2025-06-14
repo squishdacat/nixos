@@ -22,7 +22,9 @@ let
         option-functions = specialArgs.option-functions config;
       };
       hostUsers = config.myNix.users;
-      userDefinitions = import ./../users/userDefinitions.nix {inherit lib; inherit hostUsers;};
+      test = ./..;
+      
+      userDefinitions = import test {inherit lib; inherit hostUsers;};
 
 
 
