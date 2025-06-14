@@ -3,6 +3,7 @@
   imports = [
     ./../defaults/home.nix
     ./../../home/default.nix
+    ./../../home/desktop.nix
 
   ];
 
