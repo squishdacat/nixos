@@ -12,6 +12,8 @@
   #services.xserver.displayManager.startx.enable = true;
   environment.systemPackages = [
         pkgs.networkmanagerapplet
+        pkgs.rustdesk
+        pkgs.vlc
   ];
   #virtualisation.docker = {
   #  enable = true;

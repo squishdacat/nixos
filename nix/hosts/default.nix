@@ -3,6 +3,8 @@
   clib,
   nixosConfigurations,
   specialArgs,
+  home-manager,
+  inputs
 }:
 let
   hosts = lib.lists.remove "defaults" (
@@ -19,6 +21,9 @@ let
         module-functions = specialArgs.module-functions config;
         option-functions = specialArgs.option-functions config;
       };
+      userDefinitions = import ./../users/userDefinitions.nix {inherit lib;};
+
+
     in
     lib.nixosSystem {
       specialArgs = extraSpecialArgs;
@@ -29,6 +34,14 @@ let
           ./defaults # Shared Sys Conf
 
           { networking.hostName = name; } # System Name
+
+          home-manager.nixosModules.home-manager {
+                home-manager.useGlobalPkgs = false;
+                home-manager.useUserPackages = true;
+                home-manager.users = userDefinitions.users;
+		            home-manager.extraSpecialArgs = { inherit inputs;}; 
+                home-manager.backupFileExtension = "backup";
+          }
         ]
         ++ (
           # If it's not an ISO

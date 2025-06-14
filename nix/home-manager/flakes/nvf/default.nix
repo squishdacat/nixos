@@ -33,7 +33,7 @@
                                 };
                         theme = {
                                 enable = true;
-                                name = lib.mkDefault "tokyonight";
+                                name = lib.mkForce"tokyonight";
                                 style = "night";
                                 };
                         statusline.lualine.enable = true;

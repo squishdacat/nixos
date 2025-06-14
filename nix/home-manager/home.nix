@@ -9,7 +9,7 @@
     ./locale/default.nix
     ./app/tts/piper.nix
 
-    ./flakes/nvf/default.nix
+    #./flakes/nvf/default.nix
 
     ./icons
 
@@ -38,7 +38,7 @@
     ./app/cmd/lf.nix
     #./app/cmd/helix
 
-    ./app/app/vscodium.nix
+    #./app/app/vscodium.nix
 
     ./app/browser/librewolf.nix
     ./app/browser/qutebrowser.nix
@@ -53,6 +53,7 @@
     alacritty
     jellyfin-media-player
     brave
+    gh
 
     nemo-with-extensions
     pavucontrol
@@ -111,6 +112,10 @@
     #sox
     #alsa-utils
   ];
+
+  programs.gh = {
+    enable = true;
+  };
 
   programs.git = {
     enable = true;

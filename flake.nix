@@ -38,7 +38,7 @@
   };
 
   outputs =
-    { self, nixpkgs, ... }@inputs:
+    { self, nixpkgs, home-manager, ... }@inputs:
     let
       inherit (self) outputs;
       inherit (nixpkgs) lib;
@@ -74,14 +74,16 @@
         inherit (nixpkgs) lib;
         inherit clib;
         inherit specialArgs;
+        inherit home-manager;
+	inherit inputs;
       };
 
-      homeConfigurations = import ./nix/users/flake.nix {
-        inherit (self) homeConfigurations;
-        inherit (inputs) home-manager;
-        inherit (nixpkgs) lib;
-        inherit (inputs) nixpkgs;
-        inherit inputs;
-      };
+      #homeConfigurations = import ./nix/users/flake.nix {
+      #  inherit (self) homeConfigurations;
+      #  inherit (inputs) home-manager;
+      #  inherit (nixpkgs) lib;
+      #  inherit (inputs) nixpkgs;
+      #  inherit inputs;
+      #};
     };
 }
