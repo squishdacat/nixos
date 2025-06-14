@@ -7,7 +7,7 @@
   ];
 
   myNix.users = [
-    "michaelw:0"
+    "michaelw:s"
   ];
 
   services.sshguard.enable = true;

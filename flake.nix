@@ -75,7 +75,7 @@
         inherit clib;
         inherit specialArgs;
         inherit home-manager;
-	inherit inputs;
+	      inherit inputs;
       };
 
       #homeConfigurations = import ./nix/users/flake.nix {

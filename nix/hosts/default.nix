@@ -4,7 +4,7 @@
   nixosConfigurations,
   specialArgs,
   home-manager,
-  inputs
+  inputs,
 }:
 let
   hosts = lib.lists.remove "defaults" (
@@ -21,7 +21,9 @@ let
         module-functions = specialArgs.module-functions config;
         option-functions = specialArgs.option-functions config;
       };
-      userDefinitions = import ./../users/userDefinitions.nix {inherit lib;};
+      hostUsers = config.myNix.users;
+      userDefinitions = import ./../users/userDefinitions.nix {inherit lib; inherit hostUsers;};
+
 
 
     in
@@ -39,7 +41,7 @@ let
                 home-manager.useGlobalPkgs = false;
                 home-manager.useUserPackages = true;
                 home-manager.users = userDefinitions.users;
-		            home-manager.extraSpecialArgs = { inherit inputs;}; 
+		            home-manager.extraSpecialArgs = { inherit inputs; hostName = "${name}";}; 
                 home-manager.backupFileExtension = "backup";
           }
         ]
