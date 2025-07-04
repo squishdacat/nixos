@@ -5,6 +5,7 @@ let
   configurationMapper = {
         "D" = ./desktop.nix;
         "S" = ./server.nix;
+        "I" = ./iso.nix;
   };
   desktopfile = import ./desktop.nix;
 in
