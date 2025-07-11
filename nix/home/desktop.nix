@@ -5,13 +5,15 @@
     ./app/desktop/niri/wlsunset/default.nix
 
     ./app/desktop/notifications/swaync.nix
-    ./app/desktop/wallpaper/hyprpaper.nix
-    #./app/desktop/wallpaper/wpaperd.nix
+    #./app/desktop/wallpaper/hyprpaper.nix
+    ./app/desktop/wallpaper/wpaperd.nix
     ./app/desktop/xwayland-satellite.nix
 
     ./app/bar/waybar
     ./app/launcher/wofi.nix
     ./app/browser/qutebrowser.nix
+    ./app/browser/firefox.nix
+    ./flakes/stylix
   ];
 
   home.packages = with pkgs; [

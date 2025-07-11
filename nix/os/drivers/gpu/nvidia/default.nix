@@ -1,7 +1,13 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 {
   # Load nvidia driver for Xorg and Wayland
   services.xserver.videoDrivers = [ "nvidia" ];
+  services.upower.enable = true;
+xdg.portal = {
+  enable = true;
+  config.common.default = "wlr";
+  extraPortals = with pkgs; [ xdg-desktop-portal-wlr ];
+};
 
   hardware.nvidia = {
     # Modesetting is required.
@@ -32,5 +38,8 @@
 
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
     package = config.boot.kernelPackages.nvidiaPackages.stable;
+
+    #forceFullCompositionPipeline = true;
+    # This is breaking brave for some reason? Not resolving Noita tearing issue either.
   };
 }

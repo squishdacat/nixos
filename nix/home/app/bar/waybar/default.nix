@@ -1,4 +1,4 @@
-{ configs, ... }:
+{ configs, osConfig,... }:
 {
   programs.waybar = {
     enable = true;
@@ -21,10 +21,9 @@
         modules-right = [
           "tray"
           "privacy"
-          "battery"
+          (if (builtins.substring 0 1 osConfig.networking.hostName == "L") then "battery" else "")
           "wireplumber"
           "network"
-          "nm-applet"
         ];
 
         privacy = {
@@ -51,3 +50,4 @@
     #'';
   };
 }
+

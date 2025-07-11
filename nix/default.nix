@@ -14,7 +14,20 @@
         pkgs.networkmanagerapplet
         pkgs.rustdesk
         pkgs.vlc
+        pkgs.inetutils
   ];
+  #networking.firewall.allowedTCPPorts = [ 80 443 ];
+
+  #services.httpd.enable = true;
+  #services.httpd.adminAddr = "webmaster@example.org";
+
+  #services.httpd.virtualHosts."example.org" = {
+  #  documentRoot = "/var/www/";
+    #dir = "/var/www/test";
+    # want ssl + a let's encrypt certificate? add `forceSSL = true;` right here
+  #};
+
+
   #virtualisation.docker = {
   #  enable = true;
   #  storageDriver = "btrfs";
