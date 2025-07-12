@@ -9,6 +9,12 @@
   
   services.jellyfin = {
     enable = true;
-    openfirewall = true;
+    #openfirewall = true; Doesn't exist?
   };
+
+  networking.firewall = {
+    #allowedUDPPorts = [ 8096 ];
+    #allowedTCPPorts = [ 8096 ];
+  };
+  
 }

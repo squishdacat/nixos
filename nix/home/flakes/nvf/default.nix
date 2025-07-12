@@ -30,6 +30,7 @@
                         snippets.luasnip.enable = true;
                         lsp = {
                                 enable = true;
+                                formatOnSave = true;
                                 };
                         theme = {
                                 enable = true;
@@ -55,11 +56,13 @@
                               gitsigns.enable = true;
                               gitsigns.codeActions.enable = false; # throws an annoying debug message
                             };
+                        formatter.conform-nvim.enable = true;
                         autocomplete.nvim-cmp.enable = true;
                         languages = {
-                                enableLSP = true;
                                 #php.enable = true;
-                                nix.enable = true;
+                                nix = {
+                                  enable = true;
+                                };
                                 sql.enable = true;
                                 python.enable = true;
                                 markdown.enable = true;
