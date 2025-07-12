@@ -33,6 +33,7 @@
     };
   */
 
+
   xdg.portal = {
     enable = true;
     xdgOpenUsePortal = true;
@@ -59,6 +60,7 @@
   programs.niri.settings = {
     prefer-no-csd = true;
     hotkey-overlay.skip-at-startup = false;
+    debug.render-drm-device = "/dev/dri/renderD128";
     layout = {
         gaps = 5;
         preset-column-widths = [

@@ -12,7 +12,7 @@
   #services.xserver.displayManager.startx.enable = true;
   environment.systemPackages = [
         pkgs.networkmanagerapplet
-        pkgs.rustdesk
+        #pkgs.rustdesk
         pkgs.vlc
         pkgs.inetutils
   ];
