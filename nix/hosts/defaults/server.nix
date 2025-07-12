@@ -1,7 +1,7 @@
 { ... }:
 {
   imports = [
-    #./../../os/apps/server/ssh.nix
+    ./../../os/apps/server/ssh.nix
     ./../../os/apps/utils/general.nix
     ./../../os/startup/loader/systemd.nix
   ];
