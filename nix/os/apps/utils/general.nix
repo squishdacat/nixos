@@ -19,9 +19,12 @@
 
   programs.ssh.startAgent = false;
   #programs.ssh.askPassword = true;
+  networking.firewall.allowedTCPPorts = [ 22 ];
   services.openssh.settings = {
+        enable = true;
         PermitRootLogin = "no";
         PasswordAuthentication = false;
+        ports = [ 22 ];
   };
   services.pcscd.enable = true;
 

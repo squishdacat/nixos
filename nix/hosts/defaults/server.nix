@@ -1,7 +1,6 @@
 { ... }:
 {
   imports = [
-    ./../../os/apps/server/ssh.nix
     ./../../os/apps/utils/general.nix
     ./../../os/startup/loader/systemd.nix
   ];
@@ -10,7 +9,7 @@
     "michaelw:s"
   ];
 
-  services.sshguard.enable = true;
+  #services.sshguard.enable = true;
 
   # On a server, it makes sense to be able to ping
   networking.firewall.allowPing = true;
