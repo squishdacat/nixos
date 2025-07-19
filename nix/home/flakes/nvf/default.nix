@@ -14,6 +14,7 @@
                 enable = true;
                 settings.vim = {
                         options.tabstop = 2;
+                        options.shiftwidth = 2;
                         viAlias = false;
                         vimAlias = true;
                         keymaps = [

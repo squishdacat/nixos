@@ -14,6 +14,10 @@
     simple-nixos-mailserver.url = "gitlab:simple-nixos-mailserver/nixos-mailserver";
     tuwunel.url = "github:matrix-construct/tuwunel";
     mc-honeypot.url = "github:Duckulus/mc-honeypot";
+    compose2nix = {
+      url = "github:aksiksi/compose2nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # ========== HOME ========== #
     home-manager = {
@@ -75,7 +79,7 @@
         inherit clib;
         inherit specialArgs;
         inherit home-manager;
-	      inherit inputs;
+        inherit inputs;
       };
 
       #homeConfigurations = import ./nix/users/flake.nix {
